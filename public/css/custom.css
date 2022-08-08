@@ -1,0 +1,12 @@
+/*
+Custom Css
+*/
+
+.nav-link.active{
+    color: #106bc7 !important;
+    font-weight: bold !important;
+}
+.nav-link:hover{
+    color: #106bc7 !important;
+    font-weight: bold !important;
+}
