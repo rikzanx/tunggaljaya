@@ -27,7 +27,7 @@ https://templatemo.com/tm-559-zay-shop
 </head>
 
 <body>
-    <a href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}">{{ $company->telp }}" class="float-ok" target="_blank">
+    <a href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
         <i class="fa fa-whatsapp my-float-ok"></i>
         </a>
     <!-- Start Top Nav -->
