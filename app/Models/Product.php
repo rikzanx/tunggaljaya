@@ -22,6 +22,7 @@ class Product extends Model
         "connection",
         "brand",
         "description",
+        "dilihat"
     ];
 
     public function sluggable(): array

@@ -36,9 +36,9 @@
                   <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Material</th>
-                    <th>Rating</th>
                     <th>Description</th>
+                    <th>Brand</th>
+                    <th>Size</th>
                     <th>Foto</th>
                     <th>Aksi</th>
                   </tr>
@@ -48,9 +48,9 @@
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->material }}</td>
-                        <td>{{ $item->rating }}</td>
                         <td>{{ $item->description }}</td>
+                        <td>{{ $item->brand }}</td>
+                        <td>{{ $item->size }}</td>
                         <td>
                             <a href="{{ asset($item->images[0]->image_product) }}" data-toggle="lightbox" data-title="{{ $item->name }}">
                                 <img src="{{ asset($item->images[0]->image_product) }}" style="width: 100px;height:100px;" alt="" srcset="">

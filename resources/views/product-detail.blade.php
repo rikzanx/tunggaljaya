@@ -157,44 +157,34 @@ https://templatemo.com/tm-559-zay-shop
                             <h6>Description:</h6>
                             <p>{{$product->description}}</p>
 
-                            <h6>Specification</h6>
+                            {{-- <h6>Specification</h6> --}}
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <h6>Brand:</h6>
-                                </li>
-                                <li class="list-inline-item">
                                     <p class="text-muted"><strong>{{ $product->brand }}</strong></p>
                                 </li>
                             </ul>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <h6>Material:</h6>
-                                </li>
-                                <li class="list-inline-item">
-                                    <p class="text-muted"><strong>{{ $product->material }}</strong></p>
-                                </li>
-                            </ul>
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
                                     <h6>Size:</h6>
-                                </li>
-                                <li class="list-inline-item">
                                     <p class="text-muted"><strong>{{ $product->size }} inch</strong></p>
                                 </li>
                             </ul>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <h6>Rating:</h6>
+                                    <h6>Material:</h6>
+                                    <p class="text-muted"><strong>Cast Iron, Cast Steel / WCB / A216, Forged Steel / A105, Stainless Steel / SS304 / 316 / CF8 / CF8M, Bronze / Brass, PVC / U-PVC.</strong></p>
                                 </li>
+                            </ul>
+                            <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <p class="text-muted"><strong>{{ $product->rating }}</strong></p>
+                                    <h6>Rating:</h6>
+                                    <p class="text-muted"><strong>ANSI 150 / 300 / 600 / 900<br>PN 10 / 16 / 40 / 63<br>JIS 10K / 16K / 20K</strong></p>
                                 </li>
                             </ul>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <h6>Connection:</h6>
-                                </li>
-                                <li class="list-inline-item">
                                     <p class="text-muted"><strong>{{ $product->connection }}</strong></p>
                                 </li>
                             </ul>

@@ -17,10 +17,12 @@ class PageController extends Controller
         $company = Company::first();
         $sliders = ImagesSlider::all();
         $categories = Category::all();
+        $products = Product::skip(0)->take(6)->get();
         return view('index',[
             'company'=> $company,
             'sliders' => $sliders,
-            'categories' => $categories
+            'categories' => $categories,
+            'products' => $products
         ]);
     }
 
@@ -65,6 +67,10 @@ class PageController extends Controller
         $company = Company::first();
         $categories = Category::all();
         $product = Product::with('images')->where('slug',$slug)->firstOrFail();
+        $dilihat = $product->dilihat+1;
+        // dd($dilihat);
+        $product->dilihat = $dilihat;
+        $product->save();
         $products = Product::with('images')->get();
         return view('product-detail',[
             'company'=> $company,

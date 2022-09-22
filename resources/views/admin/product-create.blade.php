@@ -48,20 +48,20 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Material Produk</label>
-                    <input type="text" name="material" class="form-control" id="exampleInputEmail1" placeholder="Cast Iron,Carbon Steel, Steinless Steel" value="Cast Iron,Carbon Steel, Steinless Steel">
+                    {{-- <label for="exampleInputEmail1">Material Produk</label> --}}
+                    <input type="hidden" name="material" class="form-control" id="exampleInputEmail1" placeholder="Cast Iron,Carbon Steel, Steinless Steel" value="Cast Iron,Carbon Steel, Steinless Steel">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Size Produk</label>
                     <input type="text" name="size" class="form-control" id="exampleInputEmail1" placeholder="2,3,4,5,6,8,10" value="2,3,4,5,6,8,10">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Rating Produk</label>
-                    <input type="text" name="rating" class="form-control" id="exampleInputEmail1" placeholder="jis 10k, jis 20k, jis 30k, ansi 150, ansi 300, ansi 600" value="jis 10k, jis 20k, jis 30k, ansi 150, ansi 300, ansi 600">
+                    {{-- <label for="exampleInputEmail1">Rating Produk</label> --}}
+                    <input type="hidden" name="rating" class="form-control" id="exampleInputEmail1" placeholder="jis 10k, jis 20k, jis 30k, ansi 150, ansi 300, ansi 600" value="jis 10k, jis 20k, jis 30k, ansi 150, ansi 300, ansi 600">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Connection Produk</label>
-                    <input type="text" name="connection" class="form-control" id="exampleInputEmail1" placeholder="flange-end, screw" value="flange-end, screw">
+                    {{-- <label for="exampleInputEmail1">Connection Produk</label> --}}
+                    <input type="hidden" name="connection" class="form-control" id="exampleInputEmail1" placeholder="flange-end, screw" value="flange-end, screw">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Brand Produk</label>

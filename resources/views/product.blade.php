@@ -96,39 +96,15 @@ https://templatemo.com/tm-559-zay-shop
     <div class="container py-5">
         <div class="row">
 
-            <div class="col-lg-3">
-                <ul class="list-unstyled">
-                    <li class="pb-3">
-                        <a class="d-flex justify-content-between h3 text-decoration-none text-dark" href="{{ route('product') }}">
-                            Semua Produk
-                        </a>
-                    </li>
-                </ul>
-                <ul class="list-unstyled templatemo-accordion">
-                    
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Kategori
-                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul class="collapse show list-unstyled pl-3">
-                            @foreach ($categories as $category)
-                            <li><a class="text-decoration-none" href="{{ route('product',['category'=>$category->id]) }}">{{ $category->name }}</a></li>
-                            @endforeach
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 <div class="row">
                     <div class="col-12">
-                        <h5>{{$label}}</h5>
+                        <h5>Produk kami</h5>
                     </div>
                 </div>
                 <div class="row">
                     @foreach ($products as $product)    
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
                                 <img class="card-img rounded-0 img-fluid" src="{{ asset($product->images[0]->image_product) }}">
@@ -140,8 +116,10 @@ https://templatemo.com/tm-559-zay-shop
                             </div>
                             <div class="card-body">
                                 <a href="{{ route('product-detail',[$product->slug]) }}" class="h3 text-decoration-none"><b>{{ $product->name }}</b></a>
-                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li>Material: {{ $product->material }}</li>
+                                <ul class="w-100 list-unstyled mb-0">
+                                    <li>Size: {{ $product->size }}</li>
+                                    <li>Brand: {{ $product->brand }}</li>
+                                    <li class="" style="color:gray;">Dilihat {{ $product->dilihat }} kali</li>
                                 </ul>
                             </div>
                         </div>

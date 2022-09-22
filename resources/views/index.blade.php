@@ -139,7 +139,7 @@ https://templatemo.com/tm-559-zay-shop
     <section class="container py-5">
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Kategori Valve</h1>
+                <h1 class="h1">Produk</h1>
                 <!-- <p>
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                     deserunt mollit anim id est laborum.
@@ -147,13 +147,18 @@ https://templatemo.com/tm-559-zay-shop
             </div>
         </div>
         <div class="row">
-            @foreach ($categories as $category)
+            @foreach ($products as $product)
             <div class="col-12 col-md-4 p-5 mt-md-3">
-                <a href="#"><img src="{{ asset($category->image_category) }}" class="rounded-circle img-fluid border"></a>
-                <h5 class="text-center mt-3 mb-3">{{ $category->name }}</h5>
-                <p class="text-center"><a class="btn btn-success" href="{{ route('product',['category'=>$category->id]) }}">Lihat produk</a></p>
+                <a href="{{ route('product-detail',[$product->slug]) }}"><img src="{{ asset($product->images[0]->image_product) }}" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">{{ $product->name }}</h5>
+                {{-- <p class="text-center"><a class="btn btn-success" href="{{ route('product-detail',[$product->slug]) }}">Lihat produk</a></p> --}}
             </div>
             @endforeach
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <a class="btn btn-success text-white mt-2" href="#">Lihat semua produk</a>
+            </div>
         </div>
     </section>
 
@@ -183,9 +188,10 @@ https://templatemo.com/tm-559-zay-shop
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Produk</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        @foreach ($categories as $category)
-                            <li><a class="text-decoration-none" href="{{ route('product') }}">{{ $category->name }}</a></li>
+                        @foreach ($products as $product)
+                        <li><a class="text-decoration-none" href="{{ route('product-detail',[$product->slug]) }}">{{ $product->name }}</a></li>
                         @endforeach
+                        <li><a class="text-decoration-none" href="{{ route('product') }}">Produk lainnya..</a></li>
                     </ul>
                 </div>
 
