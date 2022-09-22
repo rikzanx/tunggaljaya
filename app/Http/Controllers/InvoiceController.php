@@ -118,7 +118,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($invoice);
-        return view('admin.invoice-show',[
+        return view('admin.invoice-show-new',[
             'invoice' => $invoice,
         'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
             'company' => $company,

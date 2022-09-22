@@ -65,14 +65,6 @@
             {{  $invoice->phone_customer}}
           </p>
         </div>
-        {{-- <div class="col-5">
-          <p>
-            <strong>Energies54</strong><br>
-            Réf. Client <em>C00022</em><br>
-            12 Rue de Verdun<br>
-            54250 JARNY
-          </p>
-        </div> --}}
       </div>
       <br>
       {{-- <h6>Audits et rapports mensuels (1er Novembre 2016 - 30 Novembre 2016)</h6> --}}

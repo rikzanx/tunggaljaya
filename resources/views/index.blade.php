@@ -147,7 +147,7 @@ https://templatemo.com/tm-559-zay-shop
             <div class="col-12 col-md-4 p-5 mt-3">
                 <a href="#"><img src="{{ asset($category->image_category) }}" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">{{ $category->name }}</h5>
-                <p class="text-center"><a class="btn btn-success" href="{{ route('product') }}">Lihat produk</a></p>
+                <p class="text-center"><a class="btn btn-success" href="{{ route('product',['category'=>$category->id]) }}">Lihat produk</a></p>
             </div>
             @endforeach
         </div>
