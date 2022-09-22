@@ -26,5 +26,6 @@ Custom Css
 }
 
 .my-float-ok{
+    z-index:104 !important;
 	margin-top:16px !important;
 }
