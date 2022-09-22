@@ -10,7 +10,7 @@ Custom Css
     color: #106bc7 !important;
     font-weight: bold !important;
 }
-.float{
+.float-ok{
 	position:fixed;
 	width:60px;
 	height:60px;
@@ -25,6 +25,6 @@ Custom Css
   z-index:100;
 }
 
-.my-float{
+.my-float-ok{
 	margin-top:16px;
 }
