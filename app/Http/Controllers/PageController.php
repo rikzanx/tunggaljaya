@@ -18,28 +18,34 @@ class PageController extends Controller
         $sliders = ImagesSlider::all();
         $categories = Category::all();
         $products = Product::skip(0)->take(6)->get();
+        $products_footer = Product::skip(0)->take(6)->get();
         return view('index',[
             'company'=> $company,
             'sliders' => $sliders,
             'categories' => $categories,
-            'products' => $products
+            'products' => $products,
+            'products_footer' => $products_footer,
         ]);
     }
 
     public function about(){
         $company = Company::first();
         $categories = Category::all();
+        $products_footer = Product::skip(0)->take(6)->get();
         return view('about',[
             'company'=> $company,
-            'categories' => $categories
+            'categories' => $categories,
+            'products_footer' => $products_footer,
         ]);
     }
     public function contact(){
         $company = Company::first();
         $categories = Category::all();
+        $products_footer = Product::skip(0)->take(6)->get();
         return view('contact',[
             'company'=> $company,
-            'categories' => $categories
+            'categories' => $categories,
+            'products_footer' => $products_footer,
         ]);
     }
     public function product(Request $request){
@@ -54,12 +60,14 @@ class PageController extends Controller
             $label = $category->name;
             $category_option = $category->id;
         }
+        $products_footer = Product::skip(0)->take(6)->get();
         // dd($products);
         return view('product',[
             'company'=> $company,
             'categories' => $categories,
             'label' => $label,
             'products' => $products,
+            'products_footer' => $products_footer,
             'category_option' => $category_option
         ]);
     }
@@ -72,11 +80,13 @@ class PageController extends Controller
         $product->dilihat = $dilihat;
         $product->save();
         $products = Product::with('images')->get();
+        $products_footer = Product::skip(0)->take(6)->get();
         return view('product-detail',[
             'company'=> $company,
             'categories' => $categories,
             'product' => $product,
-            'products' => $products
+            'products' => $products,
+            'products_footer' => $products_footer,
         ]);
     }
 }

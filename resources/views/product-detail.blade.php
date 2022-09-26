@@ -266,7 +266,7 @@ https://templatemo.com/tm-559-zay-shop
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Produk</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        @foreach ($products as $product)
+                        @foreach ($products_footer as $product)
                         <li><a class="text-decoration-none" href="{{ route('product-detail',[$product->slug]) }}">{{ $product->name }}</a></li>
                         @endforeach
                         <li><a class="text-decoration-none" href="{{ route('product') }}">Produk lainnya..</a></li>
