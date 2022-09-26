@@ -154,7 +154,7 @@ https://templatemo.com/tm-559-zay-shop
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <a class="btn btn-success text-white mt-2" href="#">Lihat semua produk</a>
+                <a class="btn btn-success text-white mt-2" href="{{ route('product') }}">Lihat semua produk</a>
             </div>
         </div>
     </section>

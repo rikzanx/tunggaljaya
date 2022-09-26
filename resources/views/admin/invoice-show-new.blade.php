@@ -94,13 +94,13 @@
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line text-center"><strong>Diskon</strong></td>
-    								<td class="no-line text-right">@rupiah($subtotal*$invoice->diskon_rate) ({{ $invoice->diskon_rate }}%)</td>
+    								<td class="no-line text-right">@rupiah($subtotal*$invoice->diskon_rate/100) ({{ $invoice->diskon_rate }}%)</td>
     							</tr>
     							<tr>
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line text-center"><strong>Total</strong></td>
-    								<td class="no-line text-right">@rupiah($subtotal-($subtotal*$invoice->diskon_rate))</td>
+    								<td class="no-line text-right">@rupiah($subtotal-($subtotal*$invoice->diskon_rate/100))</td>
     							</tr>
     						</tbody>
     					</table>
