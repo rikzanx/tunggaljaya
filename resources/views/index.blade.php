@@ -27,9 +27,6 @@ https://templatemo.com/tm-559-zay-shop
 </head>
 
 <body>
-    <a href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
-        <i class="fa fa-whatsapp my-float-ok"></i>
-        </a>
     <!-- Start Top Nav -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
         <div class="container text-light">
@@ -250,6 +247,11 @@ https://templatemo.com/tm-559-zay-shop
 
     </footer>
     <!-- End Footer -->
+
+    
+    <a href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
+        <i class="fa fa-whatsapp my-float-ok"></i>
+        </a>
 
     <!-- Start Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

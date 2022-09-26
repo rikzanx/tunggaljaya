@@ -45,7 +45,7 @@ https://templatemo.com/tm-559-zay-shop
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand text-success logo h2 align-self-center" href="{{ route('index') }}">
+            <a class="navbar-brand text-success logo h3 align-self-center" href="{{ route('index') }}">
                 {{ $company->name }}
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -191,9 +191,10 @@ https://templatemo.com/tm-559-zay-shop
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Produk</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        @foreach ($categories as $category)
-                            <li><a class="text-decoration-none" href="{{ route('product') }}">{{ $category->name }}</a></li>
+                        @foreach ($products as $product)
+                        <li><a class="text-decoration-none" href="{{ route('product-detail',[$product->slug]) }}">{{ $product->name }}</a></li>
                         @endforeach
+                        <li><a class="text-decoration-none" href="{{ route('product') }}">Produk lainnya..</a></li>
                     </ul>
                 </div>
 
@@ -252,6 +253,10 @@ https://templatemo.com/tm-559-zay-shop
 
     </footer>
     <!-- End Footer -->
+
+    <a href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
+        <i class="fa fa-whatsapp my-float-ok"></i>
+        </a>
 
     <!-- Start Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
