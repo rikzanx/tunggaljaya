@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{{ $company->name }} - Contact</title>
+    <title>Kontak - {{ $company->name }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
