@@ -34,13 +34,13 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>{{ count($products) }}</h3>
-                <p>Jumlah Produk</p>
+                <h3 style="font-size:3vw !important;">{{ count($products) }}</h3>
+                <p style="font-size:2vw !important;">Jumlah Produk</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="{{ route('produk.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('produk.index') }}" class="small-box-footer" style="font-size:2vw !important;">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -48,13 +48,13 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{ count($categories) }}</h3>
-                <p>Kategori Product</p>
+                <h3 style="font-size:3vw !important;">{{ count($categories) }}</h3>
+                <p style="font-size:2vw !important;">Kategori Product</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{{ route('kategori.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a style="font-size:2vw !important;" href="{{ route('kategori.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -62,13 +62,13 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{ count($images_slider) }}</h3>
-                <p>Foto Slider</p>
+                <h3 style="font-size:3vw !important;">{{ count($images_slider) }}</h3>
+                <p style="font-size:2vw !important;">Foto Slider</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="{{ route('slider.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a style="font-size:2vw !important;" href="{{ route('slider.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <div class="col-12">
@@ -81,52 +81,52 @@
                 <!-- small box -->
                 <div class="small-box bg-purple">
                   <div class="inner">
-                    <h3>{{ count($invoicesMonth) }}</h3>
-                    <p>Orderan</p>
+                    <h3 style="font-size:3vw !important;">{{ count($invoicesMonth) }}</h3>
+                    <p style="font-size:2vw !important;">Orderan</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-cart"></i>
                   </div>
-                  <a href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a style="font-size:2vw !important;" href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-purple">
                   <div class="inner">
-                    <h3>@rupiah($invoicesMonth->sum("profit"))</h3>
-                    <p>Laba bersih total (profit)</p>
+                    <h3 style="font-size:3vw !important;">@rupiah($invoicesMonth->sum("profit"))</h3>
+                    <p style="font-size:2vw !important;">Laba bersih total (profit)</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-cart"></i>
                   </div>
-                  <a href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a style="font-size:2vw !important;" href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-purple">
                   <div class="inner">
-                    <h3>@rupiah($itemsMonth->sum("total"))</h3>
-                    <p>Omset</p>
+                    <h3 style="font-size:3vw !important;">@rupiah($itemsMonth->sum("total"))</h3>
+                    <p style="font-size:2vw !important;">Omset</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-cash"></i>
                   </div>
-                  <a href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a style="font-size:2vw !important;" href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-purple">
                   <div class="inner">
-                    <h3>{{ $itemsMonth->sum("qty") }}</h3>
-                    <p>Barang Terjual</p>
+                    <h3 style="font-size:3vw !important;">{{ $itemsMonth->sum("qty") }}</h3>
+                    <p style="font-size:2vw !important;">Barang Terjual</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-briefcase"></i>
                   </div>
-                  <a href="{{ route('item.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a style="font-size:2vw !important;" href="{{ route('item.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
@@ -141,52 +141,52 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3>{{ count($invoices) }}</h3>
-                    <p>Orderan</p>
+                    <h3 style="font-size:3vw !important;">{{ count($invoices) }}</h3>
+                    <p style="font-size:2vw !important;">Orderan</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-cart"></i>
                   </div>
-                  <a href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a style="font-size:2vw !important;" href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3>@rupiah($invoices->sum("profit"))</h3>
-                    <p>Laba bersih total (profit)</p>
+                    <h3 style="font-size:3vw !important;">@rupiah($invoices->sum("profit"))</h3>
+                    <p style="font-size:2vw !important;">Laba bersih total (profit)</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-cart"></i>
                   </div>
-                  <a href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a style="font-size:2vw !important;" href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3>@rupiah($items->sum("total"))</h3>
-                    <p>Omset</p>
+                    <h3 style="font-size:3vw !important;">@rupiah($items->sum("total"))</h3>
+                    <p style="font-size:2vw !important;">Omset</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-cash"></i>
                   </div>
-                  <a href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a style="font-size:2vw !important;" href="{{ route('invoice.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3>{{ $items->sum("qty") }}</h3>
-                    <p>Barang Terjual</p>
+                    <h3 style="font-size:3vw !important;">{{ $items->sum("qty") }}</h3>
+                    <p style="font-size:2vw !important;">Barang Terjual</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-briefcase"></i>
                   </div>
-                  <a href="{{ route('item.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a style="font-size:2vw !important;" href="{{ route('item.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
