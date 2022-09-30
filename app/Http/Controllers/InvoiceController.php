@@ -77,6 +77,7 @@ class InvoiceController extends Controller
                 $invoice->id_inv = $latestInvoice->id_inv+1;
             }
             $invoice->duedate = $request->duedate;
+            $invoice->tanggal_pengiriman = $request->tanggal_pengiriman;
             $invoice->name_customer = $request->name_customer;
             $invoice->address_customer = $request->address_customer;
             $invoice->phone_customer = $request->phone_customer;
@@ -121,6 +122,19 @@ class InvoiceController extends Controller
         return view('admin.invoice-show',[
             'invoice' => $invoice,
         'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
+            'company' => $company,
+        ]);
+    }
+
+    public function surat_jalan($id)
+    {
+        $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
+        $company = Company::first();
+        // dd($invoice);
+        return view('admin.surat-jalan',[
+            'invoice' => $invoice,
+        'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
+        'tanggal_pengiriman' => Carbon::createFromFormat('Y-m-d', $invoice->tanggal_pengiriman)->format('Y-m-d'),
             'company' => $company,
         ]);
     }
@@ -188,6 +202,7 @@ class InvoiceController extends Controller
             $invoice = Invoice::findOrFail($id);
             $invoice->name_customer = $request->name_customer;
             $invoice->duedate = $request->duedate;
+            $invoice->tanggal_pengiriman = $request->tanggal_pengiriman;
             $invoice->address_customer = $request->address_customer;
             $invoice->phone_customer = $request->phone_customer;
             $invoice->diskon_rate = $request->diskon_rate;
