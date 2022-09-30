@@ -1,9 +1,39 @@
 <head>
-  <style>
-    .logo {
-      width: 2.5cm;
+	<style>
+        body {
+      background: #ccc;
+      padding: 30px;
     }
-  </style>
+    
+    .container {
+      width: 21cm;
+      min-height: 29.7cm;
+    }
+    
+    .invoice {
+      background: #fff;
+      width: 100%;
+      padding: 50px;
+    }
+    
+    .logo {
+      height: 2.5cm;
+    }
+    
+    .document-type {
+      text-align: right;
+      color: #444;
+    }
+    
+    .conditions {
+      font-size: 0.7em;
+      color: #666;
+    }
+    
+    .bottom-page {
+      font-size: 0.7em;
+    }
+    </style>
 </head>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>

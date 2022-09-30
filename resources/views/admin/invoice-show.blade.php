@@ -39,7 +39,17 @@
 <div class="container">
     <div class="invoice">
       <div class="row">
-        <div class="col-7">
+        <div class="col-6">
+            <h2>Invoice</h2>
+        </div>
+        <div class="col-6">
+            <p class="text-end">Order #{{ $invoice->no_invoice }} <br> Date: {{ $date_inv }}</p>
+            {{-- <p class="text-end">Date: {{ $date_inv }}</p> --}}
+        </div>
+      </div>
+        <hr>
+      <div class="row">
+        <div class="col-6">
           <img src="{{ asset($company->image_company) }}" class="logo">
           <p>
             <strong>{{ $company->name }}</strong><br>
@@ -47,19 +57,9 @@
             Phone : {{ $company->telp}}
           </p>
         </div>
-        <div class="col-5">
-          <h1 class="document-type display-4">INVOICE</h1>
+        <div class="col-6">
           <p class="text-end">
-            <strong>No: {{ $invoice->no_invoice }}</strong>
-            <br>
-            <strong>Date: {{ $date_inv }}</strong>
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-7">
-          <p>
-            <strong>Bill to</strong><br>
+            <strong>Kepada</strong><br>
             {{  $invoice->name_customer}}<br>
             {{  $invoice->address_customer}}<br>
             {{  $invoice->phone_customer}}
@@ -67,54 +67,61 @@
         </div>
       </div>
       <br>
-      {{-- <h6>Audits et rapports mensuels (1er Novembre 2016 - 30 Novembre 2016)</h6> --}}
-      <br>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Description</th>
-            <th>Qty</th>
-            <th>Item Price</th>
-            <th>Total amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php $subtotal = 0; ?>
-          @foreach($invoice->items as $item)
-            <tr>
-                <td>{{ $loop->index+1 }}</td>
-                <td>{{ $item->description }}</td>
-                <td>{{ $item->qty }}</td>
-                <td class="text-right">@rupiah($item->item_price)</td>
-                <td class="text-right">@rupiah($item->item_price * $item->qty)</td>
-            </tr>
-            <?php $subtotal += $item->item_price * $item->qty; ?>
-          @endforeach
-        </tbody>
-      </table>
       <div class="row">
-        <div class="col-8">
-        </div>
-        <div class="col-4">
-          <table class="table table-sm text-right">
-            <tr>
-              <td><strong>Subtotal</strong></td>
-              <td class="text-right">@rupiah($subtotal)</td>
-            </tr>
-            <tr>
-              <td>Diskon</td>
-              <td class="text-right">@rupiah($subtotal*$invoice->diskon_rate) ({{ $invoice->diskon_rate }}%)</td>
-            </tr>
-            <tr>
-              <td><strong>Total</strong></td>
-              <td class="text-right">@rupiah($subtotal-($subtotal*$invoice->diskon_rate))</td>
-            </tr>
-          </table>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+            <strong>Order</strong>
+            </div>
+            <div class="card-body mx-0 my-0 px-0 py-0">
+              <table class="table my-0">
+                <thead>
+                  <tr>
+                      <td><strong>Nama barang</strong></td>
+                      <td class="text-center"><strong>Harga</strong></td>
+                      <td class="text-center"><strong>Jumlah</strong></td>
+                      <td class="text-right"><strong>Total</strong></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                  <?php $subtotal = 0; ?>
+                  @foreach($invoice->items as $item)
+                    <tr>
+                        <td>{{ $item->description }}</td>
+                        <td class="text-center">@rupiah($item->item_price)</td>
+                        <td class="text-center">{{ $item->qty }}</td>
+                        <td class="text-right">@rupiah($item->item_price * $item->qty)</td>
+                    </tr>
+                    <?php $subtotal += $item->item_price * $item->qty; ?>
+                  @endforeach
+                  <tr>
+                    <td class="thick-line"></td>
+                    <td class="thick-line"></td>
+                    <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                    <td class="thick-line text-right">@rupiah($subtotal)</td>
+                  </tr>
+                  <tr>
+                    <td class="no-line"></td>
+                    <td class="no-line"></td>
+                    <td class="no-line text-center"><strong>Diskon</strong></td>
+                    <td class="no-line text-right">@rupiah($subtotal*$invoice->diskon_rate/100) ({{ $invoice->diskon_rate }}%)</td>
+                  </tr>
+                  <tr>
+                    <td class="no-line"></td>
+                    <td class="no-line"></td>
+                    <td class="no-line text-center"><strong>Total</strong></td>
+                    <td class="no-line text-right">@rupiah($subtotal-($subtotal*$invoice->diskon_rate/100))</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
       
       <p class="conditions">
+        <br>
         <strong>Catatan Tambahan :</strong><br>
         {{ $invoice->comment }}
       </p>
