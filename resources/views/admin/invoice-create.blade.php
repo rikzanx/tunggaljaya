@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tanggal Pengiriman</label>
-                  <input type="date" name="tangal_pengiriman" class="form-control" id="exampleInputEmail1" value="{{ \Carbon\Carbon::now()->format("Y-m-d") }}">
+                  <input type="date" name="tanggal_pengiriman" class="form-control" id="exampleInputEmail1" value="{{ \Carbon\Carbon::now()->format("Y-m-d") }}">
                 </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Customer</label>
