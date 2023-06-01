@@ -124,6 +124,8 @@
         <br>
         <strong>Catatan Tambahan :</strong><br>
         {!! $invoice->comment !!}
+        <br>
+        djsnj
       </p>
       
       <br>
