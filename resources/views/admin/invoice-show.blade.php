@@ -123,9 +123,7 @@
       <p class="conditions">
         <br>
         <strong>Catatan Tambahan :</strong><br>
-        {!! $invoice->comment !!}
-        <br>
-        djsnj
+      {!! $invoice->comment !!}
       </p>
       
       <br>
