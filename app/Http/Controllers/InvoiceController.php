@@ -210,7 +210,6 @@ class InvoiceController extends Controller
             $invoice->tax_rate = $request->tax_rate;
             $invoice->profit = $request->profit;
             if($request->has('comment')){
-                dd($request->comment);
                 $invoice->comment = $request->comment;
             }
             $invoice->save();
