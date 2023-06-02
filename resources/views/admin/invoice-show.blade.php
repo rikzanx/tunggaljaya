@@ -136,7 +136,6 @@
           <br>
           <br>
           <br>
-          <hr>
         </div>
         <div class="col-6">
         </div>
