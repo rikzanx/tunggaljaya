@@ -34,6 +34,9 @@
     .bottom-page {
       font-size: 0.7em;
     }
+    hr{
+      border-top: 1px solid black !important;
+    }
     </style>
 </head>
 <div class="container">
@@ -125,6 +128,28 @@
         <strong>Catatan Tambahan :</strong><br>
       {!! nl2br($invoice->comment) !!}
       </p>
+      <br>
+      <div class="row my-4">
+        <div class="col text-center">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <hr>
+        </div>
+        <div class="col-6">
+        </div>
+        <div class="col text-center">
+          Hormat kami,
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <b>{{$company->name}}</b>
+        </div>
+      </div>
       
       <br>
       <br>

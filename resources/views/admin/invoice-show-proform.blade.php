@@ -34,6 +34,9 @@
     .bottom-page {
       font-size: 0.7em;
     }
+    hr{
+      border-top: 1px solid black !important;
+    }
     </style>
 </head>
 <div class="container">

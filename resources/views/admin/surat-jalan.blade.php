@@ -38,6 +38,7 @@
       background-color: black !important;
       color: black !important;  
       opacity: 1;
+      border-top: 1px solid black !important;
     }
     </style>
 </head>
