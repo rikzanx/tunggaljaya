@@ -123,7 +123,7 @@
       <p class="conditions">
         <br>
         <strong>Catatan Tambahan :</strong><br>
-      {!! $invoice->comment !!}
+      {!! nl2br($invoice->comment) !!}
       </p>
       
       <br>
