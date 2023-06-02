@@ -1,5 +1,5 @@
 <head>
-  <title>Surat Jalan {{$company->name}} {{$invoice->no_invoice}}</title>
+  <title>Surat Penawaran {{$company->name}} {{$suratpenawaran->no_surat}}</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <style>
         body {
@@ -62,79 +62,79 @@
           
         </div>
         <div class="col-4">
-            <h2 class="text-end">Surat Jalan</h2>
         </div>
       </div>
         <hr>
+      <p class="text-center">
+        <u><b>Surat Penawaran Harga</b></u>
+      </p>
       <div class="row">
         <div class="col-6">
           <p>
             <strong>Kepada</strong><br>
-            {{  $invoice->name_customer}}<br>
-            {{  $invoice->address_customer}}<br>
-            {{  $invoice->phone_customer}}
+            {{  $suratpenawaran->name_customer}}<br>
+            {{  $suratpenawaran->address_customer}}<br>
+            {{  $suratpenawaran->phone_customer}}
           </p>
         </div>
         <div class="col-6">
           <p class="text-end">
-            No invoice : {{  $invoice->no_invoice}}<br>
-            Tanggal : {{  $tanggal_pengiriman}}<br>
+            Surabaya, {{  $suratpenawaran->duedate}}<br>
           </p>
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-md-12">
+            <p>Kami dari {{$company->name}} bermaksud memberikan penawaran harga barang dibawah ini:</p>
               <table class="table table-bordered my-0">
                 <thead>
                   <tr>
+
+                      <td><strong>No</strong></td>
                       <td><strong>Nama barang</strong></td>
-                      <td class="text-center"><strong>Jumlah</strong></td>
+                      <td><strong>Harga</strong></td>
+                      <td><strong>Jumlah</strong></td>
+                      <td><strong>Total</strong></td>
                   </tr>
                 </thead>
                 <tbody>
                   <!-- foreach ($order->lineItems as $line) or some such thing here -->
                   <?php $subtotal = 0; ?>
-                  @foreach($invoice->items as $item)
+                  @foreach($suratpenawaran->items as $item)
                     <tr>
-                        <td>{{ $item->description }}</td>
+                      <td>{{ $loop->index+1 }}</td>
+                        <td>{!! nl2br($item->description) !!}</td>
                         <td class="text-center">{{ $item->qty }}</td>
+                        <td class="">@rupiah($item->item_price)</td>
+                        <td class="">@rupiah($item->item_price * $item->qty)</td>
                     </tr>
                     <?php $subtotal += $item->item_price * $item->qty; ?>
                   @endforeach
-                  <tr>
-                    <td class="thick-line" colspan="2">
-                      <p>
-                        PERHATIAN<br>
-                        1. Surat jalan merupakan bukti resmi penerimaan barang<br>
-                        2. Surat jalan ini bukan bukti penjualan
-                      </p>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
       </div>
+      <br>
+      <br>
+      <p>
+        Catatan Tambahan :<br>
+        {!! nl2br($suratpenawaran->comment) !!}
+      </p>
+      <br>
       
       <div class="row my-4">
         <div class="col text-center">
-          Penerima
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <hr>
         </div>
         <div class="col-6">
         </div>
         <div class="col text-center">
-          Pengirim
+          Hormat kami,
           <br>
           <br>
           <br>
           <br>
           <br>
-          <hr>
+          <b>{{ $company->name }}</b>
         </div>
       </div>
       
@@ -142,12 +142,5 @@
       <br>
       <br>
       <br>
-      
-      {{-- <p class="bottom-page text-right">
-        90TECH SAS - N° SIRET 80897753200015 RCS METZ<br>
-        6B, Rue aux Saussaies des Dames - 57950 MONTIGNY-LES-METZ 03 55 80 42 62 - www.90tech.fr<br>
-        Code APE 6201Z - N° TVA Intracom. FR 77 808977532<br>
-        IBAN FR76 1470 7034 0031 4211 7882 825 - SWIFT CCBPFRPPMTZ
-      </p> --}}
     </div>
   </div>

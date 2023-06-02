@@ -111,6 +111,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('surat-penawaran.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-file-alt"></i>
+              <p>
+                Surat Penawaran
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('item.index') }}" class="nav-link">
               <i class="nav-icon fas fa-box-open"></i>
               <p>

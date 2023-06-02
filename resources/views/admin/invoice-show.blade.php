@@ -1,4 +1,5 @@
 <head>
+  <title>Invoice {{$invoice->no_invoice}} {{$company->name}}</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <style>
         body {
