@@ -93,8 +93,8 @@
 
                       <td><strong>No</strong></td>
                       <td><strong>Nama barang</strong></td>
-                      <td><strong>Harga</strong></td>
                       <td><strong>Jumlah</strong></td>
+                      <td><strong>Harga</strong></td>
                       <td><strong>Total</strong></td>
                   </tr>
                 </thead>
