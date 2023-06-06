@@ -67,7 +67,7 @@
                   <div class="input-group hdtuto control-group lst increment" >
                     <input type="text" name="description[]" placeholder="Nama Barang" class="myfrm form-control">
                     <input type="number" name="qty[]" placeholder="Jumlah" class="myfrm form-control">
-                    <input type="number" name="item_price[]" placeholder="Item price" class="myfrm form-control">
+                    <input type="number" name="item_price[]" placeholder="Harga Barang" min="1000" class="myfrm form-control">
                     <div class="input-group-btn"> 
                       <button class="btn btn-success btn-add-image" type="button"><i class="fldemo glyphicon glyphicon-plus"></i>Add</button>
                     </div>
@@ -76,7 +76,7 @@
                     <div class="hdtuto control-group lst input-group" style="margin-top:10px">
                       <input type="text" name="description[]" placeholder="Nama Barang" class="myfrm form-control">
                       <input type="number" name="qty[]" placeholder="Jumlah" class="myfrm form-control">
-                      <input type="number" name="item_price[]" placeholder="Item price" class="myfrm form-control">
+                      <input type="number" name="item_price[]" placeholder="Harga Barang" min="1000" class="myfrm form-control">
                       <div class="input-group-btn"> 
                         <button class="btn btn-danger" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
                       </div>
@@ -124,7 +124,7 @@
         var lsthmtl = `<div class="hdtuto control-group lst input-group" style="margin-top:10px">
                       <input type="text" name="description[]" placeholder="Nama Barang" class="myfrm form-control">
                       <input type="number" name="qty[]" placeholder="Jumlah" class="myfrm form-control">
-                      <input type="number" name="item_price[]" placeholder="Item price" class="myfrm form-control">
+                      <input type="number" name="item_price[]" placeholder="Harga Barang" min="1000" class="myfrm form-control">
                       <div class="input-group-btn"> 
                         <button class="btn btn-danger" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
                       </div>
