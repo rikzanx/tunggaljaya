@@ -111,7 +111,16 @@
                     </tr>
                     <?php $subtotal += $item->item_price * $item->qty; ?>
                   @endforeach
-                </tbody>
+            <tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>@rupiah($subtotal)</td>
+</tr>
+
+
+                        </tbody>
               </table>
       </div>
       <br>
