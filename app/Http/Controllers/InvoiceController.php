@@ -23,7 +23,7 @@ class InvoiceController extends Controller
     public function index()
     {
         $invoices = Invoice::with(['items' => function($query){
-            $query->sum('price');
+            $query->sum('qty');
         }])->get();
         dd($invoices);
 
