@@ -30,7 +30,6 @@ class InvoiceController extends Controller
                 $inv->total += $item->total;
             }
         }
-        dd($invoices);
         return view('admin.invoice',[
             'invoices' => $invoices,
         ]);
