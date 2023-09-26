@@ -29,7 +29,4 @@ class Invoice extends Model
     public function items(){
         return $this->hasMany('App\Models\Item','invoice_id');
     }
-    public function getTotalInvoiceAttribute(){
-        return $this->items()->sum('total'); 
-    }
 }
