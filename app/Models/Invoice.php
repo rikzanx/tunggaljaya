@@ -30,7 +30,7 @@ class Invoice extends Model
         return $this->hasMany('App\Models\Item','invoice_id');
     }
     public function getTotalInvoiceAttribute(){
-        $total = 1s0;
+        $total = 10;
         $items = $this->hasMany('App\Models\Item','invoice_id');
         foreach($items as $item){
             $total += $item->item_price * $item->qty;
