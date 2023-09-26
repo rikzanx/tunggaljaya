@@ -29,4 +29,11 @@ class Invoice extends Model
     public function items(){
         return $this->hasMany('App\Models\Item','invoice_id');
     }
+    public getTotalInvoiceAttribute(){
+        $total = 0;
+        foreach($this->items() as $item){
+            $total += $item->item_price * $item->qty;
+        }
+        return $total;
+    }
 }

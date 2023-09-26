@@ -49,7 +49,7 @@
                         <td>{{ $item->no_invoice }}</td>
                         <td>{{ $item->name_customer }}</td>
                         <td>{{ $item->duedate }}</td>
-                        <td>@rupiah($item->items_sum_item_price * $item->items_sum_qty)</td>
+                        <td>@rupiah($item->diskon_rate)</td>
                         <td>
                             <a class="btn btn-success" href="{{ route('invoice.show',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
                             <a class="btn btn-warning" href="{{ route('surat_jalan',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
