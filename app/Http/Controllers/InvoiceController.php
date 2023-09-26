@@ -24,7 +24,7 @@ class InvoiceController extends Controller
     {
         $invoices = Invoice::withSum('items','item_price')->withSum('items','qty')->with('items')->get();
         foreach($invoices as $inv){
-            dd($inv->items);
+            dd($inv->items->sum('total'));
         }
         return view('admin.invoice',[
             'invoices' => $invoices,
