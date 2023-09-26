@@ -23,6 +23,14 @@ class InvoiceController extends Controller
     public function index()
     {
         $invoices = Invoice::with('items')->get();
+        
+        foreach($invoices as $inv){
+            $inv->total=0;
+            foreach($inv->items as $item){
+                $inv->total += $item->total;
+            }
+        }
+        dd($invoices);
         return view('admin.invoice',[
             'invoices' => $invoices,
         ]);
