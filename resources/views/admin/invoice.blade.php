@@ -38,6 +38,7 @@
                     <th>No Invoice</th>
                     <th>Name Customer</th>
                     <th>Tanggal</th>
+                    <th>Total</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
@@ -48,6 +49,7 @@
                         <td>{{ $item->no_invoice }}</td>
                         <td>{{ $item->name_customer }}</td>
                         <td>{{ $item->duedate }}</td>
+                        <td>{{ $item->items_sum_total_price}}</td>
                         <td>
                             <a class="btn btn-success" href="{{ route('invoice.show',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
                             <a class="btn btn-warning" href="{{ route('surat_jalan',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
@@ -65,6 +67,8 @@
                     <th>No Invoice</th>
                     <th>Name Customer</th>
                     <th>Tanggal</th>
+                    <th>Total</th>
+
                     <th>Aksi</th>
                     </tr>
                   </tfoot>
