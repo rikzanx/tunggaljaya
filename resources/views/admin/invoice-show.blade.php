@@ -63,7 +63,7 @@
         </div>
         <div class="col-6">
           <p class="text-end">
-	    dd($invoice)
+	    
             <strong>Kepada</strong><br>
             {{  $invoice->name_customer}}<br>
             {{  $invoice->address_customer}}<br>
