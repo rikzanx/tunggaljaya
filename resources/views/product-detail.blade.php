@@ -376,6 +376,16 @@ https://templatemo.com/tm-559-zay-shop
             ]
         });
     </script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6JNN02NBY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L6JNN02NBY');
+</script>
     <!-- End Slider Script -->
 
 </body>
