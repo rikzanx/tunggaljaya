@@ -251,6 +251,15 @@ https://templatemo.com/tm-559-zay-shop
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/templatemo.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6JNN02NBY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-L6JNN02NBY');
+    </script>
     <!-- End Script -->
 </body>
 
