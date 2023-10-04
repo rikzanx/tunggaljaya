@@ -7,10 +7,10 @@
       padding: 30px;
     }
     
-    .container {
+/*     .container {
       width: 21cm;
       min-height: 29.7cm;
-    }
+    } */
     
     .invoice {
       background: #fff;
