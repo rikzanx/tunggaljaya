@@ -20,12 +20,16 @@ class KeuanganController extends Controller
      */
     public function index()
     {
-        $keuangan = Keuangan::orderBy('created_at','DESC')->get();
+        $keuangan = Keuangan::orderBy('created_at','ASC')->get();
+        $sumPemasukan = Keuangan::where('tipe', 'pemasukan')->sum('amount');
+        $sumPengeluaran = Keuangan::where('tipe','!=','pemasukan')->sum('amount');
         $company = Company::firstOrFail();
-        $saldo = $company->saldo;
+        $saldo = $sumPemasukan-$sumPengeluaran;
         return view('admin.keuangan',[
             'keuangan' => $keuangan,
-            'saldo' => $saldo
+            'saldo' => $saldo.
+            'sumPemasukan' => $sumPemasukan,
+            'sumPengeluaran' => $sumPengeluaran,
         ]);
     }
 
