@@ -33,47 +33,51 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>SKU</th>
-                                            <th>Name</th>
-                                            <th>Qty</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($inventories as $item)
-                                        <tr>
-                                            <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $item->sku }}</td>
-                                            <td>{{ $item->name }}</td>
-                                            <td>{{ $item->qty }}</td>
-                                            <td>
-                                                <!-- <a class="btn btn-success" href="{{ route('inventories.show', $item->id) }}" target="_blank">
-                                                    <span class="fas fa-eye"></span>
-                                                </a> -->
-                                                <a class="btn btn-primary" href="{{ route('inventories.edit', $item->id) }}">
-                                                    <span class="fas fa-edit"></span>
-                                                </a>
-                                                <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})">
-                                                    <span class="fas fa-trash"></span>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>SKU</th>
-                                            <th>Name</th>
-                                            <th>Qty</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                            <table id="example1" class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>SKU</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Lokasi</th>
+            <th>Qty</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($inventories as $item)
+        <tr>
+            <td>{{ $loop->index + 1 }}</td>
+            <td>{{ $item->sku }}</td>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->description }}</td>
+            <td>{{ $item->lokasi }}</td>
+            <td>{{ $item->qty }}</td>
+            <td>
+                <a class="btn btn-primary" href="{{ route('inventories.edit', $item->id) }}">
+                    <span class="fas fa-edit"></span>
+                </a>
+                <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})">
+                    <span class="fas fa-trash"></span>
+                </button>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>No</th>
+            <th>SKU</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Lokasi</th>
+            <th>Qty</th>
+            <th>Aksi</th>
+        </tr>
+    </tfoot>
+</table>
+
                             </div>
                             <!-- /.card-body -->
                         </div>
