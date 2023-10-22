@@ -199,44 +199,18 @@ class KeuanganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function destroy($id)
-    // {
-    //     DB::beginTransaction();
-    //     try{
-    //         $invoice = Invoice::where('id',$id)->first();
-    //         $deleted_invoice = new DeletedInvoice();
-    //         $deleted_invoice->id_inv = $invoice->id_inv;
-    //         $deleted_invoice->no_invoice = $invoice->no_invoice;
-    //         $deleted_invoice->duedate = $invoice->duedate;
-    //         $deleted_invoice->name_customer = $invoice->name_customer;
-    //         $deleted_invoice->address_customer = $invoice->address_customer;
-    //         $deleted_invoice->phone_customer = $invoice->phone_customer;
-    //         $deleted_invoice->diskon_rate = $invoice->diskon_rate;
-    //         $deleted_invoice->tax_rate = $invoice->tax_rate;
-    //         $deleted_invoice->profit = $invoice->profit;
-    //         $deleted_invoice->comment = $invoice->comment;
-    //         $deleted_invoice->save();
-
-    //         $items = Item::where('invoice_id','=',$id)->get();
-    //         foreach($items as $item){
-    //             $deleted_item = new DeletedItem();
-    //             $deleted_item->duedate = $item->duedate;
-    //             $deleted_item->invoice_id = $deleted_invoice->id;
-    //             $deleted_item->item_of = "pcs";
-    //             $deleted_item->description = $item->description;
-    //             $deleted_item->qty = $item->qty;
-    //             $deleted_item->item_price = $item->item_price;
-    //             $deleted_item->save();
-    //         }
-    //         Invoice::destroy($id);
-    //         Item::where("invoice_id",'=',$id)->delete();
-    //         DB::commit();
-    //         return redirect()->route("invoice.index")->with('status', "Sukses menghapus invoice");
-    //     }catch(\Exception $e){
-    //         DB::rollback();
-    //         dd($e);
-    //         $ea = "Terjadi Kesalahan saat menghapus invoice".$e->message;
-    //         return redirect()->route("invoice.index")->with('danger', $ea);
-    //     }
-    // }
+    public function destroy($id)
+    {
+        DB::beginTransaction();
+        try{
+            Invoice::destroy($id);
+            DB::commit();
+            return redirect()->route("keuangan.index")->with('status', "Sukses menghapus transaksi");
+        }catch(\Exception $e){
+            DB::rollback();
+            dd($e);
+            $ea = "Terjadi Kesalahan saat menghapus transaksi".$e->message;
+            return redirect()->route("keuangan.index")->with('danger', $ea);
+        }
+    }
 }
