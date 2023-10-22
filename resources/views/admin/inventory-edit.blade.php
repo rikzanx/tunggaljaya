@@ -33,29 +33,38 @@
                             <!-- /.card-header -->
                             <!-- form start -->
                             <form method="POST" action="{{ route('inventories.update', $inventory->id) }}" enctype="multipart/form-data">
-                                @csrf
-                                @method("PATCH")
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">SKU</label>
-                                        <input type="text" name="sku" class="form-control" id="exampleInputEmail1" value="{{ $inventory->sku }}" readonly>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
-                                        <input type="text" value="{{ $inventory->name }}" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter the name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Qty</label>
-                                        <input type="number" value="{{ $inventory->qty }}" name="qty" class="form-control" id="exampleInputEmail1" placeholder="Enter the quantity">
-                                    </div>
-                                </div>
-                                <!-- /.card-body -->
+    @csrf
+    @method("PATCH")
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">SKU</label>
+            <input type="text" name="sku" class="form-control" id="exampleInputEmail1" value="{{ $inventory->sku }}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" value="{{ $inventory->name }}" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter the name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Qty</label>
+            <input type="number" value="{{ $inventory->qty }}" name="qty" class="form-control" id="exampleInputEmail1" placeholder="Enter the quantity">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Description</label>
+            <input type="text" value="{{ $inventory->description }}" name="description" class="form-control" id="exampleInputEmail1" placeholder="Enter the description">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Lokasi</label>
+            <input type="text" value="{{ $inventory->lokasi }}" name="lokasi" class="form-control" id="exampleInputEmail1" placeholder="Enter the location">
+        </div>
+    </div>
+    <!-- /.card-body -->
 
-                                <div class="card-footer">
-                                    <a href="{{ route('inventories.index') }}" class="btn btn-secondary">Back</a>
-                                    <button type="submit" class="btn btn-success">Update</button>
-                                </div>
-                            </form>
+    <div class="card-footer">
+        <a href="{{ route('inventories.index') }}" class="btn btn-secondary">Back</a>
+        <button type="submit" class="btn btn-success">Update</button>
+    </div>
+</form>
+
                         </div>
                         <!-- /.card -->
                     </div>
