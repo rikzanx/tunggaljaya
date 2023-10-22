@@ -23,7 +23,7 @@ class KeuanganController extends Controller
         $keuangan = Keuangan::orderBy('created_at','ASC')->get();
         $sumPemasukan = Keuangan::where('tipe', 'pemasukan')->sum('amount');
         $sumPengeluaran = Keuangan::where('tipe','!=','pemasukan')->sum('amount');
-        dd($sumPengeluaran);
+        // dd($sumPengeluaran);
         $company = Company::firstOrFail();
         $saldo = $sumPemasukan-$sumPengeluaran;
         return view('admin.keuangan',[
