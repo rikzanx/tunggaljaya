@@ -80,7 +80,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('keuangan.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-money"></i>
+              <i class="nav-icon fas fa-money-bill"></i>
               <p>
                 Transaksi Keuangan
               </p>
