@@ -122,7 +122,7 @@
                     <td class="no-line"></td>
                     <td class="no-line"></td>
                     <td class="no-line text-center"><strong>DP</strong></td>
-                    <td class="no-line text-right">@rupiah($invoice->dp) ({{ $invoice->diskon_rate }}%)</td>
+                    <td class="no-line text-right">@rupiah($invoice->dp)</td>
                   </tr>
                   <tr>
                     <td class="no-line"></td>
