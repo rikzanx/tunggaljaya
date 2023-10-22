@@ -64,7 +64,8 @@
                           </div>
                         </td>
                         <!-- <td>@rupiahonly($item->balance_after)</td> -->
-                        <td>{{ $item->description }}</td>
+                        <!-- <td>{{ $item->description }}</td> -->
+                        <td>{!! $item->description !!}</td>
                         <td>
                           <!-- <a class="btn btn-primary" href="{{ route('keuangan.edit',$item->id) }}"><span class="fas fa-edit"></span></a> -->
                             <!-- <a class="btn btn-success" href="{{ route('keuangan.show',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a> -->
