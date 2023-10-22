@@ -47,9 +47,10 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Deskripsi</label>
-                    <input type="text" name="description" class="form-control" id="exampleInputEmail1" placeholder="masukkan deskripsi">
+                      <label for="exampleTextarea">Deskripsi</label>
+                      <textarea name="description" class="form-control" id="exampleTextarea" rows="3" placeholder="Masukkan deskripsi"></textarea>
                   </div>
+
                 </div>
                 <!-- /.card-body -->
 
