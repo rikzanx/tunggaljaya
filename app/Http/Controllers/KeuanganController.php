@@ -67,11 +67,12 @@ class KeuanganController extends Controller
             // $wallet = Wallet::findOrFail($request->wallet_id);
             $company = Company::firstOrFail();
             $keuangan = new Keuangan();
-            $keuangan->amount = $request->amount;
+            $amount = preg_replace('/[\,\.]/', '', $request->amount);
+            $keuangan->amount = $amount;
             $keuangan->tipe = $request->tipe;
             $keuangan->description = nl2br($request->description);
 
-            $balance_after = ($request->tipe == "pemasukan")? $company->saldo + $request->amount : $company->saldo - $request->amount;
+            $balance_after = ($request->tipe == "pemasukan")? $company->saldo + $amount : $company->saldo - $amount;
             $keuangan->balance_after = $balance_after;
             $keuangan->save();
 
