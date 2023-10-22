@@ -208,7 +208,12 @@ class KeuanganController extends Controller
     {
         DB::beginTransaction();
         try{
-            Invoice::destroy($id);
+            $keuangan = Keuangan::findOrFail($id);
+            $company = Company::firstOrFail();
+            $balance_after = ($keuangan->tipe == "pemasukan")? $company->saldo - $keuangan->amount : $company->saldo + $keuangan->amount;
+            $company->saldo = $balance_after;
+            $company->save();
+            Keuangan::destroy($id);
             DB::commit();
             return redirect()->route("keuangan.index")->with('status', "Sukses menghapus transaksi");
         }catch(\Exception $e){
