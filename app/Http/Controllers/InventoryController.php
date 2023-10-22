@@ -19,7 +19,7 @@ class InventoryController extends Controller
 
     public function create()
     {
-        return view('admin.inventory.create');
+        return view('admin.inventory-create');
     }
 
     public function store(Request $request)
@@ -59,7 +59,7 @@ class InventoryController extends Controller
     public function edit($id)
     {
         $inventory = Inventory::findOrFail($id);
-        return view('admin.inventory.edit', [
+        return view('admin.inventory-edit', [
             'inventory' => $inventory,
         ]);
     }
