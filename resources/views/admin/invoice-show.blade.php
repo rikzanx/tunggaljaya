@@ -137,19 +137,13 @@
         </div>
       </div>
       
-      <p class="conditions">
+      <div class="row my-4">
+        <div class="col text-center">
+        <p class="conditions">
         <br>
         <strong>Catatan Tambahan :</strong><br>
       {!! nl2br($invoice->comment) !!}
       </p>
-      <br>
-      <div class="row my-4">
-        <div class="col text-center">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
         </div>
         <div class="col-6">
         </div>
