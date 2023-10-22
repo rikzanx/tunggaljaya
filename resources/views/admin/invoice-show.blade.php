@@ -110,7 +110,7 @@
                     <td class="no-line"></td>
                     <td class="no-line"></td>
                     <td class="no-line text-center"><strong>Diskon</strong></td>
-                    <td class="no-line text-right">@rupiah($invoice->diskon_rate) ({{ ($invoice->diskon_rate/$subtotal)*100 }}%)</td>
+                    <td class="no-line text-right">@rupiah($invoice->diskon_rate) ({{ number_format(($invoice->diskon_rate/$subtotal)*100,1) }}%)</td>
                   </tr>
                   <tr>
                     <td class="no-line"></td>
@@ -128,7 +128,7 @@
                     <td class="no-line"></td>
                     <td class="no-line"></td>
                     <td class="no-line text-center"><strong>Sisa Pembayaran</strong></td>
-                    <td class="no-line text-right">@rupiah(($subtotal-($invoice->diskon_rate))-$invoice->dp) ({{ $invoice->diskon_rate }}%)</td>
+                    <td class="no-line text-right">@rupiah(($subtotal-($invoice->diskon_rate))-$invoice->dp)</td>
                   </tr>
                 </tbody>
               </table>
