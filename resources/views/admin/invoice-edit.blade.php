@@ -90,7 +90,11 @@
                 </div>
                   <br>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Diskon (%)</label>
+                    <label for="exampleInputEmail1">DP (Down Payment)</label>
+                    <input type="number" value="{{ $invoice->dp }}" name="dp" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Diskon</label>
                     <input type="number" value="{{ $invoice->diskon_rate }}" name="diskon_rate" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer">
                   </div>
                   <div class="form-group">
