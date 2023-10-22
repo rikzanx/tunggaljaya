@@ -53,9 +53,9 @@
                         <td>{{ $item->created_at->setTimezone('Asia/Jakarta')->format('Y-m-d H:i:s') }}</td> <!-- Menambahkan tanggal transaksi -->
                         <td>@if ($item->tipe == "pemasukan")
                             @rupiahonly($item->amount)
-                        @else
-                            -@rupiahonly(abs($item->amount))
-                        @endif
+                            @else
+        <span class="text-danger">-@rupiahonly(abs($item->amount))</span>
+    @endif
                         </td>
                         {{-- <td>{{ $item->tipe }}</td> --}}
                         <td>
