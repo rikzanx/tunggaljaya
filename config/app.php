@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'icon' => env('APP_ICON', 'Laravel'),
     'log' =>'errorlog',
 
     /*
