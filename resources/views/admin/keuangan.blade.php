@@ -31,9 +31,9 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <h3>Saldo: @rupiahonly($saldo)</h3>
-                <h3>Total Pemasukan: @rupiahonly($sumPemasukan)</h3>
-                <h3>Total Pengeluaran: @rupiahonly($sumPengeluaran)</h3>
+                <p>Saldo: @rupiahonly($saldo)</p>
+                <p>Total Pemasukan: @rupiahonly($sumPemasukan)</p>
+                <p>Total Pengeluaran: @rupiahonly($sumPengeluaran)</p>
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
