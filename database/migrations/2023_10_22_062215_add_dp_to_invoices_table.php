@@ -14,7 +14,7 @@ class AddDpToInvoicesTable extends Migration
     public function up()
     {
         Schema::table('invoices', function (Blueprint $table) {
-            //
+            $table->integer('dp')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class AddDpToInvoicesTable extends Migration
     public function down()
     {
         Schema::table('invoices', function (Blueprint $table) {
-            //
+            $table->dropColumn("dp");
         });
     }
 }
