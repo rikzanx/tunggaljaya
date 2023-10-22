@@ -231,30 +231,12 @@
 <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <!-- Ekko Lightbox -->
 <script src="{{ asset('plugins/ekko-lightbox/ekko-lightbox.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mask/1.14.18/jquery.mask.min.js"></script>
+
 <script>
-    var formattedNumberInputs = document.querySelectorAll('.formatted-number');
-    formattedNumberInputs.forEach(function(input) {
-        input.addEventListener('input', function() {
-            // Menghilangkan tanda ribuan dan menyimpan nilai asli
-            var rawValue = input.value.replace(/,/g, '');
-            var formattedValue = numeral(rawValue).format('0,0');
-
-            // Menyimpan nilai asli dalam input tersembunyi
-            var rawInput = input.parentElement.querySelector('input[name="amount_raw"]');
-            rawInput.value = rawValue;
-
-            // Mengatur nilai dalam input yang ditampilkan
-            input.value = formattedValue;
-        });
-
-        // Menginisialisasi input saat halaman dimuat
-        var rawInput = input.parentElement.querySelector('input[name="amount_raw"]');
-        if (rawInput.value) {
-            var formattedValue = numeral(rawInput.value).format('0,0');
-            input.value = formattedValue;
-        }
-    });
+$(document).ready(function() {
+    $('.formatted-number').mask('0,000', {reverse: true});
+});
 </script>
 
 <script>
