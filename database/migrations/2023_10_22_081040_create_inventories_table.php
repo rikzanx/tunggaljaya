@@ -15,6 +15,11 @@ class CreateInventoriesTable extends Migration
     {
         Schema::create('inventories', function (Blueprint $table) {
             $table->id();
+            $table->string("sku");
+            $table->string("name")->nullable();
+            $table->string("description")->nullable();
+            $table->string("lokasi")->nullable();
+            $table->integer("qty")->ndefault(0);
             $table->timestamps();
         });
     }

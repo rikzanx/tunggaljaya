@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Inventory extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id';
+
+    protected $fillable = [
+            "sku",
+            "name",
+            "description",
+            "lokasi",
+            "qty",
+    ];
 }
