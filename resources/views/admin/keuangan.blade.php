@@ -38,9 +38,10 @@
                   <thead>
                   <tr>
                     <th>No</th>
+                    <th>Tanggal Transaksi</th>
                     <th>Jumlah</th>
                     <th>Tipe</th>
-                    <th>Balance After</th>
+                    <!-- <th>Balance After</th> -->
                     <th>Deskripsi</th>
                     <th>Aksi</th>
                   </tr>
@@ -49,6 +50,7 @@
                     @foreach ($keuangan as $item)
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
+                        <td>{{ $item->created_at->format('Y-m-d H:i:s') }}</td> <!-- Menambahkan tanggal transaksi -->
                         <td>@rupiahonly($item->amount)</td>
                         {{-- <td>{{ $item->tipe }}</td> --}}
                         <td>
@@ -56,7 +58,7 @@
                             <?php echo $item->tipe;?>
                           </div>
                         </td>
-                        <td>@rupiahonly($item->balance_after)</td>
+                        <!-- <td>@rupiahonly($item->balance_after)</td> -->
                         <td>{{ $item->description }}</td>
                         <td>
                           <!-- <a class="btn btn-primary" href="{{ route('keuangan.edit',$item->id) }}"><span class="fas fa-edit"></span></a> -->
@@ -69,9 +71,10 @@
                   <tfoot>
                     <tr>
                       <th>No</th>
+                      <th>Tanggal Transaksi</th>
                       <th>Jumlah</th>
                       <th>Tipe</th>
-                      <th>Balance After</th>
+                      <!-- <th>Balance After</th> -->
                       <th>Deskripsi</th>
                       <th>Aksi</th>
                     </tr>
