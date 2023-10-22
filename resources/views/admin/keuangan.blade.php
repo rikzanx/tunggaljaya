@@ -51,7 +51,12 @@
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
                         <td>{{ $item->created_at->setTimezone('Asia/Jakarta')->format('Y-m-d H:i:s') }}</td> <!-- Menambahkan tanggal transaksi -->
-                        <td>@rupiahonly($item->amount)</td>
+                        <td>@if ($item->tipe == "pemasukan")
+                            @rupiahonly($item->amount)
+                        @else
+                            -@rupiahonly(abs($item->amount))
+                        @endif
+                        </td>
                         {{-- <td>{{ $item->tipe }}</td> --}}
                         <td>
                           <div class="d-inline-flex mb-3 px-2 py-1 <?php echo ($item->tipe == "pemasukan")?"bg-success":"bg-danger"; ?>" role="alert">
