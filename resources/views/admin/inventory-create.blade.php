@@ -47,7 +47,16 @@
                                         <label for="exampleInputEmail1">Qty</label>
                                         <input type="number" name="qty" class="form-control" id="exampleInputEmail1" placeholder="Enter the quantity">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Description</label>
+                                        <input type="text" name="description" class="form-control" id="exampleInputEmail1" placeholder="Enter the description">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Lokasi</label>
+                                        <input type="text" name="lokasi" class="form-control" id="exampleInputEmail1" placeholder="Enter the location">
+                                    </div>
                                 </div>
+
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
