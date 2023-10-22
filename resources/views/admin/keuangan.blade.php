@@ -54,8 +54,8 @@
                         <td>@if ($item->tipe == "pemasukan")
                             @rupiahonly($item->amount)
                             @else
-        <span class="text-danger">-@rupiahonly(abs($item->amount))</span>
-    @endif
+                                <span class="text-danger">-@rupiahonly(abs($item->amount))</span>
+                            @endif
                         </td>
                         {{-- <td>{{ $item->tipe }}</td> --}}
                         <td>
@@ -156,8 +156,19 @@
         });
       });
       $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        "responsive": true, 
+        "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        "initComplete": function () {
+            this.api().columns(2).every(function () {
+                var column = this;
+                var sum = column.data().reduce(function (a, b) {
+                    var number = parseFloat(b.replace(/[^\d.-]/g, ''));
+                    return a + number;
+                }, 0);
+                $(column.footer()).html('Total: ' + sum);
+            });
+        },
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
       $('#example2').DataTable({
         "paging": true,
