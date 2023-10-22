@@ -138,7 +138,7 @@
       </div>
       
       <div class="row my-4">
-        <div class="col-6">
+        <div class="col">
         <p class="conditions">
         <br>
         <strong>Catatan Tambahan :</strong><br>
