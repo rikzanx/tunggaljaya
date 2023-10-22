@@ -233,20 +233,30 @@
 <script src="{{ asset('plugins/ekko-lightbox/ekko-lightbox.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 <script>
-    // Format input saat menampilkan
     var formattedNumberInputs = document.querySelectorAll('.formatted-number');
     formattedNumberInputs.forEach(function(input) {
-        var format = input.getAttribute('data-number-format');
-        var numeralFormat = numeral(0).format(format);
-
         input.addEventListener('input', function() {
-            if (input.value) {
-                var value = numeral(input.value.replace(/[^0-9.]/g, '')).value();
-                input.value = numeral(value).format(format);
-            }
+            // Menghilangkan tanda ribuan dan menyimpan nilai asli
+            var rawValue = input.value.replace(/,/g, '');
+            var formattedValue = numeral(rawValue).format('0,0');
+
+            // Menyimpan nilai asli dalam input tersembunyi
+            var rawInput = input.parentElement.querySelector('input[name="amount_raw"]');
+            rawInput.value = rawValue;
+
+            // Mengatur nilai dalam input yang ditampilkan
+            input.value = formattedValue;
         });
+
+        // Menginisialisasi input saat halaman dimuat
+        var rawInput = input.parentElement.querySelector('input[name="amount_raw"]');
+        if (rawInput.value) {
+            var formattedValue = numeral(rawInput.value).format('0,0');
+            input.value = formattedValue;
+        }
     });
 </script>
+
 <script>
     $(function () {
       bsCustomFileInput.init();
