@@ -16,6 +16,9 @@ use App\Http\Controllers\DeletedItemController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\PenawaranController;
 use App\Http\Controllers\SuratPenawaranController;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +36,21 @@ Route::get('about',[PageController::class, 'about'])->name('about');
 Route::get('contact',[PageController::class, 'contact'])->name('contact');
 Route::get('product',[PageController::class, 'product'])->name('product');
 Route::get('product/{slug}',[PageController::class, 'productdetail'])->name('product-detail');
+
+Route::get('/sitemap', function(){
+    $sitemap = Sitemap::create()
+    ->add(Url::create('/about'))
+    ->add(Url::create('/contact'))
+    ->add(Url::create('/product'))
+    ->add(Url::create('/'));
+   
+    $post = Product::all();
+    foreach ($post as $post) {
+        $sitemap->add(Url::create("/product/{$post->slug}"));
+    }
+    $sitemap->writeToFile(public_path('sitemap.xml'));
+});
+
 
 Route::get('admin/login', [CustomAuthController::class, 'index'])->name('login');
 Route::group(['prefix' => 'admin'],function(){

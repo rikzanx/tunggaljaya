@@ -12,7 +12,8 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "spatie/laravel-backup": "^7.8"
+        "spatie/laravel-backup": "^7.8",
+        "spatie/laravel-sitemap": "^6.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
