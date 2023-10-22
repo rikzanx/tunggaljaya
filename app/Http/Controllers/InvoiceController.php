@@ -63,7 +63,8 @@ class InvoiceController extends Controller
             'item_price' => 'required',
             'diskon_rate' => 'required',
             'tax_rate' => 'required',
-            'profit' => 'required'
+            'profit' => 'required',
+            'dp' => 'required'
         ]);
         
         if ($validator->fails()) {
@@ -91,6 +92,7 @@ class InvoiceController extends Controller
             $invoice->diskon_rate = $request->diskon_rate;
             $invoice->tax_rate = $request->tax_rate;
             $invoice->profit = $request->profit;
+            $invoice->dp = $request->dp;
             if($request->has('comment')){
                 
                 $invoice->comment = $request->comment;
@@ -191,7 +193,8 @@ class InvoiceController extends Controller
             'item_price' => 'required',
             'diskon_rate' => 'required',
             'tax_rate' => 'required',
-            'profit' => 'required'
+            'profit' => 'required',
+            'dp' => 'required'
         ]);
         
         if ($validator->fails()) {
@@ -216,6 +219,7 @@ class InvoiceController extends Controller
             $invoice->diskon_rate = $request->diskon_rate;
             $invoice->tax_rate = $request->tax_rate;
             $invoice->profit = $request->profit;
+            $invoice->dp = $request->dp;
             if($request->has('comment')){
                 $invoice->comment = $request->comment;
             }

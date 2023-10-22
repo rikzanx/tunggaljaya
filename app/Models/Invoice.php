@@ -23,7 +23,8 @@ class Invoice extends Model
             "tax_rate",
             "profit",
             "created_at",
-            "tanggal_pengiriman"
+            "tanggal_pengiriman",
+            "dp"
     ];
 
     public function items(){
