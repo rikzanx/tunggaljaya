@@ -16,6 +16,7 @@ use App\Http\Controllers\DeletedItemController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\PenawaranController;
 use App\Http\Controllers\SuratPenawaranController;
+use App\Http\Controllers\KeuanganController;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use App\Models\Product;
@@ -71,6 +72,7 @@ Route::group(['prefix' => 'admin'],function(){
     Route::resource('password',PasswordController::class);
     Route::resource('penawaran',PenawaranController::class);
     Route::resource('surat-penawaran',SuratPenawaranController::class);
+    Route::resource('keuangan',KeuanganController::class);
 
     Route::get('proforma/invoice/{id}',[InvoiceController::class, 'show_proform'])->name("show_proform");
     Route::get('suratjalan/invoice/{id}',[InvoiceController::class, 'surat_jalan'])->name("surat_jalan");
