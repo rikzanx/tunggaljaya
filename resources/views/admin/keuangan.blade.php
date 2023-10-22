@@ -50,7 +50,7 @@
                     @foreach ($keuangan as $item)
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
-                        <td>{{ $item->created_at->format('Y-m-d H:i:s') }}</td> <!-- Menambahkan tanggal transaksi -->
+                        <td>{{ $item->created_at->setTimezone('Asia/Jakarta')->format('Y-m-d H:i:s') }}</td> <!-- Menambahkan tanggal transaksi -->
                         <td>@rupiahonly($item->amount)</td>
                         {{-- <td>{{ $item->tipe }}</td> --}}
                         <td>
