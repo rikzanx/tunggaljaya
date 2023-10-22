@@ -37,7 +37,7 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">SKU</label>
-                                        <input type="text" name="sku" class="form-control" id="exampleInputEmail1" readonly>
+                                        <input type="text" name="sku" class="form-control" id="exampleInputEmail1" value="{{ str_pad($nextId, 8, '0', STR_PAD_LEFT) }}" readonly>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name</label>

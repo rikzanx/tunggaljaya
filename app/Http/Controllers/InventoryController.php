@@ -19,7 +19,11 @@ class InventoryController extends Controller
 
     public function create()
     {
-        return view('admin.inventory-create');
+        $nextId = Inventory::max('id') + 1;
+
+        return view('admin.inventory-create',[
+            "nextId" => $nextId
+        ]);
     }
 
     public function store(Request $request)
