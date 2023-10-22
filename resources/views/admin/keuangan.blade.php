@@ -40,7 +40,7 @@
                     <th>Tipe</th>
                     <th>Balance After</th>
                     <th>Deskripsi</th>
-                    {{-- <th>Aksi</th> --}}
+                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -56,11 +56,11 @@
                         </td>
                         <td>@rupiahonly($item->balance_after)</td>
                         <td>{{ $item->description }}</td>
-                        {{-- <td>
-                          <a class="btn btn-primary" href="{{ route('wallet.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
-                            <a class="btn btn-success" href="{{ route('wallet.show',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
+                        <td>
+                          <a class="btn btn-primary" href="{{ route('keuangan.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
+                            <a class="btn btn-success" href="{{ route('keuangan.show',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
                             <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})"><span class="fas fa-trash"></span></button>
-                        </td> --}}
+                        </td>
                     </tr>
                     @endforeach
                   </tbody>
@@ -71,6 +71,7 @@
                       <th>Tipe</th>
                       <th>Balance After</th>
                       <th>Deskripsi</th>
+                      <th>Aksi</th>
                     </tr>
                   </tfoot>
                 </table>
