@@ -69,7 +69,7 @@ class KeuanganController extends Controller
             $keuangan = new Keuangan();
             $keuangan->amount = $request->amount;
             $keuangan->tipe = $request->tipe;
-            $keuangan->description = $request->description;
+            $keuangan->description = nl2br($request->description);
 
             $balance_after = ($request->tipe == "pemasukan")? $company->saldo + $request->amount : $company->saldo - $request->amount;
             $keuangan->balance_after = $balance_after;
