@@ -79,6 +79,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('keuangan.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-money"></i>
+              <p>
+                Transaksi Keuangan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('slider.index') }}" class="nav-link">
               <i class="nav-icon fas fa-images"></i>
               <p>
