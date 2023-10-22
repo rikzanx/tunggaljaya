@@ -27,7 +27,7 @@ class KeuanganController extends Controller
         $saldo = $sumPemasukan-$sumPengeluaran;
         return view('admin.keuangan',[
             'keuangan' => $keuangan,
-            'saldo' => $saldo.
+            'saldo' => $saldo,
             'sumPemasukan' => $sumPemasukan,
             'sumPengeluaran' => $sumPengeluaran,
         ]);
