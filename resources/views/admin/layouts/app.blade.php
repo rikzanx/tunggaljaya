@@ -231,6 +231,22 @@
 <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <!-- Ekko Lightbox -->
 <script src="{{ asset('plugins/ekko-lightbox/ekko-lightbox.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script>
+    // Format input saat menampilkan
+    var formattedNumberInputs = document.querySelectorAll('.formatted-number');
+    formattedNumberInputs.forEach(function(input) {
+        var format = input.getAttribute('data-number-format');
+        var numeralFormat = numeral(0).format(format);
+
+        input.addEventListener('input', function() {
+            if (input.value) {
+                var value = numeral(input.value.replace(/[^0-9.]/g, '')).value();
+                input.value = numeral(value).format(format);
+            }
+        });
+    });
+</script>
 <script>
     $(function () {
       bsCustomFileInput.init();

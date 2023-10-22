@@ -37,7 +37,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Jumlah</label>
-                    <input type="number" name="amount" class="form-control" id="exampleInputEmail1" placeholder="Masukkan jumlah">
+                    <input type="number" name="amount" class="form-control formatted-number" id="exampleInputEmail1" placeholder="Masukkan jumlah">
                   </div>
                   <div class="form-group">
                     <label>Tipe Keuangan</label>
