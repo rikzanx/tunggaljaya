@@ -1,0 +1,34 @@
+cara install baru
+1.  lakukan git clone
+2. buat env koneksi dengan databse dan isi username password
+3. buatkan php artisan generate key
+4. lakukan composer install
+5. copy index.php .htaccess
+6. lakukan php artisan migrate
+7. sesuaikan data terutama data companies,data prod
+
+
+cara backup databse 
+- https://www.positronx.io/laravel-database-backup-with-spatie-tutorial-example/
+memakai spatie kemudian harus di publish provider dulu
+
+nano config/backup.php
+php artisan backup:run --disable-notifications --only-db
+
+cara ssh agara konek dengna github terminal
+https://www.petanikode.com/github-ssh/
+
+
+membuat ssh key
+cd ~/.ssh/ #pindah ke direktori ssh
+
+# membuat private key dan public key
+ssh-keygen -t rsa
+cat ~/.ssh/id_anda.pub
+eval `ssh-agent`
+ssh-add dian
+ssh -T git@github.com
+
+
+tutor xml sitemap
+https://codelapan.com/post/cara-membuat-sitemap-dinamis-di-laravel-8
