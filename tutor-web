@@ -6,6 +6,8 @@ cara install baru
 5. copy index.php .htaccess
 6. lakukan php artisan migrate
 7. sesuaikan data terutama data companies,data prod
+8. setting app_url app_name di env dan juga app_image
+9.
 
 
 cara backup databse 
