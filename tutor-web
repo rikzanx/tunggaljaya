@@ -34,3 +34,5 @@ ssh -T git@github.com
 
 tutor xml sitemap
 https://codelapan.com/post/cara-membuat-sitemap-dinamis-di-laravel-8
+
+cara melakukan perpindahan dari branch 1 ke 2, begitu sebaliknya
