@@ -19,4 +19,6 @@ yarn-error.log
 /harapanbaru.tunggaljayasurabaya.web.id
 /typer.tunggaljayasurabaya.web.id
 # Mengabaikan folder yang nama akhirnya ".tunggaljayasurabaya.web.id"
-*\.tunggaljayasurabaya.web.id/
+*\tunggaljayasurabaya.web.id/
+*\shw.my.id/
+/ftp
