@@ -149,7 +149,8 @@ class InvoiceController extends Controller
         //     'company' => $company,
         // ]);
         // Setup a filename 
-        $documentFileName = "fun.pdf";
+        $name = "Invoice ".$invoice->no_invoice." ".$company->name.".pdf";
+        $documentFileName = $name;
  
         // Create the mPDF document
         $document = new PDF( [
