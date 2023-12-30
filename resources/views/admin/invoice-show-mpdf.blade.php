@@ -43,25 +43,25 @@
                 <td width="155">Kepada</td>
                 <td width="10"></td>
                 <td width="210"></td>
-                <td width="155">No Invoice:</td>
+                <td width="100">No Invoice:</td>
                 <td width="10">:</td>
                 <td>{{ $invoice->no_invoice }}</td>
             </tr>
             <tr valign="top">
-                <td>{{  $invoice->name_customer}}</td>
+                <td>&nbsp;&nbsp;{{$invoice->name_customer}}</td>
                 <td></td>
                 <td></td>
-                <td width="155">Tanggal:</td>
+                <td width="100">Tanggal:</td>
                 <td width="10">:</td>
                 <td>{{ $date_inv }}</td>
             </tr>
 			      <tr valign="top">
-                <td>{{  $invoice->address_customer}}</td>
+                <td>&nbsp;&nbsp;{{  $invoice->address_customer}}</td>
                 <td></td>
                 <td></td>
             </tr>
 			      <tr valign="top">
-                <td>{{  $invoice->phone_customer}}</td>
+                <td>&nbsp;&nbsp;{{  $invoice->phone_customer}}</td>
                 <td></td>
                 <td></td>
             </tr>
@@ -98,7 +98,7 @@
         <br>
 		<table width="750" border="0" cellpadding="0" cellspacing="3">
             <tr valign="top">
-                <td width="750"><b><u>Comments</u></b></td>
+                <td width="750"><b><u>Catatan:</u></b></td>
             </tr>
             <tr valign="top">
                 <td>{!! nl2br($invoice->comment) !!}</td>
