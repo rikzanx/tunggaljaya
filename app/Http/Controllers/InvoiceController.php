@@ -143,11 +143,11 @@ class InvoiceController extends Controller
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($invoice);
-        // return view('admin.invoice-show-mpdf',[
-        //     'invoice' => $invoice,
-        //     'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
-        //     'company' => $company,
-        // ]);
+        return view('admin.invoice-show-mpdf',[
+            'invoice' => $invoice,
+            'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
+            'company' => $company,
+        ]);
         // Setup a filename 
         $documentFileName = "fun.pdf";
  
