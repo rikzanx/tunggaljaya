@@ -78,7 +78,7 @@
 				</tr>
 			</thead>
 			<tbody>
-			<?php $nomer = 0; $total = 0;$subtotal = 0; foreach($invoice->items as $item) { $nomer++; $total += floatval($item->harga_total);$subtotal += floatval($item->harga_total); ?>
+			<?php $nomer = 0; $total = 0;$subtotal = 0; foreach($invoice->items as $item) { $nomer++; $total += floatval($item->total);$subtotal += floatval($item->total); ?>
 				<tr>
 					<td style="text-align: right;"><?php echo $nomer; ?></td>
 					<td>{{ $item->description }}</td>
