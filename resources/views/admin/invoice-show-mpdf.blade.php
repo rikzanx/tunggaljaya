@@ -42,7 +42,7 @@
             <tr valign="top">
                 <td width="155">Kepada</td>
                 <td width="10"></td>
-                <td width=""></td>
+                <td width="210"></td>
                 <td width="155">No Invoice:</td>
                 <td width="10">:</td>
                 <td>{{ $invoice->no_invoice }}</td>
