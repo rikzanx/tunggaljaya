@@ -48,7 +48,7 @@
                 <td>{{ $invoice->no_invoice }}</td>
             </tr>
             <tr valign="top">
-                <td>&nbsp;&nbsp;{{$invoice->name_customer}}</td>
+                <td>{{$invoice->name_customer}}</td>
                 <td></td>
                 <td></td>
                 <td width="100">Tanggal:</td>
@@ -56,12 +56,12 @@
                 <td>{{ $date_inv }}</td>
             </tr>
 			      <tr valign="top">
-                <td>&nbsp;&nbsp;{{  $invoice->address_customer}}</td>
+                <td>{{  $invoice->address_customer}}</td>
                 <td></td>
                 <td></td>
             </tr>
 			      <tr valign="top">
-                <td>&nbsp;&nbsp;{{  $invoice->phone_customer}}</td>
+                <td>{{  $invoice->phone_customer}}</td>
                 <td></td>
                 <td></td>
             </tr>
