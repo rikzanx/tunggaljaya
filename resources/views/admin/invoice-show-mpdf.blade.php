@@ -5,7 +5,7 @@
         <title>Invoice {{$invoice->no_invoice}} {{$company->name}}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <style type="text/css">
-            body { background: url('<?php echo base_url('assets') ?>/admin/media/bg/wm-print-3.png') repeat; font-size: 12px;}
+            body {  font-size: 12px;}
 			.tbl-bordered { border: 1px solid #000; border-top: none; border-left: none; }
 			.tbl-bordered td, .tbl-bordered th { border: 1px solid #000; border-right: none; border-bottom: none; }
 			.tbl-bordered th { text-align: center; font-weight: bold; }
