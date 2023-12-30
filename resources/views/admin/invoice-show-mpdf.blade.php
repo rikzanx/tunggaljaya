@@ -108,9 +108,9 @@
 		<br />
         <table width="750" border="0" cellpadding="0" cellspacing="0">
             <tr valign="top">
-              <td width="210" align="center" style="border: none;"></td>
-				      <td width="210" align="center" style="border: none;"></td>
-				      <td width="210" align="center"style="border: none;"><strong>Hormat Kami</strong></td>
+              <td width="250" align="center" style="border: none;"></td>
+				      <td width="250" align="center" style="border: none;"></td>
+				      <td width="250" align="center" style="border: none;"><strong>Hormat Kami</strong></td>
 			      </tr>
             <tr valign="top" style="border: none;">
               <td height="120" align="center" style="border: none;">
