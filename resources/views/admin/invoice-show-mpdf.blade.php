@@ -106,18 +106,18 @@
         </table>
 		<br />
 		<br />
-        <table width="750" class="tbl-bordered" border="0" cellpadding="0" cellspacing="0">
+        <table width="750" border="0" cellpadding="0" cellspacing="0">
             <tr valign="top">
               <td width="210" align="center" style="border: none;"></td>
 				      <td width="210" align="center" style="border: none;"></td>
 				      <td width="210" align="center"style="border: none;"><strong>Hormat Kami</strong></td>
 			      </tr>
-            <tr valign="top">
+            <tr valign="top" style="border: none;">
               <td height="120" align="center" style="border: none;">
 				      </td>
-				      <td align="center" style="border: none;">
+				      <td height="120" align="center" style="border: none;">
               </td>
-              <td align="center" style="border: none;">
+              <td height="120" align="center" style="border: none;">
                 <img src="{{ asset($company->image_company) }}" width="100" />
               </td>
 			      </tr>
