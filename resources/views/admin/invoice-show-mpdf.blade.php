@@ -106,33 +106,25 @@
         </table>
 		<br />
 		<br />
-		<table width="750" border="0" cellpadding="0" cellspacing="3">
-            <tr valign="top">
-                <td width="750"><b><u>Term and Conditions</u></b></td>
-            </tr>
-            <tr valign="top">
-                <td>No returns will be permitted.</td>
-            </tr>
-        </table>
-		<br/>
         <table width="750" class="tbl-bordered" border="0" cellpadding="0" cellspacing="0">
             <tr valign="top">
-              <td width="210" align="center"><strong>Issued By</strong></td>
-				      <td width="210" align="center"><strong>Approved By</strong></td>
-				      <td width="210" align="center"><strong>Acknowledged By</strong></td>
+              <td width="210" align="center" style="border: none;"></td>
+				      <td width="210" align="center" style="border: none;"></td>
+				      <td width="210" align="center"style="border: none;"><strong>Hormat Kami</strong></td>
 			      </tr>
             <tr valign="top">
-              <td height="120" align="center">
+              <td height="120" align="center" style="border: none;">
 				      </td>
-				      <td align="center">
+				      <td align="center" style="border: none;">
               </td>
-              <td align="center">
+              <td align="center" style="border: none;">
+                <img src="{{ asset($company->image_company) }}" width="100" />
               </td>
 			      </tr>
             <tr valign="top">
-              <td align="center"><strong>End User</strong><br/>end user</span></td>
-              <td align="center"><strong>End User</strong><br/>end user</span></td>
-              <td align="center"><strong>End User</strong><br/>end user</span></td>
+              <td align="center" style="border: none;"></td>
+              <td align="center" style="border: none;"></td>
+              <td align="center" style="border: none;"><strong>{{ $company->name }}</strong><br/>Sales</span></td>
             </tr>
 		</table>
 	</body>
