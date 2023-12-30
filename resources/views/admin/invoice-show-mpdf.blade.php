@@ -42,7 +42,7 @@
             <tr valign="top">
                 <td width="155">Kepada</td>
                 <td width="10"></td>
-                <td width=""><</td>
+                <td width=""></td>
                 <td width="155">No Invoice:</td>
                 <td width="10">:</td>
                 <td>{{ $invoice->no_invoice }}</td>
@@ -90,7 +90,7 @@
 			</tbody>
 			<tfoot>
 				<tr>
-					<th colspan="6" style="text-align: right;">Grand Total</th>
+					<th colspan="4" style="text-align: right;">Grand Total</th>
 					<th style="text-align: right;">@rupiah($subtotal)</th>
 				</tr>
 			</tfoot>
