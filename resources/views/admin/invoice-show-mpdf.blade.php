@@ -134,14 +134,14 @@
 				      <td width="250" align="center" style="border: none;"><strong>Hormat Kami</strong></td>
 			      </tr>
             <tr valign="top" style="border: none;">
-              <td height="120" align="center" style="border: none;">
-				      </td>
-				      <td height="120" align="center" style="border: none;">
-              </td>
-              <td height="120" align="center" style="border: none;">
-                <!-- <img src="{{ asset($company->image_company) }}" width="100" /> -->
-              </td>
-			      </tr>
+            	<td height="120" align="center" style="border: none;">
+				</td>
+				<td height="120" align="center" style="border: none;">
+              	</td>
+              	<td height="120" align="center" style="border: none;">
+                	<!-- <img src="{{ asset($company->image_company) }}" width="100" /> -->
+              	</td>
+			</tr>
             <tr valign="top">
               <td align="center" style="border: none;"></td>
               <td align="center" style="border: none;"></td>
