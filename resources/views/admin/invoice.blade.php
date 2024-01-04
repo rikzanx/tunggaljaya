@@ -51,7 +51,7 @@
                         <td>{{ $item->duedate }}</td>
                         <td>@rupiah($item->total - ($item->diskon_rate) + ($item->tax_rate*$item->total/100))</td>
                         <td>
-                            <a class="btn btn-success" href="{{ route('invoice.show',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
+                            <a class="btn btn-success" href="{{ route('print_invoice',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
                             <a class="btn btn-warning" href="{{ route('surat_jalan',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
                             <a class="btn btn-primary" href="{{ route('invoice.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
                             <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})"><span class="fas fa-trash"></span></button>
