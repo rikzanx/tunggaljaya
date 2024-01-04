@@ -52,20 +52,20 @@
                 <td>{{ $invoice->no_invoice }}</td>
             </tr>
             <tr valign="top">
-                <td>{{$invoice->name_customer}}</td>
-                <td></td>
-                <td></td>
+                <td colspan="3">{{$invoice->name_customer}}</td>
                 <td width="100">Tanggal:</td>
                 <td width="10">:</td>
                 <td>{{ $date_inv }}</td>
             </tr>
-			      <tr valign="top">
-                <td>{{  $invoice->address_customer}}</td>
+			<tr valign="top">
+                <td colspan="3">{{  $invoice->address_customer}}</td>
+                <td></td>
                 <td></td>
                 <td></td>
             </tr>
-			      <tr valign="top">
-                <td>{{  $invoice->phone_customer}}</td>
+			<tr valign="top">
+                <td colspan="3">{{  $invoice->phone_customer}}</td>
+                <td></td>
                 <td></td>
                 <td></td>
             </tr>
