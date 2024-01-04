@@ -17,6 +17,17 @@
                 border: 2px solid #333;
                 text-transform: uppercase;
             }
+			/* Media query for A4 size */
+			@media print {
+				@page {
+					size: A4;
+				}
+
+				/* Apply page break if tbl-tandatangan exceeds A4 size */
+				.tbl-tandatangan {
+					page-break-before: always;
+				}
+			}
         </style>
     </head>
 	<body>
@@ -113,7 +124,7 @@
 			</tfoot>
 		</table>
         <br>
-		<table width="750" border="0" cellpadding="0" cellspacing="3">
+		<table class="tbl-tandatangan" width="750" border="0" cellpadding="0" cellspacing="3">
             <tr valign="top">
                 <td width="750"><b><u>Catatan:</u></b></td>
             </tr>
