@@ -141,7 +141,7 @@
             <tr valign="top">
               <td align="center" style="border: none;"></td>
               <td align="center" style="border: none;"></td>
-              <td align="center" style="border: none;"><strong>{{ $company->name }}</strong><br/>Sales</span></td>
+              <td align="center" style="border: none;"><strong>{{ $company->name }}</strong></td>
             </tr>
 		</table>
 	</body>
