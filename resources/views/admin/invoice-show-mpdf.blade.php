@@ -17,16 +17,9 @@
                 border: 2px solid #333;
                 text-transform: uppercase;
             }
-			/* Media query for A4 size */
-			@media print {
-				@page {
-					size: A4;
-				}
-
-				/* Apply page break if tbl-tandatangan exceeds A4 size */
-				.tbl-tandatangan {
-					page-break-before: always;
-				}
+			/* Apply page break if tbl-tandatangan exceeds A4 size */
+			.tbl-tandatangan {
+				page-break-before: always;
 			}
         </style>
     </head>
