@@ -80,4 +80,5 @@ Route::group(['prefix' => 'admin'],function(){
     Route::get('proforma/invoice/{id}',[InvoiceController::class, 'show_proform'])->name("show_proform");
     Route::get('suratjalan/invoice/{id}',[InvoiceController::class, 'surat_jalan'])->name("surat_jalan");
     Route::get('print/invoice/{id}',[InvoiceController::class, 'print'])->name("print_invoice");
+    Route::get('shown/invoice/{id}',[InvoiceController::class, 'shown'])->name("shown_invoice");
 });
