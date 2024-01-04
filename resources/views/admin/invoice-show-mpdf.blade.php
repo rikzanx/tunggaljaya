@@ -118,7 +118,7 @@
 				      <td height="120" align="center" style="border: none;">
               </td>
               <td height="120" align="center" style="border: none;">
-                <img src="{{ asset($company->image_company) }}" width="100" />
+                <!-- <img src="{{ asset($company->image_company) }}" width="100" /> -->
               </td>
 			      </tr>
             <tr valign="top">
