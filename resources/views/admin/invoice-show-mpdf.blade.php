@@ -90,9 +90,26 @@
 			</tbody>
 			<tfoot>
 				<tr>
-					<th colspan="4" style="text-align: right;">Grand Total</th>
+					<th colspan="4" style="text-align: right;">Sub Total</th>
 					<th style="text-align: right;">@rupiah($subtotal)</th>
 				</tr>
+				<tr>
+					<th colspan="4" style="text-align: right;">Diskon</th>
+					<th style="text-align: right;">@rupiah($invoice->diskon_rate) ({{ number_format(($invoice->diskon_rate/$subtotal)*100,1) }}%)</th>
+				</tr>
+				<tr>
+					<th colspan="4" style="text-align: right;">Total</th>
+					<th style="text-align: right;">@rupiah($subtotal-($invoice->diskon_rate))</th>
+				</tr>
+				<tr>
+					<th colspan="4" style="text-align: right;">DP</th>
+					<th style="text-align: right;">@rupiah($invoice->dp)</th>
+				</tr>
+				<tr>
+					<th colspan="4" style="text-align: right;">Sisa Pembayaran</th>
+					<th style="text-align: right;">@rupiah(($subtotal-($invoice->diskon_rate))-$invoice->dp)</th>
+				</tr>
+				
 			</tfoot>
 		</table>
         <br>
