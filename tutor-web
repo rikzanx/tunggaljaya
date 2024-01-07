@@ -31,6 +31,13 @@ eval `ssh-agent`
 ssh-add dian
 ssh -T git@github.com
 
+#permanent add identity ssh-agent
+touch ~/.ssh/config
+chmod 600 ~/.ssh/config
+chown username:username ~/.ssh/config
+nano ~/.ssh/config => 
+    Host *
+    IdentityFile ~/.ssh/id_anda
 
 tutor xml sitemap
 https://codelapan.com/post/cara-membuat-sitemap-dinamis-di-laravel-8
