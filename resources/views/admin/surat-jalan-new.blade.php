@@ -84,7 +84,7 @@
 				<tr>
 					<td style="text-align: right;"><?php echo $nomer; ?></td>
 					<td>{{ $item->description }}</td>
-					<td align="right" style="text-align: right;">{{ $item->qty }}</td>
+					<td align="center">{{ $item->qty }}</td>
 				</tr>
 			<?php } ?>
 			</tbody>
