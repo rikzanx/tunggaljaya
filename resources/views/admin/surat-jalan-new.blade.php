@@ -75,10 +75,8 @@
 			<thead>
 				<tr>
 					<th width="40">NO.</th>
-					<th width="220">NAMA BARANG</th>
+					<th>NAMA BARANG</th>
 					<th width="90">JUMLAH</th>
-					<th width="160">HARGA</th>
-					<th width="160">TOTAL</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -87,14 +85,12 @@
 					<td style="text-align: right;"><?php echo $nomer; ?></td>
 					<td>{{ $item->description }}</td>
 					<td align="right" style="text-align: right;">{{ $item->qty }}</td>
-					<td align="right" style="text-align: right;">@rupiah($item->item_price)</td>
-					<td align="right" style="text-align: right;">@rupiah($item->total)</td>
 				</tr>
 			<?php } ?>
 			</tbody>
 			<tfoot>
 				<tr>
-					<th colspan="5" style="text-align: left;">
+					<th colspan="3" style="text-align: left;">
                     <p>
                         PERHATIAN<br>
                         1. Surat jalan merupakan bukti resmi penerimaan barang<br>
