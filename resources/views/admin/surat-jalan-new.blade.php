@@ -75,7 +75,7 @@
 			<thead>
 				<tr>
 					<th width="40">NO.</th>
-					<th>NAMA BARANG</th>
+					<th width="540">NAMA BARANG</th>
 					<th width="90">JUMLAH</th>
 				</tr>
 			</thead>
