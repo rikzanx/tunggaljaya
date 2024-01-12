@@ -44,16 +44,16 @@
 		<hr style="margin-top: 0px; margin-bottom: 0px;" /><br/><br/>
 		<table width="750" border="0" cellpadding="0" cellspacing="3">
             <tr valign="top">
-                <td width="155">Kepada</td>
+                <td width="155"><b>Kepada</b></td>
                 <td width="10"></td>
                 <td width="210"></td>
-                <td width="100">No Invoice:</td>
+                <td width="100"><b>No Invoice</b></td>
                 <td width="10">:</td>
                 <td>{{ $invoice->no_invoice }}</td>
             </tr>
             <tr valign="top">
                 <td colspan="3">{{$invoice->name_customer}}</td>
-                <td width="100">Tanggal:</td>
+                <td width="100"><b>Tanggal</b></td>
                 <td width="10">:</td>
                 <td>{{  $tanggal_pengiriman }}</td>
             </tr>
@@ -71,7 +71,7 @@
             </tr>
         </table>
 		<br/>
-		<table class="tbl-bordered" border="0" cellpadding="3" cellspacing="0">
+		<table class="tbl-bordered" border="0" cellpadding="4" cellspacing="0">
 			<thead>
 				<tr>
 					<th width="40">NO.</th>
