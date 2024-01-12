@@ -78,7 +78,7 @@
         <div class="col-6">
           <p class="text-end">
             No invoice : {{  $invoice->no_invoice}}<br>
-            Tanggal : {{  $tanggal_pengiriman}}<br>
+            Tanggal : {{  $tanggal_pengiriman }}<br>
           </p>
         </div>
       </div>
