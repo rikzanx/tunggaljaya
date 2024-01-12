@@ -71,7 +71,7 @@
             </tr>
         </table>
 		<br/>
-		<table class="tbl-bordered" border="0" cellpadding="4" cellspacing="0">
+		<table class="tbl-bordered" border="0" cellpadding="3" cellspacing="0">
 			<thead>
 				<tr>
 					<th width="40">NO.</th>
