@@ -36,7 +36,7 @@
 					<p style="font-size: 11px;">&nbsp;&nbsp;Phone : {{ $company->telp}}</p>
 				</td>
 				<td width="40%" valign="middle" align="center">
-					<h1 class="page-title">&nbsp;&nbsp;Invoice&nbsp;&nbsp;</h1>
+					<h1 class="page-title">&nbsp;&nbsp;Surat Jalan&nbsp;&nbsp;</h1>
 				</td>
 			</tr>
 		</table>
