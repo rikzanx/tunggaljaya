@@ -83,7 +83,7 @@
 			</thead>
 			<tbody>
 			<?php $nomer = 0; $total = 0;$subtotal = 0; foreach($invoice->items as $item) { $nomer++; $total += floatval($item->total);$subtotal += floatval($item->total); ?>
-				<tr>
+				<tr valign="top">
 					<td style="text-align: right;"><?php echo $nomer; ?></td>
 					<td>{{ $item->description }}</td>
 					<td align="center">{{ $item->qty }}</td>
