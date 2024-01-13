@@ -90,30 +90,30 @@
   </div>
   <!-- /.content-wrapper -->
   <!-- Modal -->
-<div class="modal fade" id="modal-default">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Peringatan</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+  <div class="modal fade" id="modal-default">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Peringatan</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Apakah anda yakin akan menghapus data ini&hellip;</p>
+          </div>
+          <form action="{{ route('produk.destroy', ':id') }}" method="POST" class="delete-form">
+              @csrf
+              @method('DELETE')
+              <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-danger">Delete</button>
+              </div>
+          </form>
         </div>
-        <div class="modal-body">
-          <p>Apakah anda yakin akan menghapus data ini&hellip;</p>
-        </div>
-        <form action="{{ route('produk.destroy', ':id') }}" method="POST" class="delete-form">
-            @csrf
-            @method('DELETE')
-            <div class="modal-footer justify-content-between">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-danger">Delete</button>
-            </div>
-        </form>
+        <!-- /.modal-content -->
       </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
+      <!-- /.modal-dialog -->
   </div>
   <!-- /.modal -->
 @endsection

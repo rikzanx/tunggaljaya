@@ -72,10 +72,20 @@
                     <label>Deskripsi produk</label>
                     <textarea id="description" name="description" class="form-control" rows="3" placeholder="Enter ...">{{ $product->description }}</textarea>
                   </div>
-
                   <div class="form-group">
                     <label for="exampleInputFile">Upload/Ganti Foto Produk Baru</label>
                   </div>
+                  <div class="form-group">
+                    <div class="control-group lst input-group" style="margin-top:10px">
+                      @foreach($product->images as $item)
+                      <div class="input-group-btn"> 
+                        <img src="{{ asset($item->image_product) }}" width="200" alt="">
+                        <button class="btn btn-danger" type="button" onclick="modaldelete({{ $item->id }})"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
+                      </div>
+                      @endforeach
+                    </div>
+                  </div>
+                  
                   <div class="input-group hdtuto control-group lst increment" >
                     <input type="file" name="filenames[]" class="myfrm form-control">
                     <div class="input-group-btn"> 
@@ -86,7 +96,7 @@
                     <div class="hdtuto control-group lst input-group" style="margin-top:10px">
                       <input type="file" name="filenames[]" class="myfrm form-control">
                       <div class="input-group-btn"> 
-                        <button class="btn btn-danger" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
+                        <button class="btn btn-danger btn-hapus" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
                       </div>
                     </div>
                   </div>
@@ -110,16 +120,48 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  <!-- Modal -->
+  <div class="modal fade" id="modal-default">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Peringatan</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Apakah anda yakin akan menghapus data ini&hellip;</p>
+          </div>
+          <form action="{{ route('delete_image_product', ':id') }}" method="POST" class="delete-form">
+              @csrf
+              <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-danger">Delete</button>
+              </div>
+          </form>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
 @endsection
 
 @section('js')
 <script type="text/javascript">
+  function modaldelete(id){
+        // alert(id);
+        var url = $('.delete-form').attr('action');
+        $('.delete-form').attr('action',url.replace(':id',id));
+        $('#modal-default').modal('show');
+  }
   $(document).ready(function() {
     $(".btn-add-image").click(function(){ 
         var lsthmtl = $(".clone").html();
         $(".increment").after(lsthmtl);
     });
-    $("body").on("click",".btn-danger",function(){ 
+    $("body").on("click",".btn-hapus",function(){ 
         $(this).parents(".hdtuto").remove();
     });
   });

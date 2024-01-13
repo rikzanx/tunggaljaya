@@ -170,7 +170,7 @@ class ProductController extends Controller
             $product->description = $request->description;
             $product->save();
             if($request->hasfile('filenames')){
-                $delete = ImagesProduct::where('product_id',$id)->delete();
+                // $delete = ImagesProduct::where('product_id',$id)->delete();
                 foreach($request->file('filenames') as $file)
                 {
                     $imageproduct = new ImagesProduct();
@@ -212,6 +212,22 @@ class ProductController extends Controller
         }catch (\Exception $e) {
             DB::rollback();
             $ea = "Terjadi Kesalahan saat merubah produk".$e->message;
+            return redirect()->route("produk.index")->with('danger', $ea);
+        }
+    }
+
+    public function destroy_image($id)
+    {
+        $imageselected = ImagesProduct::with('product')->findOrFail($id);
+        DB::beginTransaction();
+        try{
+            ImagesProduct::destroy($id);
+            DB::commit();
+            return redirect()->route("produk.index")->with('status', "Sukses menghapus foto");
+
+        }catch (\Exception $e) {
+            DB::rollback();
+            $ea = "Terjadi Kesalahan saat merubah foto".$e->message;
             return redirect()->route("produk.index")->with('danger', $ea);
         }
     }
