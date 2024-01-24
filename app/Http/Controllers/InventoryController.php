@@ -7,6 +7,7 @@ use App\Models\ImagesInventory;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class InventoryController extends Controller
 {
