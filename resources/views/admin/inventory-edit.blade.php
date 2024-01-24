@@ -134,21 +134,20 @@
 
 @section('js')
 <script type="text/javascript">
-    $(document).ready(function() {
-        $(".btn-add-image").click(function(){ 
-            var lsthmtl = `<div class="hdtuto control-group lst input-group" style="margin-top:10px">
-                <textarea name="description[]" placeholder="Product Name" cols="30" rows="4" class="myfrm form-control"></textarea>
-                <input type="number" name="qty[]" placeholder="Quantity" class="myfrm form-control">
-                <input type="number" name="item_price[]" placeholder="Item Price" min="1000" class="myfrm form-control">
-                <div class="input-group-btn"> 
-                    <button class="btn btn-danger" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
-                </div>
-            </div>`;
-            $(".increment").after(lsthmtl);
-        });
-        $("body").on("click",".btn-danger",function(){ 
-            $(this).parents(".hdtuto").remove();
-        });
+  function modaldelete(id){
+        // alert(id);
+        var url = $('.delete-form').attr('action');
+        $('.delete-form').attr('action',url.replace(':id',id));
+        $('#modal-default').modal('show');
+  }
+  $(document).ready(function() {
+    $(".btn-add-image").click(function(){ 
+        var lsthmtl = $(".clone").html();
+        $(".increment").after(lsthmtl);
     });
+    $("body").on("click",".btn-hapus",function(){ 
+        $(this).parents(".hdtuto").remove();
+    });
+  });
 </script>
 @endsection
