@@ -102,7 +102,20 @@ class InventoryController extends Controller
             $inventory->lokasi = $request->lokasi;
             $inventory->qty = $request->qty;
             $inventory->save();
-
+            if($request->hasfile('filenames')){
+                foreach($request->file('filenames') as $file)
+                {
+                    $imageinventory = new ImagesInventory();
+                    $uploadFolder = "img/inventory/";
+                    $image = $file;
+                    $imageName = time().'-'.$image->getClientOriginalName();
+                    $image->move(public_path($uploadFolder), $imageName);
+                    $image_link = $uploadFolder.$imageName;
+                    $imageinventory->inventory_id = $id;
+                    $imageinventory->image_inventory = $image_link;
+                    $imageinventory->save();
+                }
+            }
             DB::commit();
 
             return redirect()->route("inventories.index")->with('status', "Inventory item updated successfully");
@@ -119,7 +132,7 @@ class InventoryController extends Controller
         try {
             $inventory = Inventory::findOrFail($id);
             $inventory->delete();
-
+            $delete = ImagesInventory::where('inventory_id',$id)->delete();
             DB::commit();
 
             return redirect()->route("inventories.index")->with('status', "Inventory item deleted successfully");

@@ -46,7 +46,6 @@ Route::get('/sitemap', function(){
     ->add(Url::create('/contact'))
     ->add(Url::create('/product'))
     ->add(Url::create('/'));
-   
     $post = Product::all();
     foreach ($post as $post) {
         $sitemap->add(Url::create("/product/{$post->slug}"));
