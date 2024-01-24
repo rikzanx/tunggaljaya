@@ -52,9 +52,11 @@
                         <td>{{ $item->brand }}</td>
                         <td>{{ $item->size }}</td>
                         <td>
+                          @if(count($item->images) > 0)
                             <a href="{{ asset($item->images[0]->image_product) }}" data-toggle="lightbox" data-title="{{ $item->name }}">
                                 <img src="{{ asset($item->images[0]->image_product) }}" style="width: 100px;height:100px;" alt="" srcset="">
                             </a>
+                          @endif
                         </td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('produk.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
