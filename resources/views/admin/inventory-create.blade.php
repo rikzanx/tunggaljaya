@@ -55,6 +55,23 @@
                                         <label for="exampleInputEmail1">Lokasi</label>
                                         <input type="text" name="lokasi" class="form-control" id="exampleInputEmail1" placeholder="Enter the location">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">Foto Barang</label>
+                                    </div>
+                                    <div class="input-group hdtuto control-group lst increment" >
+                                        <input type="file" name="filenames[]" class="myfrm form-control">
+                                        <div class="input-group-btn"> 
+                                        <button class="btn btn-success btn-add-image" type="button"><i class="fldemo glyphicon glyphicon-plus"></i>Add</button>
+                                        </div>
+                                    </div>
+                                    <div class="clone hide">
+                                        <div class="hdtuto control-group lst input-group" style="margin-top:10px">
+                                        <input type="file" name="filenames[]" class="myfrm form-control">
+                                        <div class="input-group-btn"> 
+                                            <button class="btn btn-danger" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
+                                        </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!-- /.card-body -->
@@ -80,21 +97,14 @@
 
 @section('js')
 <script type="text/javascript">
-    $(document).ready(function() {
-        $(".btn-add-image").click(function(){ 
-            var lsthmtl = `<div class="hdtuto control-group lst input-group" style="margin-top:10px">
-                <textarea name="description[]" placeholder="Product Name" cols="30" rows="4" class="myfrm form-control"></textarea>
-                <input type="number" name="qty[]" placeholder="Quantity" class="myfrm form-control">
-                <input type="number" name="item_price[]" placeholder="Item Price" min="1000" class="myfrm form-control">
-                <div class="input-group-btn"> 
-                    <button class="btn btn-danger" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
-                </div>
-            </div>`;
-            $(".increment").after(lsthmtl);
-        });
-        $("body").on("click",".btn-danger",function(){ 
-            $(this).parents(".hdtuto").remove();
-        });
+  $(document).ready(function() {
+    $(".btn-add-image").click(function(){ 
+        var lsthmtl = $(".clone").html();
+        $(".increment").after(lsthmtl);
     });
+    $("body").on("click",".btn-danger",function(){ 
+        $(this).parents(".hdtuto").remove();
+    });
+  });
 </script>
 @endsection
