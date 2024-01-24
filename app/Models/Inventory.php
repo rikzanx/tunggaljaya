@@ -9,7 +9,6 @@ class Inventory extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id';
-
     protected $fillable = [
             "sku",
             "name",
@@ -17,4 +16,7 @@ class Inventory extends Model
             "lokasi",
             "qty",
     ];
+    public function images(){
+        return $this->hasMany('App\Models\ImagesInventory','inventory_id');
+    }
 }
