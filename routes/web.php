@@ -78,6 +78,7 @@ Route::group(['prefix' => 'admin'],function(){
     Route::resource('inventories',InventoryController::class);
 
     Route::post('image-produk/delete/{id}',[ProductController::class,'destroy_image'])->name("delete_image_product");
+    Route::post('image-inventory/delete/{id}',[InventoryController::class,'destroy_image'])->name("delete_image_inventory");
 
     Route::get('proforma/invoice/{id}',[InvoiceController::class, 'show_proform'])->name("show_proform");
     Route::get('suratjalan/invoice/{id}',[InvoiceController::class, 'surat_jalan_new'])->name("surat_jalan");

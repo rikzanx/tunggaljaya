@@ -129,4 +129,19 @@ class InventoryController extends Controller
             return redirect()->route("inventories.index")->with('danger', $error);
         }
     }
+    public function destroy_image($id)
+    {
+        $imageselected = ImagesInventory::with('inventory')->findOrFail($id);
+        DB::beginTransaction();
+        try{
+            ImagesInventory::destroy($id);
+            DB::commit();
+            return redirect()->route("inventories.index")->with('status', "Sukses menghapus foto");
+
+        }catch (\Exception $e) {
+            DB::rollback();
+            $ea = "Terjadi Kesalahan saat merubah foto".$e->message;
+            return redirect()->route("inventories.index")->with('danger', $ea);
+        }
+    }
 }
