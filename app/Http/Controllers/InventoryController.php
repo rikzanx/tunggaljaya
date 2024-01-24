@@ -213,4 +213,7 @@ class InventoryController extends Controller
             return redirect()->route("inventories.index")->with('danger', $ea);
         }
     }
+    public function clear_char_non_ascii($string){
+        return preg_replace('/[^\x20-\x7E]/', '',$string);
+    }
 }
