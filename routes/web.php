@@ -75,6 +75,7 @@ Route::group(['prefix' => 'admin'],function(){
     Route::resource('surat-penawaran',SuratPenawaranController::class);
     Route::resource('keuangan',KeuanganController::class);
     Route::resource('inventories',InventoryController::class);
+    Route::post('import-csv-inventories',[InventoryController::class,'import'])->name('import.csv-inventories');
 
     Route::post('image-produk/delete/{id}',[ProductController::class,'destroy_image'])->name("delete_image_product");
     Route::post('image-inventory/delete/{id}',[InventoryController::class,'destroy_image'])->name("delete_image_inventory");

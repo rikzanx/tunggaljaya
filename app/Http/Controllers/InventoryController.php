@@ -73,6 +73,61 @@ class InventoryController extends Controller
         }
     }
 
+    public function import(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'file' => 'required|mimes:csv,txt',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->route("inventories.index")->with('danger', $validator->errors()->first());
+        }
+        if ($request->hasFile('file')) {
+            DB::beginTransaction();
+            try{
+                $file = $request->file('file');
+                // Baca isi file CSV
+                $csvData = file_get_contents($file);
+                // Ubah isi CSV menjadi array
+                $rows = array_map('str_getcsv', explode("\n", $csvData));
+                // Ambil header sebagai nama kolom
+                $header = array_shift($rows);
+                $header = array_map('trim', $header);
+                // Loop untuk setiap baris dalam file CSV
+                $jumlah = 0;
+                $duplicate_kib = "";
+                $jumlah_duplicate = 0;
+                $nextId = Inventory::max('id') + 1;
+                foreach ($rows as $index=>$row) {
+                    if (count($header) !== count($row)) {
+                        continue; // Lewati baris yang tidak sesuai format
+                    }
+                    $data = array_combine($header, $row);
+                    $inventory = new Inventory();
+                    $inventory->sku = str_pad($nextId, 8, '0', STR_PAD_LEFT);
+                    $name = $data['jenis']." ".$data['ukuran']." ".$data['class']." ".$data['material']." ".$data['merk'];
+                    $inventory->name = $this->clear_char_non_ascii($name);
+                    $inventory->description = $this->clear_char_non_ascii($name);
+                    $inventory->lokasi = $this->clear_char_non_ascii($data['lokasi']);
+                    $inventory->qty = $this->clear_char_non_ascii($data['qty']);
+                    $inventory->save();
+                    $jumlah++;
+                    $nextId++;
+                }
+                $duplicate_kib = "Duplicate Item ($jumlah_duplicate) : ".$duplicate_kib;
+                DB::commit();
+                return redirect()->route("inventories.index")->with('status', "Sukses mengimport $jumlah data barang, $duplicate_kib");
+            }catch(\Exception $e){
+                DB::rollback();
+                $ea = "Terjadi Kesalahan saat menambah data invenotry: " . $e->getMessage(); // Change here
+                Log::error($ea);
+                return redirect()->route("inventories.index")->with('danger', $ea);
+            }
+        }else{
+            return redirect()->route("inventories.index")->with('danger', "File Not Found, File tidak terkirim");
+        }
+        return redirect()->route("inventories.index");
+    }
+
     public function edit($id)
     {
         $inventory = Inventory::findOrFail($id);

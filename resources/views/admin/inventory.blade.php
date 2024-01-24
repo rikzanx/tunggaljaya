@@ -30,62 +30,63 @@
                                 <a href="{{ route('inventories.create') }}" class="btn btn-success">
                                     <span class="fas fa-plus"></span> Tambah inventory item
                                 </a>
+                                <button onclick="modalimportcsv()" class="btn btn-primary"><span class="fas fa-plus"></span> Import From CSV</button>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>No</th>
-            <th>SKU</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Lokasi</th>
-            <th>Qty</th>
-            <th>Foto</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($inventories as $item)
-        <tr>
-            <td>{{ $loop->index + 1 }}</td>
-            <td>{{ $item->sku }}</td>
-            <td>{{ $item->name }}</td>
-            <td>{{ $item->description }}</td>
-            <td>{{ $item->lokasi }}</td>
-            <td>{{ $item->qty }}</td>
-            <td>
-                @if(count($item->images) > 0)
-                <a href="{{ asset($item->images[0]->image_inventory) }}" data-toggle="lightbox" data-title="{{ $item->name }}">
-                    <img src="{{ asset($item->images[0]->image_inventory) }}" style="width: 100px;height:100px;" alt="" srcset="">
-                </a>
-                @endif
-            </td>
-            <td>
-                <a class="btn btn-primary" href="{{ route('inventories.edit', $item->id) }}">
-                    <span class="fas fa-edit"></span>
-                </a>
-                <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})">
-                    <span class="fas fa-trash"></span>
-                </button>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-    <tfoot>
-        <tr>
-            <th>No</th>
-            <th>SKU</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Lokasi</th>
-            <th>Qty</th>
-            <th>Foto</th>
-            <th>Aksi</th>
-        </tr>
-    </tfoot>
-</table>
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>SKU</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Lokasi</th>
+                                        <th>Qty</th>
+                                        <th>Foto</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($inventories as $item)
+                                    <tr>
+                                        <td>{{ $loop->index + 1 }}</td>
+                                        <td>{{ $item->sku }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->description }}</td>
+                                        <td>{{ $item->lokasi }}</td>
+                                        <td>{{ $item->qty }}</td>
+                                        <td>
+                                            @if(count($item->images) > 0)
+                                            <a href="{{ asset($item->images[0]->image_inventory) }}" data-toggle="lightbox" data-title="{{ $item->name }}">
+                                                <img src="{{ asset($item->images[0]->image_inventory) }}" style="width: 100px;height:100px;" alt="" srcset="">
+                                            </a>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" href="{{ route('inventories.edit', $item->id) }}">
+                                                <span class="fas fa-edit"></span>
+                                            </a>
+                                            <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})">
+                                                <span class="fas fa-trash"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>SKU</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Lokasi</th>
+                                        <th>Qty</th>
+                                        <th>Foto</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
 
                             </div>
                             <!-- /.card-body -->
@@ -128,6 +129,37 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="modal-importcsv">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Import CSV</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('import.csv-inventories') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('POST')
+            <div class="modal-body">
+                <p>
+                Download CSV Template untuk upload
+                </p>
+                <input type="file" vlass="form-control" id="fileInput" name="file" accept=".csv" required>
+                <div id="dataDisplay"></div>
+            </div>
+                <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-button">Import</button>
+                </div>
+            </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 @endsection
 
 @section('js')
@@ -143,6 +175,9 @@
 @endif
 <!-- Page specific script -->
 <script>
+    function modalimportcsv(){
+      $('#modal-importcsv').modal('show');
+    }
     function modaldelete(id){
         // alert(id);
         var url = $('.delete-form').attr('action');
