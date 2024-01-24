@@ -205,12 +205,12 @@ class InventoryController extends Controller
         try{
             ImagesInventory::destroy($id);
             DB::commit();
-            return redirect()->route("inventories.index")->with('status', "Sukses menghapus foto");
+            return redirect()->route('inventories.edit', $imageselected->inventory_id)->with('status', "Sukses menghapus foto");
 
         }catch (\Exception $e) {
             DB::rollback();
             $ea = "Terjadi Kesalahan saat merubah foto".$e->message;
-            return redirect()->route("inventories.index")->with('danger', $ea);
+            return redirect()->route('inventories.edit', $imageselected->inventory_id)->with('danger', $ea);
         }
     }
     public function clear_char_non_ascii($string){
