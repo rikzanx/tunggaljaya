@@ -59,7 +59,7 @@
                                         <td>
                                             @if(count($item->images) > 0)
                                             <a href="{{ asset($item->images[0]->image_inventory) }}" data-toggle="lightbox" data-title="{{ $item->name }}">
-                                                <img src="{{ asset($item->images[0]->image_inventory) }}" style="width: 100px;height:100px;" alt="" srcset="">
+                                                Lihat Foto
                                             </a>
                                             @endif
                                         </td>
