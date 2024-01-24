@@ -52,6 +52,7 @@ Route::get('/sitemap', function(){
     }
     $sitemap->writeToFile(public_path('sitemap.xml'));
 });
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 
 
 Route::get('admin/login', [CustomAuthController::class, 'index'])->name('login');
