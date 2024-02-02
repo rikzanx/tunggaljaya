@@ -52,19 +52,19 @@
                 <td>Surabaya, {{$suratpenawaran->duedate}}</td>
             </tr>
             <tr valign="top">
-                <td colspan="3">{{$invoice->name_customer}}</td>
+                <td colspan="3">{{  $suratpenawaran->name_customer}}</td>
                 <td width="100"></td>
                 <td width="10"></td>
                 <td></td>
             </tr>
 			<tr valign="top">
-                <td colspan="3">{{  $invoice->address_customer}}</td>
+                <td colspan="3">{{  $suratpenawaran->address_customer}}</td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
 			<tr valign="top">
-                <td colspan="3">{{  $invoice->phone_customer}}</td>
+                <td colspan="3">{{  $suratpenawaran->phone_customer}}</td>
                 <td></td>
                 <td></td>
                 <td></td>
