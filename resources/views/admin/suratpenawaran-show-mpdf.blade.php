@@ -5,12 +5,12 @@
         <title>Surat Penawaran {{$company->name}} {{$suratpenawaran->no_surat}}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <style type="text/css">
-            body {  font-size: 12px;}
+            body {  font-size: 14px;}
 			.tbl-bordered { border: 1px solid #000; border-top: none; border-left: none; }
 			.tbl-bordered td, .tbl-bordered th { border: 1px solid #000; border-right: none; border-bottom: none; }
 			.tbl-bordered th { text-align: center; font-weight: bold; }
 			.tbl-bordered td table td { border: none; }
-			h1 { font-size: 14px; }
+			h1 { font-size: 16px; }
             h1.page-title {
                 font-size: 28px;
                 padding: 15px;
@@ -32,8 +32,8 @@
 				<td align="left">
 					<h1>&nbsp;&nbsp;{{ $company->name }}</h1>
 					<!-- <p style="font-size: 11px;">&nbsp;&nbsp;Jalan Semarang 104 A No. 23</p> -->
-					<p style="font-size: 11px;">&nbsp;&nbsp;{{$company->address}}</p>
-					<p style="font-size: 11px;">&nbsp;&nbsp;Phone : {{ $company->telp}}</p>
+					<p style="font-size: 12px;">&nbsp;&nbsp;{{$company->address}}</p>
+					<p style="font-size: 12px;">&nbsp;&nbsp;Phone : {{ $company->telp}}</p>
 				</td>
 				<td width="40%" valign="middle" align="center">
 				</td>
@@ -44,7 +44,7 @@
 		<br/><br/>
 		<table width="750" border="0" cellpadding="0" cellspacing="3">
 			<tr>
-				<td valign="middle" align="center" style="font-size:16px;"><b>Surat Penawaran</b></td>
+				<td valign="middle" align="center" style="font-size:18px;"><b>Surat Penawaran</b></td>
 			</tr>
 		</table>
 		<br/>
