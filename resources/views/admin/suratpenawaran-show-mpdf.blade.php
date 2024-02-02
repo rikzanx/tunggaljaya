@@ -36,12 +36,18 @@
 					<p style="font-size: 11px;">&nbsp;&nbsp;Phone : {{ $company->telp}}</p>
 				</td>
 				<td width="40%" valign="middle" align="center">
-					<h1 class="page-title">&nbsp;&nbsp;Invoice&nbsp;&nbsp;</h1>
 				</td>
 			</tr>
 		</table>
 		<hr style="height: 3px; margin-bottom: 2px;" />
-		<hr style="margin-top: 0px; margin-bottom: 0px;" /><br/><br/>
+		<hr style="margin-top: 0px; margin-bottom: 0px;" />
+		<br/><br/>
+		<table width="750" border="0" cellpadding="0" cellspacing="3">
+			<tr>
+				<td valign="middle" align="center" style="font-size:16px;"><b>Surat Penawaran</b></td>
+			</tr>
+		</table>
+		<br/>
 		<table width="750" border="0" cellpadding="0" cellspacing="3">
             <tr valign="top">
                 <td width="155"><b>Kepada</b></td>
@@ -76,6 +82,7 @@
 				<td>Kami dari {{$company->name}} bermaksud memberikan penawaran harga barang dibawah ini:</td>
 			</tr>
 		</table>
+		<br/>
 		<table class="tbl-bordered" border="0" cellpadding="3" cellspacing="0">
 			<thead>
 				<tr>
