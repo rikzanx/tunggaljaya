@@ -12,6 +12,8 @@ use Validator;
 use session;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use \Mpdf\Mpdf as PDF; 
+use Illuminate\Support\Facades\Storage;
 
 class SuratPenawaranController extends Controller
 {
