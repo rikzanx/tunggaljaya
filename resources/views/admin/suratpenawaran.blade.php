@@ -49,8 +49,8 @@
                         <td>{{ $item->name_customer }}</td>
                         <td>{{ $item->duedate }}</td>
                         <td>
-                            <a class="btn btn-success" href="{{ route('surat-penawaran.show',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
-                            {{-- <a class="btn btn-warning" href="{{ route('surat_jalan',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a> --}}
+                            <a class="btn btn-success" href="{{ route('print_suratpenawaran',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
+                            <a class="btn btn-warning" href="{{ route('print_suratpenawarankosong',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
                             <a class="btn btn-primary" href="{{ route('surat-penawaran.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
                             {{-- <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})"><span class="fas fa-trash"></span></button> --}}
                             {{-- <a class="btn btn-primary" href="{{ route('produk.edit',$item->id) }}"><span class="fas fa-edit"></span></a>

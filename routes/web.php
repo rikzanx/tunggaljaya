@@ -85,4 +85,6 @@ Route::group(['prefix' => 'admin'],function(){
     Route::get('suratjalan/invoice/{id}',[InvoiceController::class, 'surat_jalan_new'])->name("surat_jalan");
     Route::get('print/invoice/{id}',[InvoiceController::class, 'print'])->name("print_invoice");
     Route::get('shown/invoice/{id}',[InvoiceController::class, 'shown'])->name("shown_invoice");
+    Route::get('print/suratpenawaran/{id}',[SuratPenawaranController::class, 'show'])->name("print_suratpenawaran");
+    Route::get('print/suratpenawaran-kosong/{id}',[SuratPenawaranController::class, 'showkosong'])->name("print_suratpenawarankosong");
 });

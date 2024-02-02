@@ -136,7 +136,9 @@
 				<td height="120" align="center" style="border: none;">
               	</td>
               	<td height="120" align="center" style="border: none;">
-                	<img src="{{ asset($company->signature) }}" width="100" />
+					<?php if(isset($signature) && $signature == true) { ?>
+						<img src="{{ asset($company->signature) }}" width="100" />
+					<?php }?>
               	</td>
 			</tr>
             <tr valign="top">
