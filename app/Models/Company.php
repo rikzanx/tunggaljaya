@@ -19,5 +19,7 @@ class Company extends Model
         'image_company',
         'lat',
         'lng',
+        'signature',
+        'stempel'
     ];
 }

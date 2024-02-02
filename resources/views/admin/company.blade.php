@@ -76,6 +76,30 @@
                     <label for="exampleInputEmail1">Longitude</label>
                     <input type="text" name="lng" value="{{ $company->lng }}" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama: Gate valve">
                   </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">Tanda Tangan *(Gambar transparant)</label>
+                    <p>
+                        <img src="{{ asset($company->signature) }}" alt="" style="height: 150px;">
+                    </p>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" name="signature" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Ganti foto</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">Stempel *(Gambar transparant)</label>
+                    <p>
+                        <img src="{{ asset($company->stempel) }}" alt="" style="height: 150px;">
+                    </p>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" name="stempel" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Ganti foto</label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <!-- /.card-body -->
 

@@ -102,12 +102,28 @@ class CompanyController extends Controller
         $company->lng = $request->lng;
 
         if($request->hasFile('image_company')){
-            $uploadFolder = "img/";
+            $uploadFolder = "img/logo_perusahaan/";
             $image = $request->file('image_company');
             $imageName = time().'-'.$image->getClientOriginalName();
             $image->move(public_path($uploadFolder), $imageName);
             $image_link = $uploadFolder.$imageName;
             $company->image_company = $image_link;
+        }
+        if($request->hasFile('signature')){
+            $uploadFolder = "img/signature/";
+            $image = $request->file('signature');
+            $imageName = time().'-'.$image->getClientOriginalName();
+            $image->move(public_path($uploadFolder), $imageName);
+            $image_link = $uploadFolder.$imageName;
+            $company->signature = $image_link;
+        }
+        if($request->hasFile('stempel')){
+            $uploadFolder = "img/stempel/";
+            $image = $request->file('stempel');
+            $imageName = time().'-'.$image->getClientOriginalName();
+            $image->move(public_path($uploadFolder), $imageName);
+            $image_link = $uploadFolder.$imageName;
+            $company->stempel = $image_link;
         }
         if($company->save()){
             return redirect("admin/perusahaan")->with('status', "Sukses merubah perusahaan");
