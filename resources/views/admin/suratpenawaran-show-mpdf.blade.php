@@ -55,7 +55,7 @@
                 <td width="210"></td>
                 <td width="100"></td>
                 <td width="10"></td>
-                <td>Surabaya, {{$suratpenawaran->duedate}}</td>
+                <td style="text-align: right;">Surabaya, {{$suratpenawaran->duedate}}</td>
             </tr>
             <tr valign="top">
                 <td colspan="3">{{  $suratpenawaran->name_customer}}</td>
