@@ -5,12 +5,12 @@
         <title>Invoice {{$invoice->no_invoice}} {{$company->name}}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <style type="text/css">
-            body {  font-size: 12px;}
+            body {  font-size: 14px;}
 			.tbl-bordered { border: 1px solid #000; border-top: none; border-left: none; }
 			.tbl-bordered td, .tbl-bordered th { border: 1px solid #000; border-right: none; border-bottom: none; }
 			.tbl-bordered th { text-align: center; font-weight: bold; }
 			.tbl-bordered td table td { border: none; }
-			h1 { font-size: 14px; }
+			h1 { font-size: 16px; }
             h1.page-title {
                 font-size: 28px;
                 padding: 15px;
@@ -32,8 +32,8 @@
 				<td align="left">
 					<h1>&nbsp;&nbsp;{{ $company->name }}</h1>
 					<!-- <p style="font-size: 11px;">&nbsp;&nbsp;Jalan Semarang 104 A No. 23</p> -->
-					<p style="font-size: 11px;">&nbsp;&nbsp;{{$company->address}}</p>
-					<p style="font-size: 11px;">&nbsp;&nbsp;Phone : {{ $company->telp}}</p>
+					<p style="font-size: 12px;">&nbsp;&nbsp;{{$company->address}}</p>
+					<p style="font-size: 12px;">&nbsp;&nbsp;Phone : {{ $company->telp}}</p>
 				</td>
 				<td width="40%" valign="middle" align="center">
 					<h1 class="page-title">&nbsp;&nbsp;Invoice&nbsp;&nbsp;</h1>
