@@ -141,16 +141,9 @@ class InvoiceController extends Controller
     {
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
-        // dd($invoice);
-        // return view('admin.invoice-show-mpdf',[
-        //     'invoice' => $invoice,
-        //     'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
-        //     'company' => $company,
-        // ]);
-        // Setup a filename 
         $name = "Invoice ".$invoice->no_invoice." ".$company->name.".pdf";
         $documentFileName = $name;
- 
+
         // Create the mPDF document
         $document = new PDF( [
             'mode' => 'utf-8',
@@ -185,16 +178,9 @@ class InvoiceController extends Controller
     {
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
-        // dd($invoice);
-        // return view('admin.invoice-show-mpdf',[
-        //     'invoice' => $invoice,
-        //     'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
-        //     'company' => $company,
-        // ]);
         // Setup a filename 
         $name = "Invoice ".$invoice->no_invoice." ".$company->name.".pdf";
         $documentFileName = $name;
- 
         // Create the mPDF document
         $document = new PDF( [
             'mode' => 'utf-8',
@@ -204,23 +190,19 @@ class InvoiceController extends Controller
             'margin_bottom' => '20',
             'margin_footer' => '2',
         ]);     
- 
         // Set some header informations for output
         $header = [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
         ];
- 
         // Write some simple Content
         $document->WriteHTML(view('admin.invoice-show-mpdf',[
             'invoice' => $invoice,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
             'company' => $company,
         ]));
-         
         // Save PDF on your public storage 
         Storage::disk('public')->put($documentFileName, $document->Output($documentFileName, "S"));
-         
         // Get file back from storage with the give header informations
         return Storage::disk('public')->download($documentFileName, 'Request', $header); //
     }

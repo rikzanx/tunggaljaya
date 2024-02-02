@@ -106,16 +106,48 @@ class SuratPenawaranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showold($id)
     {
         $suratpenawaran = SuratPenawaran::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($suratpenawaran);
         return view('admin.suratpenawaran-show',[
             'suratpenawaran' => $suratpenawaran,
-        'date_inv' => Carbon::createFromFormat('Y-m-d', $suratpenawaran->duedate)->format('Y-m-d'),
+            'date_inv' => Carbon::createFromFormat('Y-m-d', $suratpenawaran->duedate)->format('Y-m-d'),
             'company' => $company,
         ]);
+    }
+    public function show($id)
+    {
+        $suratpenawaran = SuratPenawaran::with('items')->where('id',$id)->firstOrFail();
+        $company = Company::first();
+        // Setup a filename 
+        $name = "Surat Penawaran ".$company->name." ".$suratpenawaran->no_surat.".pdf";
+        $documentFileName = $name;
+        // Create the mPDF document
+        $document = new PDF( [
+            'mode' => 'utf-8',
+            'format' => 'A4',
+            'margin_header' => '3',
+            'margin_top' => '20',
+            'margin_bottom' => '20',
+            'margin_footer' => '2',
+        ]);     
+        // Set some header informations for output
+        $header = [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
+        ];
+        // Write some simple Content
+        $document->WriteHTML(view('admin.suratpenawaran-show-mpdf',[
+            'suratpenawaran' => $suratpenawaran,
+            'date_inv' => Carbon::createFromFormat('Y-m-d', $suratpenawaran->duedate)->format('Y-m-d'),
+            'company' => $company,
+        ]));
+        // Save PDF on your public storage 
+        Storage::disk('public')->put($documentFileName, $document->Output($documentFileName, "S"));
+        // Get file back from storage with the give header informations
+        return Storage::disk('public')->download($documentFileName, 'Request', $header); //
     }
 
     /**
