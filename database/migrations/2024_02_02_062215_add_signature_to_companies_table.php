@@ -28,6 +28,7 @@ class AddSignatureToCompaniesTable extends Migration
     {
         Schema::table('companies', function (Blueprint $table) {
             $table->dropColumn("signature");
+            $table->dropColumn("stempel");
         });
     }
 }
