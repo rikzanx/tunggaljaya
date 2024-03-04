@@ -24,7 +24,8 @@ class Invoice extends Model
             "profit",
             "created_at",
             "tanggal_pengiriman",
-            "dp"
+            "dp",
+            "notes_surat_jalan"
     ];
 
     public function items(){

@@ -107,7 +107,7 @@
                 <td width="750"><b><u>Catatan:</u></b></td>
             </tr>
             <tr valign="top">
-                <td>Pengiriman hari rabu</td>
+                <td></td>
             </tr>
         </table>
 		<br />

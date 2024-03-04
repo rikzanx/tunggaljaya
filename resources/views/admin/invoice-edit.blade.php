@@ -59,7 +59,10 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Catatan tambahan</label>
                     <textarea class="form-control" name="comment" id="" cols="30" rows="10" >{{$invoice->comment}}</textarea>
-                    {{-- <input type="text" value="{{ $invoice->comment }}" name="comment" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer"> --}}
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Catatan untuk surat jalan</label>
+                    <textarea class="form-control" name="notes_surat_jalan" id="" cols="30" rows="10" >{{$invoice->notes_surat_jalan}}</textarea>
                   </div>
                   
                   <div class="form-group">

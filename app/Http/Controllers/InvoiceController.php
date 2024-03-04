@@ -99,6 +99,9 @@ class InvoiceController extends Controller
                 
                 $invoice->comment = $request->comment;
             }
+            if($request->has('notes_surat_jalan')){
+                $invoice->notes_surat_jalan = $request->notes_surat_jalan;
+            }
             $invoice->save();
             for($i=0;$i<count($request->description);$i++){
                 $item = new Item();
@@ -340,6 +343,9 @@ class InvoiceController extends Controller
             $invoice->dp = $request->dp;
             if($request->has('comment')){
                 $invoice->comment = $request->comment;
+            }
+            if($request->has('notes_surat_jalan')){
+                $invoice->notes_surat_jalan = $request->notes_surat_jalan;
             }
             $invoice->save();
             $delete = Item::where('invoice_id',$id)->delete();
