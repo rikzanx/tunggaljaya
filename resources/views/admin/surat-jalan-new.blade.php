@@ -101,6 +101,15 @@
 			</tfoot>
 		</table>
         <br>
+		<br>
+		<table class="tbl-tandatangan" width="750" border="0" cellpadding="0" cellspacing="3">
+            <tr valign="top">
+                <td width="750"><b><u>Catatan:</u></b></td>
+            </tr>
+            <tr valign="top">
+                <td>Pengiriman hari rabu</td>
+            </tr>
+        </table>
 		<br />
         <table width="750" border="0" cellpadding="0" cellspacing="0">
             <tr valign="top">
