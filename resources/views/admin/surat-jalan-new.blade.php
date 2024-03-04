@@ -107,7 +107,7 @@
                 <td width="750"><b><u>Catatan:</u></b></td>
             </tr>
             <tr valign="top">
-                <td></td>
+                <td>{!! nl2br($invoice->notes_surat_jalan) !!}</td>
             </tr>
         </table>
 		<br />
