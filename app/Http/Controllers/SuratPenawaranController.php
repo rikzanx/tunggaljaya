@@ -58,7 +58,7 @@ class SuratPenawaranController extends Controller
         ]);
         
         if ($validator->fails()) {
-            return redirect()->route("suratpenawaran.index")->with('danger', $validator->errors()->first());
+            return redirect()->route("surat-penawaran.index")->with('danger', $validator->errors()->first());
         }
         // dd($request->comment);
         DB::beginTransaction();
