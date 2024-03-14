@@ -174,7 +174,7 @@ class SuratPenawaranController extends Controller
             'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
         ];
         // Write some simple Content
-        $document->WriteHTML(view('admin.suratpenawaran-show-mpdf',[
+        $document->WriteHTML(view('admin.suratpenawaran-show-mpdf-kosong',[
             'suratpenawaran' => $suratpenawaran,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $suratpenawaran->duedate)->format('Y-m-d'),
             'company' => $company,
