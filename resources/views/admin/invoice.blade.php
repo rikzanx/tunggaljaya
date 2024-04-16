@@ -39,6 +39,7 @@
                     <th>Name Customer</th>
                     <th>Tanggal</th>
                     <th>Total</th>
+                    <th>Profit</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
@@ -50,6 +51,7 @@
                         <td>{{ $item->name_customer }}</td>
                         <td>{{ $item->duedate }}</td>
                         <td>@rupiah($item->total - ($item->diskon_rate) + ($item->tax_rate*$item->total/100))</td>
+                        <td>@rupiah($item->profit)</td>
                         <td>
                             <a class="btn btn-success" href="{{ route('print_invoice',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
                             <a class="btn btn-warning" href="{{ route('surat_jalan',$item->id) }}" target="_blank"><span class="fas fa-eye"></span></a>
@@ -68,7 +70,7 @@
                     <th>Name Customer</th>
                     <th>Tanggal</th>
                     <th>Total</th>
-
+                    <th>Profit</th>
                     <th>Aksi</th>
                     </tr>
                   </tfoot>
