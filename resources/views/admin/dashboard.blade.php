@@ -252,17 +252,18 @@
 @endif
 
 <script>
-    function addCommas(nStr) {
-        nStr += '';
-        x = nStr.split('.');
-        x1 = x[0];
-        x2 = x.length > 1 ? '.' + x[1] : '';
-        let rgx = /(\d+)(\d{3})/;
-        while (rgx.test(x1)) {
-            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    Chart.scaleService.updateScaleDefaults('linear', {
+      ticks: {
+        callback: function(tick) {
+          return '$' + tick.toLocaleString();
         }
-        return x1 + x2;
-    }
+      }
+    });
+    Chart.defaults.global.tooltips.callbacks.label = function(tooltipItem, data) {
+      var dataset = data.datasets[tooltipItem.datasetIndex];
+      var datasetLabel = dataset.label || '';
+      return datasetLabel + ": $" + dataset.data[tooltipItem.index].toLocaleString() + " - Whatever Custom";
+    };
     var areaChartData = {
       labels  : <?php echo $month_js;?>,
       datasets: [
@@ -304,19 +305,6 @@
       responsive              : true,
       maintainAspectRatio     : false,
       datasetFill             : false,
-      scales: {
-          yAxes: [{
-              gridLines: {
-                  color: "#ECECEC",
-              },
-              ticks: {
-                  fontSize: 10,
-                  callback: function (value, index, values) {
-                      return addCommas(value); //! panggil function addComas tadi disini
-                  }
-              }
-          }]
-      }
     }
 
     new Chart(barChartCanvas, {
