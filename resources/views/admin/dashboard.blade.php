@@ -293,15 +293,21 @@
       responsive              : true,
       maintainAspectRatio     : false,
       datasetFill             : false,
-      plugins                 : {
-            tooltip: {
-                callbacks: {
-                    label: function(context) {
-                      return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(context.value);
-                    }
-                }
+      locale: 'en-IN',
+      scales: {
+        y: {
+          ticks:{
+            callback: (value,index,values) => {
+              return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR'
+              }).format(value);
             }
+
           },
+          beginAtZero: true
+        }
+      }
     }
 
     new Chart(barChartCanvas, {
