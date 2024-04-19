@@ -292,15 +292,8 @@
     var barChartOptions = {
       responsive              : true,
       maintainAspectRatio     : false,
-      datasetFill             : false
-    }
-
-    new Chart(barChartCanvas, {
-      type: 'bar',
-      data: barChartData,
-      options: barChartOptions,
-      options: {
-        plugins: {
+      datasetFill             : false,
+      plugins                 : {
             tooltip: {
                 callbacks: {
                     label: function(context) {
@@ -308,8 +301,13 @@
                     }
                 }
             }
-        }
+          },
     }
+
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
     })
 
 </script>
