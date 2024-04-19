@@ -34,7 +34,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3 style="font-size:3vw !important;">{{ count($products) }}</h3>
+                <p style="font-size:2vw !important;">{{ count($products) }}</p>
                 <p style="font-size:2vw !important;">Jumlah Produk</p>
               </div>
               <div class="icon">
@@ -48,7 +48,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3 style="font-size:3vw !important;">{{ count($categories) }}</h3>
+                <p style="font-size:2vw !important;">{{ count($categories) }}</p>
                 <p style="font-size:2vw !important;">Kategori Product</p>
               </div>
               <div class="icon">
@@ -62,7 +62,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3 style="font-size:3vw !important;">{{ count($images_slider) }}</h3>
+                <p style="font-size:2vw !important;">{{ count($images_slider) }}</p>
                 <p style="font-size:2vw !important;">Foto Slider</p>
               </div>
               <div class="icon">
@@ -75,7 +75,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3 style="font-size:3vw !important;">{{ count($images_slider) }}</h3>
+                <p style="font-size:2vw !important;">{{ count($images_slider) }}</p>
                 <p style="font-size:2vw !important;">Foto Slider</p>
               </div>
               <div class="icon">
@@ -94,7 +94,7 @@
                 <!-- small box -->
                 <div class="small-box bg-purple">
                   <div class="inner">
-                    <h3 style="font-size:3vw !important;">{{ count($invoicesMonth) }}</h3>
+                    <p style="font-size:2vw !important;">{{ count($invoicesMonth) }}</p>
                     <p style="font-size:2vw !important;">Orderan</p>
                   </div>
                   <div class="icon">
@@ -107,7 +107,7 @@
                 <!-- small box -->
                 <div class="small-box bg-purple">
                   <div class="inner">
-                    <h3 style="font-size:3vw !important;">@rupiah($invoicesMonth->sum("profit"))</h3>
+                    <p style="font-size:2vw !important;">@rupiah($invoicesMonth->sum("profit"))</p>
                     <p style="font-size:2vw !important;">Laba bersih total (profit)</p>
                   </div>
                   <div class="icon">
@@ -120,7 +120,7 @@
                 <!-- small box -->
                 <div class="small-box bg-purple">
                   <div class="inner">
-                    <h3 style="font-size:3vw !important;">@rupiah($itemsMonth->sum("total"))</h3>
+                    <p style="font-size:2vw !important;">@rupiah($itemsMonth->sum("total"))</p>
                     <p style="font-size:2vw !important;">Omset</p>
                   </div>
                   <div class="icon">
@@ -133,7 +133,7 @@
                 <!-- small box -->
                 <div class="small-box bg-purple">
                   <div class="inner">
-                    <h3 style="font-size:3vw !important;">{{ $itemsMonth->sum("qty") }}</h3>
+                    <p style="font-size:2vw !important;">{{ $itemsMonth->sum("qty") }}</p>
                     <p style="font-size:2vw !important;">Barang Terjual</p>
                   </div>
                   <div class="icon">
@@ -156,7 +156,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3 style="font-size:3vw !important;">{{ count($invoices) }}</h3>
+                    <p style="font-size:2vw !important;">{{ count($invoices) }}</p>
                     <p style="font-size:2vw !important;">Orderan</p>
                   </div>
                   <div class="icon">
@@ -169,7 +169,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3 style="font-size:3vw !important;">@rupiah($invoices->sum("profit"))</h3>
+                    <p style="font-size:2vw !important;">@rupiah($invoices->sum("profit"))</p>
                     <p style="font-size:2vw !important;">Laba bersih total (profit)</p>
                   </div>
                   <div class="icon">
@@ -182,7 +182,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3 style="font-size:3vw !important;">@rupiah($items->sum("total"))</h3>
+                    <p style="font-size:2vw !important;">@rupiah($items->sum("total"))</p>
                     <p style="font-size:2vw !important;">Omset</p>
                   </div>
                   <div class="icon">
@@ -195,7 +195,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3 style="font-size:3vw !important;">{{ $items->sum("qty") }}</h3>
+                    <p style="font-size:2vw !important;">{{ $items->sum("qty") }}</p>
                     <p style="font-size:2vw !important;">Barang Terjual</p>
                   </div>
                   <div class="icon">
