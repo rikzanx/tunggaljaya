@@ -298,7 +298,18 @@
     new Chart(barChartCanvas, {
       type: 'bar',
       data: barChartData,
-      options: barChartOptions
+      options: barChartOptions,
+      options: {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                      return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(context.value);
+                    }
+                }
+            }
+        }
+    }
     })
 
 </script>
