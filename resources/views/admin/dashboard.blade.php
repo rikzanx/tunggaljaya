@@ -300,7 +300,8 @@
             callback: (value,index,values) => {
               return new Intl.NumberFormat('en-IN', {
                 style: 'currency',
-                currency: 'INR'
+                currency: 'INR',
+                maximumSignificantDigits: 3
               }).format(value);
             }
 
