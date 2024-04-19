@@ -108,7 +108,7 @@
                 <div class="small-box bg-purple">
                   <div class="inner">
                     <p style="font-size:2vw !important;">@rupiah($invoicesMonth->sum("profit"))</p>
-                    <p style="font-size:2vw !important;">Laba bersih total (profit)</p>
+                    <p style="font-size:2vw !important;">Profit</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-cart"></i>
@@ -170,7 +170,7 @@
                 <div class="small-box bg-danger">
                   <div class="inner">
                     <p style="font-size:2vw !important;">@rupiah($invoices->sum("profit"))</p>
-                    <p style="font-size:2vw !important;">Laba bersih total (profit)</p>
+                    <p style="font-size:2vw !important;">Profit</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-cart"></i>
