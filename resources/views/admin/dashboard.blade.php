@@ -262,7 +262,7 @@
     Chart.defaults.global.tooltips.callbacks.label = function(tooltipItem, data) {
       var dataset = data.datasets[tooltipItem.datasetIndex];
       var datasetLabel = dataset.label || '';
-      return datasetLabel + ": $" + dataset.data[tooltipItem.index].toLocaleString() + " - Whatever Custom";
+      return datasetLabel + ": $" + dataset.data[tooltipItem.index].toLocaleString();
     };
     var areaChartData = {
       labels  : <?php echo $month_js;?>,
@@ -305,6 +305,7 @@
       responsive              : true,
       maintainAspectRatio     : false,
       datasetFill             : false,
+
     }
 
     new Chart(barChartCanvas, {
