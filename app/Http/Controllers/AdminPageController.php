@@ -46,7 +46,7 @@ class AdminPageController extends Controller
             "arrayOmset" => $arrayOmset,
             "month_js" => json_encode($data_chart['labels_month']),
             "omset_js" => json_encode($data_chart['data_month'],JSON_NUMERIC_CHECK),
-            "profit_js" => json_encode($data_chart['data_profit_month'].JSON_NUMERIC_CHECK),
+            "profit_js" => json_encode($data_chart['data_profit_month'],JSON_NUMERIC_CHECK),
         ]);
     }
 
