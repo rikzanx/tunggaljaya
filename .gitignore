@@ -26,3 +26,4 @@ error_log
 public/img/inventory/
 public/img/product/
 public/img/signature/
+composer.lock
