@@ -23,3 +23,6 @@ error_log
 *\tunggaljayasurabaya.web.id/
 *\shw.my.id/
 /ftp
+public/img/inventory/
+public/img/product/
+public/img/signature/
