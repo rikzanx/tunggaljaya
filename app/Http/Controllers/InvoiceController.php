@@ -32,7 +32,7 @@ class InvoiceController extends Controller
                 $inv->total += $item->total;
             }
         }
-        return view('admin.invoice',[
+        return view('admin.invoice.invoice',[
             'invoices' => $invoices,
         ]);
     }
@@ -45,7 +45,7 @@ class InvoiceController extends Controller
     public function create()
     {
         
-        return view('admin.invoice-create');
+        return view('admin.invoice.invoice-create');
     }
 
     /**
@@ -134,7 +134,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($invoice);
-        return view('admin.invoice-show',[
+        return view('admin.invoice.invoice-show',[
             'invoice' => $invoice,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
             'company' => $company,
@@ -164,7 +164,7 @@ class InvoiceController extends Controller
         ];
  
         // Write some simple Content
-        $document->WriteHTML(view('admin.invoice-shown',[
+        $document->WriteHTML(view('admin.invoice.invoice-shown',[
             'invoice' => $invoice,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
             'company' => $company,
@@ -199,7 +199,7 @@ class InvoiceController extends Controller
             'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
         ];
         // Write some simple Content
-        $document->WriteHTML(view('admin.invoice-show-mpdf',[
+        $document->WriteHTML(view('admin.invoice.invoice-show-mpdf',[
             'invoice' => $invoice,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
             'company' => $company,
@@ -215,7 +215,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($invoice);
-        return view('admin.surat-jalan',[
+        return view('admin.surat-jalan.surat-jalan',[
             'invoice' => $invoice,
         'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
         'tanggal_pengiriman' => Carbon::createFromFormat('Y-m-d', $invoice->tanggal_pengiriman)->format('Y-m-d'),
@@ -228,7 +228,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($invoice);
-        // return view('admin.surat-jalan-new',[
+        // return view('admin.surat-jalan.surat-jalan-new',[
         //     'invoice' => $invoice,
         // 'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
         // 'tanggal_pengiriman' => Carbon::createFromFormat('Y-m-d', $invoice->tanggal_pengiriman)->format('Y-m-d'),
@@ -256,7 +256,7 @@ class InvoiceController extends Controller
         ];
  
         // Write some simple Content
-        $document->WriteHTML(view('admin.surat-jalan-new',[
+        $document->WriteHTML(view('admin.surat-jalan.surat-jalan-new',[
             'invoice' => $invoice,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
             'tanggal_pengiriman' => Carbon::createFromFormat('Y-m-d', $invoice->tanggal_pengiriman)->format('Y-m-d'),
@@ -275,7 +275,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($invoice);
-        return view('admin.invoice-show-proform',[
+        return view('admin.invoice.invoice-show-proform',[
             'invoice' => $invoice,
         'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->addDays(7)->format('Y-m-d'),
             'company' => $company,
@@ -291,7 +291,7 @@ class InvoiceController extends Controller
     public function edit($id)
     {
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
-        return view('admin.invoice-edit',[
+        return view('admin.invoice.invoice-edit',[
             "invoice" => $invoice
         ]);
     }

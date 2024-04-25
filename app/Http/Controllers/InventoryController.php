@@ -14,7 +14,7 @@ class InventoryController extends Controller
     public function index()
     {
         $inventories = Inventory::with('images')->get();
-        return view('admin.inventory', [
+        return view('admin.inventory.inventory', [
             'inventories' => $inventories,
         ]);
     }
@@ -23,7 +23,7 @@ class InventoryController extends Controller
     {
         $nextId = Inventory::max('id') + 1;
 
-        return view('admin.inventory-create',[
+        return view('admin.inventory.inventory-create',[
             "nextId" => $nextId
         ]);
     }
@@ -132,7 +132,7 @@ class InventoryController extends Controller
     public function edit($id)
     {
         $inventory = Inventory::findOrFail($id);
-        return view('admin.inventory-edit', [
+        return view('admin.inventory.inventory-edit', [
             'inventory' => $inventory,
         ]);
     }

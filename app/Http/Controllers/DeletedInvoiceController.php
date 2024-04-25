@@ -21,7 +21,7 @@ class DeletedInvoiceController extends Controller
     public function index()
     {
         $invoices = DeletedInvoice::with('items')->orderBy('id', 'DESC')->get();
-        return view('admin.deletedinvoice',[
+        return view('admin.deletedinvoice.deletedinvoice',[
             'invoices' => $invoices,
         ]);
     }
@@ -34,7 +34,7 @@ class DeletedInvoiceController extends Controller
     public function create()
     {
         
-        return view('admin.deletedinvoice-create');
+        return view('admin.deletedinvoice.deletedinvoice-create');
     }
 
     /**
@@ -116,7 +116,7 @@ class DeletedInvoiceController extends Controller
         $invoice = DeletedInvoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($invoice);
-        return view('admin.deletedinvoice-show',[
+        return view('admin.deletedinvoice.deletedinvoice-show',[
             'invoice' => $invoice,
         'date_inv' => Carbon::createFromFormat('Y-m-d H:i:s', $invoice->created_at)->format('Y-m-d'),
             'company' => $company,
@@ -128,7 +128,7 @@ class DeletedInvoiceController extends Controller
         $invoice = DeletedInvoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($invoice);
-        return view('admin.deletedinvoice-show-proform',[
+        return view('admin.deletedinvoice.deletedinvoice-show-proform',[
             'invoice' => $invoice,
         'date_inv' => Carbon::createFromFormat('Y-m-d H:i:s', $invoice->created_at)->format('Y-m-d'),
             'company' => $company,
@@ -144,7 +144,7 @@ class DeletedInvoiceController extends Controller
     public function edit($id)
     {
         $invoice = DeletedInvoice::with('items')->where('id',$id)->firstOrFail();
-        return view('admin.deletedinvoice-edit',[
+        return view('admin.deletedinvoice.deletedinvoice-edit',[
             "invoice" => $invoice
         ]);
     }

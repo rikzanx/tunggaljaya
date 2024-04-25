@@ -25,7 +25,7 @@ class SuratPenawaranController extends Controller
     public function index()
     {
         $suratpenawarans = SuratPenawaran::with('items')->get();
-        return view('admin.suratpenawaran',[
+        return view('admin.suratpenawaran.suratpenawaran',[
             'suratpenawarans' => $suratpenawarans,
         ]);
     }
@@ -37,7 +37,7 @@ class SuratPenawaranController extends Controller
      */
     public function create()
     {
-        return view('admin.suratpenawaran-create');
+        return view('admin.suratpenawaran.suratpenawaran-create');
     }
 
     /**
@@ -113,7 +113,7 @@ class SuratPenawaranController extends Controller
         $suratpenawaran = SuratPenawaran::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         // dd($suratpenawaran);
-        return view('admin.suratpenawaran-show',[
+        return view('admin.suratpenawaran.suratpenawaran-show',[
             'suratpenawaran' => $suratpenawaran,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $suratpenawaran->duedate)->format('Y-m-d'),
             'company' => $company,
@@ -141,7 +141,7 @@ class SuratPenawaranController extends Controller
             'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
         ];
         // Write some simple Content
-        $document->WriteHTML(view('admin.suratpenawaran-show-mpdf',[
+        $document->WriteHTML(view('admin.suratpenawaran.suratpenawaran-show-mpdf',[
             'suratpenawaran' => $suratpenawaran,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $suratpenawaran->duedate)->format('Y-m-d'),
             'company' => $company,
@@ -174,7 +174,7 @@ class SuratPenawaranController extends Controller
             'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
         ];
         // Write some simple Content
-        $document->WriteHTML(view('admin.suratpenawaran-show-mpdf-kosong',[
+        $document->WriteHTML(view('admin.suratpenawaran.suratpenawaran-show-mpdf-kosong',[
             'suratpenawaran' => $suratpenawaran,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $suratpenawaran->duedate)->format('Y-m-d'),
             'company' => $company,
@@ -194,7 +194,7 @@ class SuratPenawaranController extends Controller
     public function edit($id)
     {
         $suratpenawaran = Suratpenawaran::with('items')->where('id',$id)->firstOrFail();
-        return view('admin.suratpenawaran-edit',[
+        return view('admin.suratpenawaran.suratpenawaran-edit',[
             "suratpenawaran" => $suratpenawaran
         ]);
     }

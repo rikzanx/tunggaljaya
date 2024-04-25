@@ -24,7 +24,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::with('images')->get();
-        return view('admin.product',[
+        return view('admin.product.product',[
             'products' => $products,
         ]);
     }
@@ -37,7 +37,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return view('admin.product-create',[
+        return view('admin.product.product-create',[
             'categories' => $categories
         ]);
     }
@@ -126,7 +126,7 @@ class ProductController extends Controller
         $product = Product::with('images')->findOrFail($id);
         $categories = Category::get();
         // dd($category);
-        return view('admin.product-edit',[
+        return view('admin.product.product-edit',[
             'product' => $product,
             'categories' => $categories,
         ]);

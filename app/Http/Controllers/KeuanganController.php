@@ -26,7 +26,7 @@ class KeuanganController extends Controller
         // dd($sumPengeluaran);
         $company = Company::firstOrFail();
         $saldo = $sumPemasukan-$sumPengeluaran;
-        return view('admin.keuangan',[
+        return view('admin.keuangan.keuangan',[
             'keuangan' => $keuangan,
             'saldo' => $saldo,
             'sumPemasukan' => $sumPemasukan,
@@ -41,7 +41,7 @@ class KeuanganController extends Controller
      */
     public function create()
     {
-        return view('admin.keuangan-create');
+        return view('admin.keuangan.keuangan-create');
     }
 
     /**
@@ -99,7 +99,7 @@ class KeuanganController extends Controller
     //     $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
     //     $company = Company::first();
     //     // dd($invoice);
-    //     return view('admin.invoice-show',[
+    //     return view('admin.invoice.invoice-show',[
     //         'invoice' => $invoice,
     //     'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
     //         'company' => $company,
@@ -111,7 +111,7 @@ class KeuanganController extends Controller
     //     $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
     //     $company = Company::first();
     //     // dd($invoice);
-    //     return view('admin.invoice-show-proform',[
+    //     return view('admin.invoice.invoice-show-proform',[
     //         'invoice' => $invoice,
     //     'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->addDays(7)->format('Y-m-d'),
     //         'company' => $company,
@@ -127,7 +127,7 @@ class KeuanganController extends Controller
     // public function edit($id)
     // {
     //     $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
-    //     return view('admin.invoice-edit',[
+    //     return view('admin.invoice.invoice-edit',[
     //         "invoice" => $invoice
     //     ]);
     // }

@@ -25,7 +25,7 @@ class BarangController extends Controller
     {
         $barangs = Barang::get();
         $jumlah = $barangs->sum('jumlah');
-        return view('admin.barang',[
+        return view('admin.barang.barang',[
             'barangs' => $barangs,
             'jumlah' => $jumlah
         ]);
@@ -38,7 +38,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        return view('admin.barang-create');
+        return view('admin.barang.barang-create');
     }
 
     /**
@@ -106,7 +106,7 @@ class BarangController extends Controller
     {
         $barang = Barang::findOrFail($id);
         // dd($category);
-        return view('admin.barang-edit',[
+        return view('admin.barang.barang-edit',[
             'barang' => $barang
         ]);
     }

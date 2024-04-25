@@ -22,7 +22,7 @@ class ImagesSliderController extends Controller
     public function index()
     {
         $sliders = ImagesSlider::get();
-        return view('admin.slider',[
+        return view('admin.slider.slider',[
             'sliders' => $sliders,
         ]);
     }
@@ -34,7 +34,7 @@ class ImagesSliderController extends Controller
      */
     public function create()
     {
-        return view('admin.slider-create');
+        return view('admin.slider.slider-create');
     }
 
     /**
@@ -90,7 +90,7 @@ class ImagesSliderController extends Controller
     {
         $slider = ImagesSlider::findOrFail($id);
         // dd($category);
-        return view('admin.slider-edit',[
+        return view('admin.slider.slider-edit',[
             'slider' => $slider
         ]);
     }
