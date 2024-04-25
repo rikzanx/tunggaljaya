@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>{{ config('app.name', 'Laravel') }} - Kategori</h1>
+            <h1>{{ config('app.name', 'Laravel') }} - List Pelanggan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Kategori</li>
+              <li class="breadcrumb-item active">Pelanggan</li>
             </ol>
           </div>
         </div>
@@ -27,7 +27,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <a href="{{ route('kategori.create') }}" class="btn btn-success"><span class="fas fa-plus"></span> tambah kategori</a>
+                <a href="{{ route('customer.create') }}" class="btn btn-success"><span class="fas fa-plus"></span> Tambah Pelanggan</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -36,23 +36,22 @@
                   <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Foto</th>
+                    <th>Alamat</th>
+                    <th>Phone</th>
+                    <th>Email</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach ($categories as $item)
-                        
+                    @foreach ($customers as $item)                        
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
                         <td>{{ $item->name }}</td>
+                        <td>{{ $item->address }}</td>
+                        <td>{{ $item->phone }}</td>
+                        <td>{{ $item->email }}</td>
                         <td>
-                            <a href="{{ asset($item->image_category) }}" data-toggle="lightbox" data-title="{{ $item->name }}">
-                                <img src="{{ asset($item->image_category) }}" style="width: 100px;height:100px;" alt="" srcset="">
-                            </a>
-                        </td>
-                        <td>
-                            <a class="btn btn-primary" href="{{ route('kategori.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
+                            <a class="btn btn-primary" href="{{ route('customer.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
                             <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})"><span class="fas fa-trash"></span></button>
                         </td>
                     </tr>
@@ -62,7 +61,9 @@
                     <tr>
                       <th>No</th>
                       <th>Nama</th>
-                      <th>Foto</th>
+                      <th>Alamat</th>
+                      <th>Phone</th>
+                      <th>Email</th>
                       <th>Aksi</th>
                     </tr>
                   </tfoot>
@@ -94,7 +95,7 @@
         <div class="modal-body">
           <p>Apakah anda yakin akan menghapus data ini&hellip;</p>
         </div>
-        <form action="{{ route('kategori.destroy', ':id') }}" method="POST" class="delete-form">
+        <form action="{{ route('customer.destroy', ':id') }}" method="POST" class="delete-form">
             @csrf
             @method('DELETE')
             <div class="modal-footer justify-content-between">

@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Validator;
+use Session;
 
 class CustomerController extends Controller
 {
+    public function __construct()
+    {
+            $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customer::get();
+        return view('admin.customer.customer',[
+            'customers' => $customers,
+        ]);
     }
 
     /**
@@ -24,7 +34,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.customer.customer-create');
     }
 
     /**
@@ -35,7 +45,29 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'address' => 'required',
+            'phone' => 'required',
+            'email' => 'required'
+        ]);
+        
+        if ($validator->fails()) {
+            return redirect()->route("customer.index")->with('danger', $validator->errors()->first());
+        }
+
+        $customer = Customer::create([
+            'name' => $request->name,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'email' => $request->email
+        ]);
+
+        if($customer){
+            return redirect()->route("customer.index")->with('status', "Sukses menambhakan Pelanggan");
+        }else{
+            return redirect()->route("customer.index")->with('danger', "Terjadi Kesalahan saat menambahkan pelanggan.");
+        }
     }
 
     /**
@@ -55,9 +87,12 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        return view('admin.customer.customer-edit',[
+            'customer' => $customer
+        ]);
     }
 
     /**
@@ -67,9 +102,29 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'address' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+        ]);
+        
+        if ($validator->fails()) {
+            return redirect()->route("customer.index")->with('danger', $validator->errors()->first());
+        }
+        $customer = Customer::findOrFail($id);
+        $customer->name = $request->name;
+        $customer->address = $request->address;
+        $customer->phone = $request->phone;
+        $customer->email = $request->email;
+        
+        if($customer->save()){
+            return redirect()->route("customer.index")->with('status', "Sukses merubah Pelanggan");
+        }else {
+            return redirect()->route("customer.index")->with('danger', "Terjadi Kesalahan");
+        }
     }
 
     /**
@@ -78,8 +133,12 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy($id)
     {
-        //
+        if(Customer::destroy($id)){
+            return redirect()->route("customer.index")->with('status', "Sukses menghapus pelanggan");
+        }else {
+            return redirect()->route("customer.index")->with('danger', "Terjadi Kesalahan");
+        }
     }
 }

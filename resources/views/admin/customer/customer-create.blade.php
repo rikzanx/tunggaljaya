@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>{{ config('app.name', 'Laravel') }} - Kategori</h1>
+            <h1>{{ config('app.name', 'Laravel') }} - List Pelanggan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Kategori</li>
+              <li class="breadcrumb-item active">Pelanggan</li>
             </ol>
           </div>
         </div>
@@ -28,25 +28,28 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Create Kategori</h3>
+                <h3 class="card-title">Create Pelanggan</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{ route('kategori.store') }}" enctype="multipart/form-data">
+              <form method="POST" action="{{ route('customer.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Kategori</label>
-                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama: Gate valve">
+                    <label for="exampleInputEmail1">Nama Pelanggan</label>
+                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama pelanggan">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">Foto Kategori</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="image_category" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
+                    <label for="exampleInputEmail1">Alamat Pelanggan</label>
+                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" placeholder="Masukkan alamat pelanggan">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">No HP Pelanggan</label>
+                    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nomor HP pelanggan">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email Pelanggan</label>
+                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan email pelanggan kalo ada">
                   </div>
                 </div>
                 <!-- /.card-body -->

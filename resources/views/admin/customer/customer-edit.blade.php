@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>{{ config('app.name', 'Laravel') }} - Kategori</h1>
+            <h1>{{ config('app.name', 'Laravel') }} - Pelanggan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Kategori</li>
+              <li class="breadcrumb-item active">Pelanggan</li>
             </ol>
           </div>
         </div>
@@ -28,27 +28,29 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Kategori</h3>
+                <h3 class="card-title">Edit Pelanggan</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{ route('kategori.update',$category->id) }}" enctype="multipart/form-data">
+              <form method="POST" action="{{ route('customer.update',$customer->id) }}" enctype="multipart/form-data">
                 @csrf
                 {{ method_field('PATCH') }}
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Kategori</label>
-                    <input type="text" name="name" value="{{ $category->name }}" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama: Gate valve">
+                    <label for="exampleInputEmail1">Nama Pelanggan</label>
+                    <input type="text" name="name" value="{{ $customer->name }}" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama: Gate valve">
                   </div>
-                  <img src="{{ asset($category->image_category) }}" alt="" srcset="" style="height: 80px;">
                   <div class="form-group">
-                    <label for="exampleInputFile">Ganti Foto Kategori</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="image_category" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
+                    <label for="exampleInputEmail1">Alamat Kategori</label>
+                    <input type="text" name="address" value="{{ $customer->address }}" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama: Gate valve">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Phone Pelanggan</label>
+                    <input type="text" name="phone" value="{{ $customer->phone }}" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama: Gate valve">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email Pelanggan</label>
+                    <input type="text" name="email" value="{{ $customer->email }}" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama: Gate valve">
                   </div>
                 </div>
                 <!-- /.card-body -->

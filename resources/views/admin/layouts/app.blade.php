@@ -154,7 +154,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('customer.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-envelope-open"></i>
+              <i class="nav-icon fas fa-user"></i>
               <p>
                 Daftar Pelanggan
               </p>
@@ -162,7 +162,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('supplier.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-envelope-open"></i>
+              <i class="nav-icon fas fa-user"></i>
               <p>
                 Daftar Supplier
               </p>
