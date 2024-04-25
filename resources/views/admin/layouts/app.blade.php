@@ -153,6 +153,22 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('customer.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-envelope-open"></i>
+              <p>
+                Daftar Pelanggan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('supplier.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-envelope-open"></i>
+              <p>
+                Daftar Supplier
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('password.index') }}" class="nav-link">
               <i class="nav-icon fas fa-key"></i>
               <p>

@@ -18,6 +18,8 @@ use App\Http\Controllers\PenawaranController;
 use App\Http\Controllers\SuratPenawaranController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SupplierController;
 
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
@@ -76,6 +78,8 @@ Route::group(['prefix' => 'admin'],function(){
     Route::resource('surat-penawaran',SuratPenawaranController::class);
     Route::resource('keuangan',KeuanganController::class);
     Route::resource('inventories',InventoryController::class);
+    Route::resource('customer',CustomerController::class);
+    Route::resource('supplier',SupplierController::class);
     Route::post('import-csv-inventories',[InventoryController::class,'import'])->name('import.csv-inventories');
 
     Route::post('image-produk/delete/{id}',[ProductController::class,'destroy_image'])->name("delete_image_product");
