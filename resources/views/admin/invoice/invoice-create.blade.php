@@ -45,7 +45,7 @@
                 </div>
                   <div class="form-group">
                     <label>Pilih Customer <a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah Customer</a></label>
-                    <select class="form-control" name="category_id">
+                    <select class="form-control" name="id_customer" id="id_customer">
                       @foreach ($customers as $item)
                         <option value="{{ $item->id }}" data-address="{{ $item->address }}" data-phonw="{{ $item->phone }}">{{ $item->name }} - {{ $item->address }}</option>
                       @endforeach
@@ -135,6 +135,9 @@
 @section('js')
 <script type="text/javascript">
   $(document).ready(function() {
+    $("#id_customer").on('change',function(){
+      alert($("#id_customer").val());
+    });
     $(".btn-add-image").click(function(){ 
         var lsthmtl = `<div class="hdtuto control-group lst input-group" style="margin-top:10px">
                       <input type="text" name="description[]" placeholder="Nama Barang" class="myfrm form-control">
