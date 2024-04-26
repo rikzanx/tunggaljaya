@@ -136,13 +136,12 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $("#id_customer").on('change',function(){
-      let name_customer = $("#id_customer").data("name");
-      let address_customer = $("#id_customer").data("address");
-      let phone_customer = $("#id_customer").data("phone");
+      let name_customer = $("#id_customer").attr("data-name");
+      let address_customer = $("#id_customer").attr("data-address");
+      let phone_customer = $("#id_customer").attr("data-phone");
       $("#nama_customer").val(name_customer);
       $("#address_customer").val(address_customer);
       $("#phone_customer").val(phone_customer);
-      
     });
     $(".btn-add-image").click(function(){ 
         var lsthmtl = `<div class="hdtuto control-group lst input-group" style="margin-top:10px">
