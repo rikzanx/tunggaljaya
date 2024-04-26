@@ -136,10 +136,10 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $("#id_customer").on('change',function(){
-      let name_customer = $("#id_customer").attr("data-name");
-      let address_customer = $("#id_customer").attr("data-address");
-      let phone_customer = $("#id_customer").attr("data-phone");
-      $("#nama_customer").val(name_customer);
+      let name_customer = $("#id_customer option:selected").attr("data-name");
+      let address_customer = $("#id_customer option:selected").attr("data-address");
+      let phone_customer = $("#id_customer option:selected").attr("data-phone");
+      $("#name_customer").val(name_customer);
       $("#address_customer").val(address_customer);
       $("#phone_customer").val(phone_customer);
     });
