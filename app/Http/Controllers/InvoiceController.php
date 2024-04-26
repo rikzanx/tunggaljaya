@@ -138,11 +138,13 @@ class InvoiceController extends Controller
     {
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
+        $customers = Customer::get();
         // dd($invoice);
         return view('admin.invoice.invoice-show',[
             'invoice' => $invoice,
             'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
             'company' => $company,
+            'customers' => $customers
         ]);
     }
     public function shown($id)
