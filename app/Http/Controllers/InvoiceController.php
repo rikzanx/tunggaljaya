@@ -61,6 +61,7 @@ class InvoiceController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name_customer' => 'required|string|max:255',
+            'id_customer' => 'required',
             'address_customer' => 'required',
             'phone_customer' => 'required',
             'description' => 'required',
@@ -92,6 +93,7 @@ class InvoiceController extends Controller
             $invoice->duedate = $request->duedate;
             $invoice->tanggal_pengiriman = $request->tanggal_pengiriman;
             $invoice->name_customer = $request->name_customer;
+            $invoice->id_customer = $request->id_customer;
             $invoice->address_customer = $request->address_customer;
             $invoice->phone_customer = $request->phone_customer;
             $invoice->diskon_rate = $request->diskon_rate;
