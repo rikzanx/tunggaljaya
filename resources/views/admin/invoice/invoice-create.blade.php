@@ -47,21 +47,21 @@
                     <label>Pilih Customer <a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah Customer</a></label>
                     <select class="form-control" name="id_customer" id="id_customer">
                       @foreach ($customers as $item)
-                        <option value="{{ $item->id }}" data-address="{{ $item->address }}" data-phonw="{{ $item->phone }}">{{ $item->name }} - {{ $item->address }}</option>
+                        <option value="{{ $item->id }}" data-name="{{ $item->name }}" data-address="{{ $item->address }}" data-phone="{{ $item->phone }}">{{ $item->name }} - {{ $item->address }}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Customer</label>
-                    <input type="text" name="name_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer" readonly>
+                    <input type="text" name="name_customer" class="form-control" id="name_customer" placeholder="Masukkan nama customer" readonly>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Address Customer</label>
-                    <input type="text" name="address_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer" readonly>
+                    <input type="text" name="address_customer" class="form-control" id="address_customer" placeholder="Masukkan nama customer" readonly>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Phone Customer</label>
-                    <input type="text" name="phone_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer" readonly>
+                    <input type="text" name="phone_customer" class="form-control" id="phone_customer" placeholder="Masukkan nama customer" readonly>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Catatan tambahan</label>
@@ -136,7 +136,13 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $("#id_customer").on('change',function(){
-      alert($("#id_customer").val());
+      let name_customer = $("#id_customer").data("name");
+      let address_customer = $("#id_customer").data("address");
+      let phone_customer = $("#id_customer").data("phone");
+      $("#nama_customer").val(name_customer);
+      $("#address_customer").val(address_customer);
+      $("#phone_customer").val(phone_customer);
+      
     });
     $(".btn-add-image").click(function(){ 
         var lsthmtl = `<div class="hdtuto control-group lst input-group" style="margin-top:10px">
