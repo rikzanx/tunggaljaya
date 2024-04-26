@@ -44,16 +44,24 @@
                   <input type="date" name="tanggal_pengiriman" class="form-control" id="exampleInputEmail1" value="{{ \Carbon\Carbon::now()->format("Y-m-d") }}">
                 </div>
                   <div class="form-group">
+                    <label>Pilih Customer <a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah Customer</a></label>
+                    <select class="form-control" name="category_id">
+                      @foreach ($customers as $item)
+                        <option value="{{ $item->id }}" data-address="{{ $item->address }}" data-phonw="{{ $item->phone }}">{{ $item->name }} - {{ $item->address }}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <div class="form-group">
                     <label for="exampleInputEmail1">Nama Customer</label>
-                    <input type="text" name="name_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer">
+                    <input type="text" name="name_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer" readonly>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Address Customer</label>
-                    <input type="text" name="address_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer">
+                    <input type="text" name="address_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer" readonly>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Phone Customer</label>
-                    <input type="text" name="phone_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer">
+                    <input type="text" name="phone_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer" readonly>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Catatan tambahan</label>

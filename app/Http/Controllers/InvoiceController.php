@@ -8,6 +8,7 @@ use App\Models\Item;
 use App\Models\DeletedInvoice;
 use App\Models\DeletedItem;
 use App\Models\Company;
+use App\Models\Customer;
 use Validator;
 use session;
 use Illuminate\Support\Facades\DB;
@@ -44,8 +45,10 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        
-        return view('admin.invoice.invoice-create');
+        $customers = Customer::get();
+        return view('admin.invoice.invoice-create',[
+            "customers" => $customers
+        ]);
     }
 
     /**
