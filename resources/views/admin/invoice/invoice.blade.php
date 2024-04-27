@@ -44,9 +44,10 @@
                   </tr>
                   </thead>
                   <tbody>
+                    <?php $total = count($invoices); ?>
                     @foreach ($invoices as $item)
                     <tr>
-                        <td>{{ $loop->index+1 }}</td>
+                        <td>{{ $total }}</td>
                         <td>{{ $item->no_invoice }}</td>
                         <td>{{ $item->name_customer }}</td>
                         <td>{{ $item->duedate }}</td>
@@ -61,6 +62,7 @@
                             <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})"><span class="fas fa-trash"></span></button> --}}
                         </td>
                     </tr>
+                    <?php $total--; ?>
                     @endforeach
                   </tbody>
                   <tfoot>
