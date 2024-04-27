@@ -54,7 +54,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Customer</label>
-                    <input type="text" value="{{ $invoice->name_customer }}" name="name_customer" class="form-control" id="nama_customer" placeholder="Masukkan nama customer">
+                    <input type="text" value="{{ $invoice->name_customer }}" name="name_customer" class="form-control" id="name_customer" placeholder="Masukkan nama customer">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Address Customer</label>
