@@ -54,15 +54,15 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Customer</label>
-                    <input type="text" value="{{ $invoice->name_customer }}" name="name_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer">
+                    <input type="text" value="{{ $invoice->name_customer }}" name="name_customer" class="form-control" id="nama_customer" placeholder="Masukkan nama customer">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Address Customer</label>
-                    <input type="text" value="{{ $invoice->address_customer }}" name="address_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer">
+                    <input type="text" value="{{ $invoice->address_customer }}" name="address_customer" class="form-control" id="address_customer" placeholder="Masukkan nama customer">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Phone Customer</label>
-                    <input type="text" value="{{ $invoice->phone_customer }}" name="phone_customer" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama customer">
+                    <input type="text" value="{{ $invoice->phone_customer }}" name="phone_customer" class="form-control" id="phone_customer" placeholder="Masukkan nama customer">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Catatan tambahan</label>
