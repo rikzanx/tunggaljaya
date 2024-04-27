@@ -25,7 +25,7 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        $invoices = Invoice::with('items')->get();
+        $invoices = Invoice::with('items')->orderBy('id','DESC')->get();
         
         foreach($invoices as $inv){
             $inv->total=0;
