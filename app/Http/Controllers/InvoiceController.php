@@ -297,9 +297,11 @@ class InvoiceController extends Controller
      */
     public function edit($id)
     {
+        $customers = Customer::get();
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         return view('admin.invoice.invoice-edit',[
-            "invoice" => $invoice
+            "invoice" => $invoice,
+            "customers" => $customers
         ]);
     }
 
@@ -314,6 +316,7 @@ class InvoiceController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name_customer' => 'required|string|max:255',
+            'id_customer' => 'required',
             'address_customer' => 'required',
             'phone_customer' => 'required',
             'description' => 'required',
@@ -340,6 +343,7 @@ class InvoiceController extends Controller
         try {
             $invoice = Invoice::findOrFail($id);
             $invoice->name_customer = $request->name_customer;
+            $invoice->id_customer = $request->id_customer;
             $invoice->duedate = $request->duedate;
             $invoice->tanggal_pengiriman = $request->tanggal_pengiriman;
             $invoice->address_customer = $request->address_customer;
