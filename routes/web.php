@@ -35,6 +35,9 @@ use App\Models\Product;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\TelegramController;
+
+Route::any('/webhook', [TelegramController::class, 'handle']);
 
 Route::get('/', [PageController::class, 'welcome'])->name('index');
 Route::get('about',[PageController::class, 'about'])->name('about');
