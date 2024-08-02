@@ -129,7 +129,7 @@ class SuratPenawaranController extends Controller
         // Create the mPDF document
         $document = new PDF( [
             'mode' => 'utf-8',
-            'format' => 'A4',
+            'format' => 'A3',
             'margin_header' => '3',
             'margin_top' => '20',
             'margin_bottom' => '20',
