@@ -28,6 +28,11 @@ cd ~/.ssh/ #pindah ke direktori ssh
 ssh-keygen -t rsa
 cat ~/.ssh/id_anda.pub
 eval `ssh-agent`
+
+windows
+Set-Service   ssh-agent -StartupType Automatic
+Start-Service ssh-agent
+
 ssh-add dian
 ssh -T git@github.com
 
