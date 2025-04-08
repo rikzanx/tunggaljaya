@@ -46,3 +46,13 @@ nano ~/.ssh/config =>
 
 tutor xml sitemap
 https://codelapan.com/post/cara-membuat-sitemap-dinamis-di-laravel-8
+
+#jika env tidak terbaca
+php artisan config:clear
+
+#laravel permission
+find . -type f -exec chmod 644 {} \;
+find . -type d -exec chmod 755 {} \;
+chmod -R 777 ./storage
+chmod -R 777 ./bootstrap/cache/
+chmod -R 777 ./node_modules/
