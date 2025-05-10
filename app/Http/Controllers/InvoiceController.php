@@ -169,6 +169,13 @@ class InvoiceController extends Controller
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
         ];
+        $header = [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="' . $documentFileName . '"',
+                'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
+                'Pragma' => 'no-cache',
+                'Expires' => 'Sat, 01 Jan 2000 00:00:00 GMT'
+            ];
  
         // Write some simple Content
         $document->WriteHTML(view('admin.invoice.invoice-shown',[
@@ -205,6 +212,13 @@ class InvoiceController extends Controller
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
         ];
+        $header = [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="' . $documentFileName . '"',
+                'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
+                'Pragma' => 'no-cache',
+                'Expires' => 'Sat, 01 Jan 2000 00:00:00 GMT'
+            ];
         // Write some simple Content
         $document->WriteHTML(view('admin.invoice.invoice-show-mpdf',[
             'invoice' => $invoice,
@@ -261,6 +275,13 @@ class InvoiceController extends Controller
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
         ];
+        $header = [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="' . $documentFileName . '"',
+                'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
+                'Pragma' => 'no-cache',
+                'Expires' => 'Sat, 01 Jan 2000 00:00:00 GMT'
+            ];
  
         // Write some simple Content
         $document->WriteHTML(view('admin.surat-jalan.surat-jalan-new',[
