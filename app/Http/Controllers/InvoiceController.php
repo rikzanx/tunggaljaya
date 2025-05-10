@@ -229,6 +229,13 @@ $name = "Invoice ".$invoice->no_invoice." ".$company->name." ".now()->timestamp.
             'date_inv' => Carbon::createFromFormat('Y-m-d', $invoice->duedate)->format('Y-m-d'),
             'company' => $company,
         ]));
+        return response($document->Output($name, 'S'), 200, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'inline; filename="' . $name . '"',
+        'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
+        'Pragma' => 'no-cache',
+        'Expires' => 'Sat, 01 Jan 2000 00:00:00 GMT',
+    ]);
         // Save PDF on your public storage 
         Storage::disk('public')->put($documentFileName, $document->Output($documentFileName, "S"));
         // Get file back from storage with the give header informations
