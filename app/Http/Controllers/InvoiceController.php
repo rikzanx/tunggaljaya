@@ -152,6 +152,8 @@ class InvoiceController extends Controller
         $invoice = Invoice::with('items')->where('id',$id)->firstOrFail();
         $company = Company::first();
         $name = "Invoice ".$invoice->no_invoice." ".$company->name.".pdf";
+        $name = "Invoice ".$invoice->no_invoice." ".$company->name." ".now()->timestamp.".pdf";
+
         $documentFileName = $name;
 
         // Create the mPDF document
@@ -197,6 +199,8 @@ class InvoiceController extends Controller
         $company = Company::first();
         // Setup a filename 
         $name = "Invoice ".$invoice->no_invoice." ".$company->name.".pdf";
+$name = "Invoice ".$invoice->no_invoice." ".$company->name." ".now()->timestamp.".pdf";
+
         $documentFileName = $name;
         // Create the mPDF document
         $document = new PDF( [
@@ -258,6 +262,8 @@ class InvoiceController extends Controller
 
         // Setup a filename 
         $name = "Surat Jalan ".$company->name." ".$invoice->no_invoice.".pdf";
+        $name = "Surat Jalan ".$invoice->no_invoice." ".$company->name." ".now()->timestamp.".pdf";
+
         $documentFileName = $name;
  
         // Create the mPDF document
