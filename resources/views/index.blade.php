@@ -24,6 +24,55 @@ TemplateMo 559 Zay Shop
 https://templatemo.com/tm-559-zay-shop
 
 -->
+<style>
+  /* Card Produk */
+.product-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    border: 2px solid #e5e5e5;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+/* Hover: profesional, bukan modern */
+.product-card:hover {
+    border-color: #0d6efd;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Gambar Produk */
+.product-card img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 3px solid #f0f0f0;
+    padding: 10px;
+    background: #fff;
+}
+
+/* Judul Produk */
+.product-title {
+    margin-top: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+    letter-spacing: 0.3px;
+}
+
+/* Tombol */
+.btn-outline-light {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline-light:hover {
+    background: #ffffff;
+    color: #0d6efd;
+}
+
+</style>
 </head>
 
 <body>
@@ -32,6 +81,8 @@ https://templatemo.com/tm-559-zay-shop
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="https://api.whatsapp.com/send/?phone=+6288805189145&text=Halo%20{{ $company->name }}">088805189145</a>
                     <i class="fa fa-envelope mx-2"></i>
                     <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:{{ $company->email }}">{{ $company->email }}</a>
                     <i class="fa fa-phone mx-2"></i>
@@ -47,6 +98,7 @@ https://templatemo.com/tm-559-zay-shop
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand text-success logo h3 align-self-center" href="{{ route('index') }}">
+              <img src="{{ asset($company->image_company) }}" class="img-fluid" width="50px" alt="About Hero">
                 {{ $company->name }}
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,6 +143,30 @@ https://templatemo.com/tm-559-zay-shop
         </div>
     </div>
 
+    <section class="bg-success py-5">
+        <div class="container">
+            <div class="row align-items-center py-5">
+                <div class="col-md-8 text-white">
+                    {{-- <h1>{{ $company->name }}</h1> --}}
+                    <h1>Supplier & Stockist Valve Industri</h1>
+                    <p align="justify">
+                      CV Tunggal Jaya merupakan <b>supplier dan stockist valve industri</b>yang menyediakan berbagai
+                      kebutuhan <b>valve untuk perusahaan dan proyek industri</b>.Kami menyuplai <b>gate valve, globe valve, serta valve 
+                      pendukung sistem perpipaan</b> sesuai kebutuhan teknis dan spesifikasi yang dibutuhkan.
+                      <br>
+                      <br>
+                      Dengan dukungan ketersediaan stok dan jaringan pemasok, kami berkomitmen menyediakan 
+                      <b>produk sesuai standar industri, pengadaan tepat waktu, dan pelayanan profesional</b>. 
+                      CV Tunggal Jaya siap menjadi mitra pengadaan <b>valve industri dan peralatan teknik</b> bagi perusahaan Anda.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                <img src="{{ asset($company->image_company) }}" class="img-fluid" alt="About Hero">
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <!-- Start Banner Hero -->
@@ -133,31 +209,41 @@ https://templatemo.com/tm-559-zay-shop
 
 
     <!-- Start Categories of The Month -->
-    <section class="container py-5">
-        <div class="row text-center pt-3">
-            <div class="col-lg-6 m-auto">
-                <h1 class="h1">Produk</h1>
-                <!-- <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                </p> -->
-            </div>
+    <div class="bg-success">
+        
+      <section class="container bg-success py-5">
+          <div class="row text-center pt-3">
+              <div class="col-lg-6 m-auto">
+                  <h1 class="h1 text-white"><b>Produk Valve Kami</b></h1>
+                  <!-- <p>
+                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                      deserunt mollit anim id est laborum.
+                  </p> -->
+              </div>
+          </div>
+          <div class="row justify-content-center">
+    @foreach ($products as $product)
+    <div class="col-12 col-md-3 col-lg-3 mb-5">
+        <div class="product-card text-center">
+            <a href="{{ route('product-detail',[$product->slug]) }}">
+                <img src="{{ asset($product->images[0]->image_product) }}" alt="{{ $product->name }}">
+            </a>
+            <h5 class="product-title">{{ $product->name }}</h5>
         </div>
-        <div class="row">
-            @foreach ($products as $product)
-            <div class="col-12 col-md-4 p-5 mt-md-3">
-                <a href="{{ route('product-detail',[$product->slug]) }}"><img src="{{ asset($product->images[0]->image_product) }}" class="rounded-circle w-100 img-fluid border"></a>
-                <h5 class="text-center mt-3 mb-3">{{ $product->name }}</h5>
-                {{-- <p class="text-center"><a class="btn btn-success" href="{{ route('product-detail',[$product->slug]) }}">Lihat produk</a></p> --}}
-            </div>
-            @endforeach
-        </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <a class="btn btn-success text-white mt-2" href="{{ route('product') }}">Lihat semua produk</a>
-            </div>
-        </div>
-    </section>
+    </div>
+    @endforeach
+</div>
+
+<div class="row">
+    <div class="col-12 text-center">
+        <a class="btn btn-outline-light mt-3 px-4" href="{{ route('product') }}">
+            Lihat semua produk
+        </a>
+    </div>
+</div>
+
+      </section>
+    </div>
 
     <!-- Start Footer -->
     <footer class="bg-dark" id="tempaltemo_footer">
@@ -170,6 +256,10 @@ https://templatemo.com/tm-559-zay-shop
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
                             {{ $company->address }}
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="https://api.whatsapp.com/send/?phone=+6288805189145&text=Halo%20{{ $company->name }}">088805189145</a>
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
@@ -249,7 +339,7 @@ https://templatemo.com/tm-559-zay-shop
     <!-- End Footer -->
 
 
-    <a href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
+    <a href="https://api.whatsapp.com/send/?phone=+6288805189145&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
         <i class="fa fa-whatsapp my-float-ok"></i>
         </a>
 

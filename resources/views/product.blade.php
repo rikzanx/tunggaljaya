@@ -47,6 +47,7 @@ https://templatemo.com/tm-559-zay-shop
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand text-success logo h3 align-self-center" href="{{ route('index') }}">
+              <img src="{{ asset($company->image_company) }}" class="img-fluid" width="50px" alt="About Hero">
                 {{ $company->name }}
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,73 +95,76 @@ https://templatemo.com/tm-559-zay-shop
 
 
     <!-- Start Content -->
-    <div class="container py-5">
-        <div class="row">
+    <div class="bg-success">
 
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-12">
-                        <h5>Produk kami</h5>
-                    </div>
-                </div>
-                <div class="row">
-                    @foreach ($products as $product)    
-                    <div class="col-md-3">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset($product->images[0]->image_product) }}">
-                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white mt-2" href="{{ route('product-detail',[$product->slug]) }}"><i class="far fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <a href="{{ route('product-detail',[$product->slug]) }}" class="h3 text-decoration-none"><b>{{ $product->name }}</b></a>
-                                <ul class="w-100 list-unstyled mb-0">
-                                    <li>Size: {{ $product->size }}</li>
-                                    <li>Brand: {{ $product->brand }}</li>
-                                    <li class="" style="color:gray;">Dilihat {{ $product->dilihat }} kali</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div div="row">
-                    @if ($category_option == 0)
-                    <ul class="pagination pagination-lg justify-content-end">
-                        @for ($i = 1; $i <= $products->lastPage(); $i++)
-                            @if ($i == $products->currentPage())
-                                <li class="page-item disabled">
-                                    <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">{{ $i }}</a>
-                                </li>
-                            @else
-                                <li class="page-item">
-                                    <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="{{ url()->current()."?page=".$i }}">{{ $i }}</a>
-                                </li>
-                            @endif
-                        @endfor
-                    </ul>
-                    @else
-                    <ul class="pagination pagination-lg justify-content-end">
-                        @for ($i = 1; $i <= $products->lastPage(); $i++)
-                            @if ($i == $products->currentPage())
-                                <li class="page-item disabled">
-                                    <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
-                                </li>
-                            @else
-                                <li class="page-item">
-                                    <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="{{ url()->current()."?category=".$category_option."&page=".$i }}">{{ $i }}</a>
-                                </li>
-                            @endif
-                        @endfor
-                    </ul>
-                    @endif
-                </div>
-            </div>
-
-        </div>
+      <div class="container py-5">
+          <div class="row">
+  
+              <div class="col-lg-12">
+                  <div class="row">
+                      <div class="col-12">
+                          <h5 class="text-white">Produk kami</h5>
+                      </div>
+                  </div>
+                  <div class="row">
+                      @foreach ($products as $product)    
+                      <div class="col-md-3">
+                          <div class="card mb-4 product-wap rounded-0">
+                              <div class="card rounded-0">
+                                  <img class="card-img rounded-0 img-fluid" src="{{ asset($product->images[0]->image_product) }}">
+                                  <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                      <ul class="list-unstyled">
+                                          <li><a class="btn btn-success text-white mt-2" href="{{ route('product-detail',[$product->slug]) }}"><i class="far fa-eye"></i></a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div class="card-body">
+                                  <a href="{{ route('product-detail',[$product->slug]) }}" class="h3 text-decoration-none"><b>{{ $product->name }}</b></a>
+                                  <ul class="w-100 list-unstyled mb-0">
+                                      <li>Size: {{ $product->size }}</li>
+                                      <li>Brand: {{ $product->brand }}</li>
+                                      <li class="" style="color:gray;">Dilihat {{ $product->dilihat }} kali</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      @endforeach
+                  </div>
+                  <div div="row">
+                      @if ($category_option == 0)
+                      <ul class="pagination pagination-lg justify-content-end">
+                          @for ($i = 1; $i <= $products->lastPage(); $i++)
+                              @if ($i == $products->currentPage())
+                                  <li class="page-item disabled">
+                                      <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">{{ $i }}</a>
+                                  </li>
+                              @else
+                                  <li class="page-item">
+                                      <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="{{ url()->current()."?page=".$i }}">{{ $i }}</a>
+                                  </li>
+                              @endif
+                          @endfor
+                      </ul>
+                      @else
+                      <ul class="pagination pagination-lg justify-content-end">
+                          @for ($i = 1; $i <= $products->lastPage(); $i++)
+                              @if ($i == $products->currentPage())
+                                  <li class="page-item disabled">
+                                      <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                                  </li>
+                              @else
+                                  <li class="page-item">
+                                      <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="{{ url()->current()."?category=".$category_option."&page=".$i }}">{{ $i }}</a>
+                                  </li>
+                              @endif
+                          @endfor
+                      </ul>
+                      @endif
+                  </div>
+              </div>
+  
+          </div>
+      </div>
     </div>
     <!-- End Content -->
 
@@ -255,7 +259,7 @@ https://templatemo.com/tm-559-zay-shop
     </footer>
     <!-- End Footer -->
 
-    <a href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
+    <a href="https://api.whatsapp.com/send/?phone=+6288805189145&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
         <i class="fa fa-whatsapp my-float-ok"></i>
         </a>
 

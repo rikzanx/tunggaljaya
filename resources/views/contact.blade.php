@@ -35,6 +35,8 @@ https://templatemo.com/tm-559-zay-shop
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="https://api.whatsapp.com/send/?phone=+6288805189145&text=Halo%20{{ $company->name }}">088805189145</a>
                     <i class="fa fa-envelope mx-2"></i>
                     <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:{{ $company->email }}">{{ $company->email }}</a>
                     <i class="fa fa-phone mx-2"></i>
@@ -50,6 +52,7 @@ https://templatemo.com/tm-559-zay-shop
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand text-success logo h3 align-self-center" href="{{ route('index') }}">
+              <img src="{{ asset($company->image_company) }}" class="img-fluid" width="50px" alt="About Hero">
                 {{ $company->name }}
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,32 +103,23 @@ https://templatemo.com/tm-559-zay-shop
         <div class="col-md-6 m-auto text-center">
             <h1 class="h1">Hubungi Kami</h1>
         </div>
+    </div>  
+
+    <!-- Start Google Maps -->
+    <div class="container-fluid p-0">
+        <iframe
+            width="100%"
+            height="350"
+            frameborder="0"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q={{ urlencode($company->address) }}&output=embed">
+        </iframe>
     </div>
+    <!-- End Google Maps -->
 
-    <!-- Start Map -->
-    <div id="mapid" style="width: 100%; height: 300px;"></div>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <script>
-        var lat = @json($company->lat);
-        var lng = @json($company->lng);
-        var mymap = L.map('mapid').setView([lat, lng, 13], 13);
-
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-            maxZoom: 13,
-            attribution: '{{ $company->name }}',
-            description: "ok",
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1
-        }).addTo(mymap);
-
-        L.marker([lat, lng]).addTo(mymap)
-            .bindPopup("{{ $company->name }} <br> <h6>{{ $company->address }}</h6>").openPopup();
-
-        mymap.scrollWheelZoom.disable();
-        mymap.touchZoom.disable();
-    </script>
-    <!-- Ena Map -->
 
     <!-- Start Contact -->
     <div class="container py-5">
@@ -272,7 +266,7 @@ https://templatemo.com/tm-559-zay-shop
     </footer>
     <!-- End Footer -->
 
-    <a href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
+    <a href="https://api.whatsapp.com/send/?phone=+6288805189145&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
         <i class="fa fa-whatsapp my-float-ok"></i>
         </a>
 

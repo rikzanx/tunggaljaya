@@ -32,10 +32,12 @@ https://templatemo.com/tm-559-zay-shop
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
+                  <i class="fa fa-phone mx-2"></i>
+                  <a class="navbar-sm-brand text-light text-decoration-none" href="https://api.whatsapp.com/send/?phone=+6288805189145&text=Halo%20{{ $company->name }}">088805189145</a>
+                  <i class="fa fa-phone mx-2"></i>
+                  <a class="navbar-sm-brand text-light text-decoration-none" href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}">{{ $company->telp }}</a>
                     <i class="fa fa-envelope mx-2"></i>
                     <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:{{ $company->email }}">{{ $company->email }}</a>
-                    <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}">{{ $company->telp }}</a>
                 </div>
             </div>
         </div>
@@ -47,6 +49,7 @@ https://templatemo.com/tm-559-zay-shop
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand text-success logo h3 align-self-center" href="{{ route('index') }}">
+              <img src="{{ asset($company->image_company) }}" class="img-fluid" width="50px" alt="About Hero">
                 {{ $company->name }}
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,9 +100,19 @@ https://templatemo.com/tm-559-zay-shop
         <div class="container">
             <div class="row align-items-center py-5">
                 <div class="col-md-8 text-white">
-                    <h1>Tentang Kami</h1>
-                    <p>
-                        {{ $company->about }}
+                    <h1>Tentang Kami - CV Tunggal Jaya</h1>
+                    <p align="justify">
+                        CV Tunggal Jaya merupakan perusahaan yang bergerak di bidang perdagangan dan penyediaan valve industri serta peralatan teknik. Kami hadir sebagai supplier dan stockist valve yang melayani kebutuhan perusahaan, pabrik, dan proyek industri, khususnya dalam pengadaan valve untuk sistem perpipaan industri.
+                        <br><br>
+                        Sebagai supplier valve industri, kami menyediakan berbagai jenis valve yang umum digunakan dalam instalasi industri, antara lain gate valve, globe valve, dan valve pendukung lainnya. Produk yang kami suplai ditujukan untuk memenuhi kebutuhan operasional, perawatan (maintenance), maupun penggantian komponen pada sistem perpipaan industri dengan memperhatikan spesifikasi teknis yang dibutuhkan.
+                        <br><br>
+                        CV Tunggal Jaya memahami bahwa setiap industri memiliki kebutuhan teknis yang berbeda. Oleh karena itu, kami berfokus pada penyediaan valve sesuai spesifikasi, baik dari sisi ukuran, material, maupun tekanan kerja yang digunakan dalam sistem. Dengan dukungan ketersediaan stok dan kerja sama dengan pemasok terpercaya, kami berupaya menjaga kontinuitas pasokan valve industri bagi pelanggan.
+                        <br><br>
+                        Kami melayani kebutuhan pengadaan valve industri untuk perusahaan dan proyek, baik dalam skala kecil maupun besar. Komitmen kami adalah memberikan produk yang sesuai standar industri, proses pengadaan yang jelas, serta pelayanan yang profesional. Setiap kebutuhan pelanggan kami tangani dengan pendekatan teknis dan komunikasi yang transparan.
+                        <br><br>
+                        Sebagai perusahaan yang bergerak di bidang alat teknik dan valve industri, CV Tunggal Jaya terus berupaya menjadi mitra pengadaan yang dapat diandalkan. Kepercayaan pelanggan menjadi dasar bagi kami untuk menjaga kualitas produk, ketepatan waktu pengiriman, serta keberlanjutan kerja sama jangka panjang.
+                        <br><br>
+                        Dengan pengalaman dan fokus pada bidang valve dan peralatan teknik industri, CV Tunggal Jaya siap mendukung kebutuhan pengadaan valve industri untuk perusahaan Anda.
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -240,7 +253,7 @@ https://templatemo.com/tm-559-zay-shop
     </footer>
     <!-- End Footer -->
 
-    <a href="https://api.whatsapp.com/send/?phone={{ $company->telp }}&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
+    <a href="https://api.whatsapp.com/send/?phone=+6288805189145&text=Halo%20{{ $company->name }}" class="float-ok" target="_blank">
         <i class="fa fa-whatsapp my-float-ok"></i>
         </a>
     
