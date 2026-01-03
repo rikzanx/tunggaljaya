@@ -71,6 +71,13 @@ https://templatemo.com/tm-559-zay-shop
     background: #ffffff;
     color: #0d6efd;
 }
+.img-same {
+  height: 220px;
+  width: 100%;
+  object-fit: contain;
+  background: #f5f5f5; /* biar sisa ruang rapi */
+}
+
 
 </style>
 </head>
@@ -166,6 +173,25 @@ https://templatemo.com/tm-559-zay-shop
             </div>
         </div>
     </section>
+    <section>
+      <div class="container-fluid bg-white">
+        <div class="row py-2">
+          <div class="col-md-3 mb-2">
+            <img src="{{ asset('img/gate_kitz_2.jpg') }}" class="img-fluid img-same" alt="">
+          </div>
+          <div class="col-md-3 mb-2">
+            <img src="{{ asset('img/streiner_kitz.jpg') }}" class="img-fluid img-same" alt="">
+          </div>
+          <div class="col-md-3 mb-2">
+            <img src="{{ asset('img/gate_kitz_3.jpg') }}" class="img-fluid img-same" alt="">
+          </div>
+          <div class="col-md-3 mb-2">
+            <img src="{{ asset('img/globe_valve_kitz.jpg') }}" class="img-fluid img-same" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 
 
@@ -222,16 +248,16 @@ https://templatemo.com/tm-559-zay-shop
               </div>
           </div>
           <div class="row justify-content-center">
-    @foreach ($products as $product)
-    <div class="col-12 col-md-3 col-lg-3 mb-5">
-        <div class="product-card text-center">
-            <a href="{{ route('product-detail',[$product->slug]) }}">
-                <img src="{{ asset($product->images[0]->image_product) }}" alt="{{ $product->name }}">
-            </a>
-            <h5 class="product-title">{{ $product->name }}</h5>
+        @foreach ($products as $product)
+        <div class="col-12 col-md-3 col-lg-3 mb-5">
+            <div class="product-card text-center">
+                <a href="{{ route('product-detail',[$product->slug]) }}">
+                    <img src="{{ asset($product->images[0]->image_product) }}" alt="{{ $product->name }}">
+                </a>
+                <h5 class="product-title">{{ $product->name }}</h5>
+            </div>
         </div>
-    </div>
-    @endforeach
+        @endforeach
 </div>
 
 <div class="row">
