@@ -17,7 +17,7 @@ class PageController extends Controller
         $company = Company::first();
         $sliders = ImagesSlider::all();
         $categories = Category::all();
-        $products = Product::orderBy('dilihat','DESC')->get();
+        $products = Product::get();
         $products_footer = Product::skip(0)->take(6)->get();
         return view('index',[
             'company'=> $company,
