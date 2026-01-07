@@ -51,7 +51,12 @@
                         <td>{{ $item->address }}</td>
                         <td>{{ $item->phone }}</td>
                         <td>{{ $item->email }}</td>
-                        <td>{{ $item->status }}</td>
+                        <td>
+                            @if($item->status == "Done")
+                                <span class="badge bg-success">{{ $item->status }}</span>
+                            @else
+                                <span class="badge bg-danger">{{ $item->status }}</span>
+                        </td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('prospect.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
                             <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})"><span class="fas fa-trash"></span></button>

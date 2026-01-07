@@ -169,6 +169,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('prospect.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Daftar Prospek
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('password.index') }}" class="nav-link">
               <i class="nav-icon fas fa-key"></i>
               <p>
