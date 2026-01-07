@@ -56,6 +56,7 @@
                                 <span class="badge bg-success">{{ $item->status }}</span>
                             @else
                                 <span class="badge bg-danger">{{ $item->status }}</span>
+                            @endif
                         </td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('prospect.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
