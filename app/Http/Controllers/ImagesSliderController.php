@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ImagesSlider;
 use Illuminate\Http\Request;
-use Validator;
-use Session;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Session;
 
 class ImagesSliderController extends Controller
 {

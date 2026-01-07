@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Invoice;
 use App\Models\Item;
 use App\Models\Company;
-use Validator;
-use session;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 

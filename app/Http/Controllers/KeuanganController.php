@@ -6,8 +6,8 @@ use App\Models\Keuangan;
 use App\Models\Company;
 
 use Illuminate\Http\Request;
-use Validator;
-use session;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 

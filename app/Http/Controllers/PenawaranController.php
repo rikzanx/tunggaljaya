@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Penawaran;
 use Illuminate\Http\Request;
-use Validator;
-use session;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 

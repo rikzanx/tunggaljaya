@@ -100,19 +100,19 @@ https://templatemo.com/tm-559-zay-shop
         <div class="container">
             <div class="row align-items-center py-5">
                 <div class="col-md-8 text-white">
-                    <h1>Tentang Kami - CV Tunggal Jaya</h1>
+                    <h1>Tentang Kami - {{ $company->name }}</h1>
                     <p align="justify">
-                        CV Tunggal Jaya merupakan perusahaan yang bergerak di bidang perdagangan dan penyediaan valve industri serta peralatan teknik. Kami hadir sebagai supplier dan stockist valve yang melayani kebutuhan perusahaan, pabrik, dan proyek industri, khususnya dalam pengadaan valve untuk sistem perpipaan industri.
+                        {{ $company->name }} merupakan perusahaan yang bergerak di bidang perdagangan dan penyediaan valve industri serta peralatan teknik. Kami hadir sebagai supplier dan stockist valve yang melayani kebutuhan perusahaan, pabrik, dan proyek industri, khususnya dalam pengadaan valve untuk sistem perpipaan industri.
                         <br><br>
                         Sebagai supplier valve industri, kami menyediakan berbagai jenis valve yang umum digunakan dalam instalasi industri, antara lain gate valve, globe valve, dan valve pendukung lainnya. Produk yang kami suplai ditujukan untuk memenuhi kebutuhan operasional, perawatan (maintenance), maupun penggantian komponen pada sistem perpipaan industri dengan memperhatikan spesifikasi teknis yang dibutuhkan.
                         <br><br>
-                        CV Tunggal Jaya memahami bahwa setiap industri memiliki kebutuhan teknis yang berbeda. Oleh karena itu, kami berfokus pada penyediaan valve sesuai spesifikasi, baik dari sisi ukuran, material, maupun tekanan kerja yang digunakan dalam sistem. Dengan dukungan ketersediaan stok dan kerja sama dengan pemasok terpercaya, kami berupaya menjaga kontinuitas pasokan valve industri bagi pelanggan.
+                        {{ $company->name }} memahami bahwa setiap industri memiliki kebutuhan teknis yang berbeda. Oleh karena itu, kami berfokus pada penyediaan valve sesuai spesifikasi, baik dari sisi ukuran, material, maupun tekanan kerja yang digunakan dalam sistem. Dengan dukungan ketersediaan stok dan kerja sama dengan pemasok terpercaya, kami berupaya menjaga kontinuitas pasokan valve industri bagi pelanggan.
                         <br><br>
                         Kami melayani kebutuhan pengadaan valve industri untuk perusahaan dan proyek, baik dalam skala kecil maupun besar. Komitmen kami adalah memberikan produk yang sesuai standar industri, proses pengadaan yang jelas, serta pelayanan yang profesional. Setiap kebutuhan pelanggan kami tangani dengan pendekatan teknis dan komunikasi yang transparan.
                         <br><br>
-                        Sebagai perusahaan yang bergerak di bidang alat teknik dan valve industri, CV Tunggal Jaya terus berupaya menjadi mitra pengadaan yang dapat diandalkan. Kepercayaan pelanggan menjadi dasar bagi kami untuk menjaga kualitas produk, ketepatan waktu pengiriman, serta keberlanjutan kerja sama jangka panjang.
+                        Sebagai perusahaan yang bergerak di bidang alat teknik dan valve industri, {{ $company->name }} terus berupaya menjadi mitra pengadaan yang dapat diandalkan. Kepercayaan pelanggan menjadi dasar bagi kami untuk menjaga kualitas produk, ketepatan waktu pengiriman, serta keberlanjutan kerja sama jangka panjang.
                         <br><br>
-                        Dengan pengalaman dan fokus pada bidang valve dan peralatan teknik industri, CV Tunggal Jaya siap mendukung kebutuhan pengadaan valve industri untuk perusahaan Anda.
+                        Dengan pengalaman dan fokus pada bidang valve dan peralatan teknik industri, {{ $company->name }} siap mendukung kebutuhan pengadaan valve industri untuk perusahaan Anda.
                     </p>
                 </div>
                 <div class="col-md-4">

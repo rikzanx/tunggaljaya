@@ -157,14 +157,14 @@ https://templatemo.com/tm-559-zay-shop
                     {{-- <h1>{{ $company->name }}</h1> --}}
                     <h1>Supplier & Stockist Valve Industri</h1>
                     <p align="justify">
-                      CV Tunggal Jaya merupakan <b>supplier dan stockist valve industri</b>yang menyediakan berbagai
+                      {{ $company->name }} merupakan <b>supplier dan stockist valve industri</b>yang menyediakan berbagai
                       kebutuhan <b>valve untuk perusahaan dan proyek industri</b>.Kami menyuplai <b>gate valve, globe valve, serta valve 
                       pendukung sistem perpipaan</b> sesuai kebutuhan teknis dan spesifikasi yang dibutuhkan.
                       <br>
                       <br>
                       Dengan dukungan ketersediaan stok dan jaringan pemasok, kami berkomitmen menyediakan 
                       <b>produk sesuai standar industri, pengadaan tepat waktu, dan pelayanan profesional</b>. 
-                      CV Tunggal Jaya siap menjadi mitra pengadaan <b>valve industri dan peralatan teknik</b> bagi perusahaan Anda.
+                      {{ $company->name }} siap menjadi mitra pengadaan <b>valve industri dan peralatan teknik</b> bagi perusahaan Anda.
                     </p>
                 </div>
                 <div class="col-md-4">
