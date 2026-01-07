@@ -78,7 +78,11 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        //
+      $customer->load('invoices');
+      // dd($customer->invoices);
+      return view('admin.customer.customer-show',[
+          'customer' => $customer
+      ]);
     }
 
     /**

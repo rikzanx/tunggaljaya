@@ -51,6 +51,7 @@
                         <td>{{ $item->phone }}</td>
                         <td>{{ $item->email }}</td>
                         <td>
+                            <a class="btn btn-success" href="{{ route('customer.show',$item->id) }}"><span class="fas fa-eye"></span></a>
                             <a class="btn btn-primary" href="{{ route('customer.edit',$item->id) }}"><span class="fas fa-edit"></span></a>
                             <button class="btn btn-danger" onclick="modaldelete({{ $item->id }})"><span class="fas fa-trash"></span></button>
                         </td>
