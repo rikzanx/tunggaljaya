@@ -87,10 +87,10 @@
 			<thead>
 				<tr>
 					<th width="40">NO.</th>
-					<th width="220">NAMA BARANG</th>
-					<th width="90">JUMLAH</th>
-					<th width="160">HARGA</th>
-					<th width="160">TOTAL</th>
+					<th width="300">NAMA BARANG</th>
+					<th width="30">JUMLAH</th>
+					<th width="150">HARGA</th>
+					<th width="150">TOTAL</th>
 				</tr>
 			</thead>
 			<tbody>
