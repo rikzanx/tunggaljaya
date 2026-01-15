@@ -99,7 +99,7 @@
 				 $subtotal += floatval($item->item_price * $item->qty); ?>
 				<tr valign="top">
 					<td style="text-align: right;"><?php echo $nomer; ?></td>
-					<td>{{ $item->description }}</td>
+					<td style="white-space: pre-line;">{{ $item->description }}</td>
 					<td align="center">{{ $item->qty }}</td>
 					<td align="right" style="text-align: right;">@rupiah($item->item_price)</td>
 					<td align="right" style="text-align: right;">@rupiah($item->item_price * $item->qty)</td>
