@@ -135,14 +135,17 @@
 @section('js')
 <script type="text/javascript">
   $(document).ready(function() {
+    function loadCustomer() {
+        let selected = $("#id_customer option:selected");
+
+        $("#name_customer").val(selected.data("name"));
+        $("#address_customer").val(selected.data("address"));
+        $("#phone_customer").val(selected.data("phone"));
+    }
     $("#id_customer").on('change',function(){
-      let name_customer = $("#id_customer option:selected").attr("data-name");
-      let address_customer = $("#id_customer option:selected").attr("data-address");
-      let phone_customer = $("#id_customer option:selected").attr("data-phone");
-      $("#name_customer").val(name_customer);
-      $("#address_customer").val(address_customer);
-      $("#phone_customer").val(phone_customer);
+      loadCustomer();
     });
+    loadCustomer();
     $(".btn-add-image").click(function(){ 
         var lsthmtl = `<div class="hdtuto control-group lst input-group" style="margin-top:10px">
                       <input type="text" name="description[]" placeholder="Nama Barang" class="myfrm form-control">

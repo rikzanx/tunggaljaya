@@ -199,7 +199,7 @@ class InvoiceController extends Controller
         $company = Company::first();
         // Setup a filename 
         $name = "Invoice ".$invoice->no_invoice." ".$company->name.".pdf";
-$name = "Invoice ".$invoice->no_invoice." ".$company->name." ".now()->timestamp.".pdf";
+        $name = "Invoice ".$invoice->no_invoice." ".$company->name." ".now()->timestamp.".pdf";
 
         $documentFileName = $name;
         // Create the mPDF document
@@ -386,6 +386,7 @@ $name = "Invoice ".$invoice->no_invoice." ".$company->name." ".now()->timestamp.
             $invoice->tax_rate = $request->tax_rate;
             $invoice->profit = $request->profit;
             $invoice->dp = $request->dp;
+            $invoice->rev = $invoice->rev + 1; 
             if($request->has('comment')){
                 $invoice->comment = $request->comment;
             }
